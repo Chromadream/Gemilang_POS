@@ -27,6 +27,11 @@ class account_DAO
         {
             $_SESSION["access"] = "granted";
             $_SESSION["level"] = $user_role;
+            return true;
+        }
+        else 
+        {
+            return false;
         }
     }
 }
