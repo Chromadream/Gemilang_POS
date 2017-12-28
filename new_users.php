@@ -30,15 +30,15 @@
                 <form method="post">
                     <div class="form-group">
                         <label for="usernamelabel">Username</label>
-                        <input type="text" class="form-control" id="username" aria-describedby="helpId" placeholder="Username" required>
+                        <input type="text" class="form-control" name="username" aria-describedby="helpId" placeholder="Username" required>
                     </div>
                     <div class="form-group">
                     <label for="Passwordlabel">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="password" required>
+                    <input type="password" class="form-control" name="password" placeholder="password" required>
                     </div>
                     <div class="form-group">
                     <label for="Role"></label>
-                    <select class="form-control" id="role">
+                    <select class="form-control" name="role">
                         <option value="B">Boss Mode</option>
                         <option value="T">Transactional Limited Account</option>
                         <option value="S">Stockkeeping Limited Account</option>

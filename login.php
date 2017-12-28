@@ -17,12 +17,12 @@
                 <form method="post">
                     <div class="form-group">
                       <label for="username"></label>
-                      <input type="text" class="form-control" id="username" aria-describedby="helpId" placeholder="username" required>
+                      <input type="text" class="form-control" name="username" aria-describedby="helpId" placeholder="username" required>
                       <small id="helpId" class="form-text text-muted">Isi username</small>
                     </div>
                     <div class="form-group">
                       <label for="password"></label>
-                      <input type="password" class="form-control" id="password" placeholder="password" required>
+                      <input type="password" class="form-control" name="password" placeholder="password" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>
