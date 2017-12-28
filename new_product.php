@@ -18,22 +18,60 @@
               <form method="post">
               <div class="form-group">
                 <label for="product_name"></label>
-                <input type="text" class="form-control" id="product_name" aria-describedby="helpId" placeholder="Nama Produk Baru" required>
+                <input type="text" class="form-control" name="product_name" aria-describedby="helpId" placeholder="Nama Produk Baru" required>
                 <small id="helpId" class="form-text text-muted">Nama produk baru</small>
               </div>
               <div class="form-group">
                 <label for="product_purchase_price"></label>
-                <input type="number" class="form-control" id="product_purchase_price" aria-describedby="helpId" placeholder="Modal Produk" required>
+                <input type="number" class="form-control" name="product_purchase_price" aria-describedby="helpId" placeholder="Modal Produk">
                 <small id="helpId" class="form-text text-muted">Modal dasar produk</small>
               </div>
               <div class="form-group">
                 <label for="product_sale_price"></label>
-                <input type="number" class="form-control" id="" aria-describedby="helpId" placeholder="Harga Jual Produk" required>
+                <input type="number" class="form-control" name="product_sale_price" aria-describedby="helpId" placeholder="Harga Jual Produk" required>
                 <small id="helpId" class="form-text text-muted">Harga jual produk</small>
               </div>
+              <div class="form-group">
+                <label for="product_stock_quantity"></label>
+                <input type="number" class="form-control" name="product_stock_quantity" aria-describedby="helpId" placeholder="Stock awal">
+                <small id="helpId" class="form-text text-muted">Stock yang tersedia di awal pengisian data</small>
+              </div>
+              <div class="form-group">
+                <label for="product_stock_unit"></label>
+                <input type="text" class="form-control" name="product_stock_unit" aria-describedby="helpId" placeholder="Satuan produk" required>
+                <small id="helpId" class="form-text text-muted">Satuan stock produk</small>
+              </div>
+              <button type="submit" class="btn btn-primary">Tambah Produk</button>
               </form>
             </div>
-        }      
+        <?}
+        else
+        {
+            include_once("database_class.php");
+            include_once("product_DAO.php");
+            $connection = new Database();
+            $productDAO = new product_DAO($connection);
+            $product_name = $_POST["product_name"];
+            if(!empty($_POST["product_purchase_price"]))
+            {
+                $product_purchase_price = (int) $_POST["product_purchase_price"];
+            }
+            else
+            {
+                $product_purchase_price = 0;
+            }
+            $product_sale_price = (int) $_POST["product_sale_price"];
+            if(!empty($_POST["product_stock_quantity"]))
+            {
+                $product_stock_quantity = (int) $_POST["product_stock_quantity"];
+            }
+            else
+            {
+                $product_stock_quantity = NULL;
+            }
+            $product_stock_unit = $_POST["product_stock_unit"];
+            $productDAO;
+        }?>      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
