@@ -25,7 +25,6 @@ class account_DAO
         $prepared_query->execute();
         if(!empty($prepared_query->fetch()))
         {
-            $_SESSION["access"] = "granted";
             $_SESSION["level"] = $user_role;
             return true;
         }

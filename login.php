@@ -11,6 +11,7 @@
   </head>
   <body>
         <?php
+        session_start();
         if(empty($_POST["username"]))
         {?>
             <div class="container">
@@ -45,7 +46,7 @@
             }
             else
             {
-                $direction = $_GET["redirposition"]
+                $direction = $_GET["redirposition"];
                 header("location: $direction");
             }
         }?>
