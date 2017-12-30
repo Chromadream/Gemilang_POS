@@ -70,7 +70,8 @@
                 $product_stock_quantity = NULL;
             }
             $product_stock_unit = $_POST["product_stock_unit"];
-            $productDAO;
+            $new_id = $productDAO->add_new_product($product_name,$product_purchase_price,$product_sale_price,$product_stock_quantity,$product_stock_unit);
+            echo "Produk sudah ditambahkan. ID: ".$new_id;
         }?>      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
