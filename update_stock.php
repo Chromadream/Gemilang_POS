@@ -23,6 +23,8 @@
       if(empty($_POST["check"]))
       {
         $product_List = $product_DAO->list_all_product();?>
+        <div class="container">
+        <h1>Update Stock</h1>
         <form method="post" action="update_stock.php">
         <table class="table">
             <thead>
@@ -33,7 +35,7 @@
                     <th>Edit?</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody>        
         <?php
         for ($i = 0; $i<$product_List->rowCount();$i++)
         {
@@ -52,7 +54,8 @@
         <?php } ?>
           </tbody>
         </table>
-        <button type="submit" class="btn btn-primary">Update stock produk</button>    
+        <button type="submit" class="btn btn-primary">Update stock produk</button> 
+        </div>   
     <?php }
     else
     {
