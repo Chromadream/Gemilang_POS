@@ -14,7 +14,7 @@
       session_start();
       if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
       {
-        header("location: login.php?redirposition=update_stock.php");
+        header("location: login.php?redirposition=new_customer.php");
       }
       if(empty($_POST["customer_name"]))
       {?>
