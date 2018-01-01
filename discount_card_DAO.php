@@ -30,7 +30,7 @@ class discount_card_DAO
         {
             return $result["discount_id"];
         }
-        return false;
+        return NULL;
     }
 
     public function search_from_id($id)
@@ -44,7 +44,7 @@ class discount_card_DAO
         {
             return $id;
         }
-        return false;
+        return NULL;
     }
 }
 ?>
