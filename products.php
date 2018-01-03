@@ -14,7 +14,7 @@
       session_start();
       if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B" || $_SESSION["level"] != "S")
       {
-        header("location: login.php?redirposition=update_stock.php");
+        header("location: login.php?redirposition=products.php");
       }
       include_once("database_class.php");
       include_once("product_DAO.php");
