@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
       <?php
@@ -25,6 +26,11 @@
         $product_List = $product_DAO->list_all_product();?>
         <div class="container">
         <h1>Update Stock</h1>
+        <?php
+        if($_SESSION["level"]=="B")
+        {?>
+            <a class="btn btn-primary" href="new_product.php" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Produk baru</a>
+        <?php } ?>
         <form method="post" action="update_stock.php">
         <table class="table">
             <thead>
@@ -44,11 +50,10 @@
               <td scope="row"><?php echo $currentRow->product_id; ?></td>
               <td><?php echo $currentRow->product_name; ?></td>
               <td><div class="form-group">
-                <label for=""></label>
                 <input type="text" class="form-control" name="<?php echo $currentRow->product_id; ?>" value="<?php echo $currentRow->product_stock_quantity;?>">
               </div></td>
               <td><div class="form-check">
-                  <input type="checkbox" class="form-check-input" name="" value="<?php echo $currentRow->product_id; ?>">
+                  <input type="checkbox" class="form-check-input" name="check[]" value="<?php echo $currentRow->product_id; ?>">
               </div></td>
             </tr>
         <?php } ?>
