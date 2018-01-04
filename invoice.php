@@ -20,11 +20,9 @@
     include_once("database_class.php");
     include_once("transaction_DAO.php");
     include_once("transaction_items_DAO.php");
-    include_once("customer_DAO.php");
     $connection = new Database();
     $transaction_DAO = new transaction_DAO($connection);
     $item_DAO = new transaction_items_DAO($connection);
-    $customer_DAO = new customer_DAO($connection);
     if(!isset($_GET["mode"]))
     {
         $transID = $transaction_DAO->init_transaction();
@@ -35,8 +33,9 @@
         $id = $_GET["mode"];
         $trans = $transaction_DAO->get_transaction_detail($id);
         $details = $trans->getNext(new transaction_DAO($connection),0);
+        $items = $item_DAO->list_all_items_from_order($_GET["id"]);
     }?>
-    <div class="container">
+    <div class="container"> 
         <h1>Invoice</h1>
         <ul class="list-group">
             <li class="list-group-item">Nomor Transaksi: <?php $current->transact_id;?></li>
@@ -44,7 +43,34 @@
             <li class="list-group-item"><a href="change_customer.php?tid=<?php echo $id;?>">Customer: <?php $current->customer_name;?></a></li>
             <li class="list-group-item"><a href="use_discount_card.php?tid=<?php echo $id;?>">Discount ID: <?php $current->discount_id;?></a></li>
         </ul>
-        <a class="btn btn-primary" href="new_product.php" role="button"><i class="fa fa-plus" aria-hidden="true"></i>Tambah item ke invoice</a>
+        <a class="btn btn-primary" href="add_to_invoice.php" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Tambah item ke invoice</a>
+        <a name="printmode" id="printmode" class="btn btn-success" href="printmode.php?id=<?php echo $id;?>" role="button"><i class="fa fa-print" aria-hidden="true"></i> Print invoice</a>
+        <table class="table table-striped">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Qty</th>
+                    <th>Nama</th>
+                    <th>Harga satuan</th>
+                    <th>Harga akhir item</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                for($i=0;$i<$items->rowCount();$i++)
+                {
+                    $current_item = $items->getNext(new transaction_items_DAO($connection),$i);
+                    $multiplier = (int)$current_item->transact_item_quantity;?>
+                    <tr>
+                    <td scope="row"><div class="form-group">
+                      <input type="text" class="form-control" name="<?php echo $current_item->product_id;?>" value="<?php echo $multiplier;?>" onchange="change_qty(<?php echo $current_item->product_id;?>,<?php echo $id;?>">
+                    </div></td>
+                    <td><?php echo $current_item->product_name;?></td>
+                    <td><?php $current_price = (int)$current_item->product_sale_price;echo $current_price;?></td>
+                    <td><?php $subtotal = $multiplier*$current_price;echo $subtotal;$subtotal_price+=$subtotal;?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
     
 
