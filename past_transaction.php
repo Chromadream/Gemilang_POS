@@ -67,7 +67,7 @@
                 <?php } ?>
             </tbody>
         </table>
-        <button type="button" class="btn btn-primary" btn-lg btn-block><a href="printmode.php?id="<?php echo $_GET["id"];?>"">Print Invoice</a></button>
+        <button type="button" class="btn btn-primary" btn-lg btn-block><a href="printmode.php?id="<?php echo $_GET["id"];?>""><i class="fa fa-print" aria-hidden="true"></i> Print Invoice</a></button>
         <button type="button" class="btn btn-secondary" btn-lg btn-block><a href="index.php">Kembali ke menu awal</a></button>
     </div>
     <!-- Optional JavaScript -->
