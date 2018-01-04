@@ -15,7 +15,7 @@ class transaction_line_DAO
 
     public function list_all_items_from_order($id)
     {
-        $query = "SELECT t.transact_item_quantity, p.PRODUCT_NAME, p.PRODUCT_SALE_PRICE 
+        $query = "SELECT t.transact_item_quantity, p.product_id,  p.PRODUCT_NAME, p.PRODUCT_SALE_PRICE 
                     FROM PRODUCT p, TRANSACTLINE t 
                     WHERE t.transact_id = ? AND t.product_id = p.product_id";
         $prepared_query = mysqli_prepare($this->_connection,$query);
