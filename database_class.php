@@ -1,5 +1,5 @@
 <?php
-include("connection_file.php");
+require("connection_file.php");
 class Database
 {
     private $_user;
@@ -17,18 +17,17 @@ class Database
 
     public function setParams()
     {
-        //global $USER, $PASS, $DB, $HOST;
-        $this->_username = "GEMILANG";
-        $this->_password = "gemilang_adm";
-        $this->_db = "GEMILANG";
-        $this->_host = "127.0.0.1";
+        $this->_username = $GLOBALS["user"];
+        $this->_password = $GLOBALS["pass"];
+        $this->_db = $GLOBALS["db"];
+        $this->_host = $GLOBALS["host"];
     }
 
     public function connect()
     {
-        //error_reporting(E_ERROR);
+        error_reporting(E_ERROR);
         $this->_conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
-        //error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+        error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
         if ($this->_conn->connect_errno)
         {
             $this->_connerr = $this->_conn->_connect_error;
