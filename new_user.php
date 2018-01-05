@@ -11,6 +11,7 @@
   </head>
   <body>
         <?php
+        include("vendor/autoload.php");
         if(!empty($_POST["username"]))
         {
             include_once("database_class.php");
@@ -18,6 +19,7 @@
             $connection = new Database();
             if($connection->checkConnection())
             {
+                krumo($connection->conn);
                 $accountDAO = new account_DAO($connection->conn);
                 $username = $_POST["username"];
                 $password = $_POST["password"];
