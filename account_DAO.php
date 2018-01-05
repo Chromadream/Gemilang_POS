@@ -3,12 +3,7 @@ class account_DAO
 {
     private $_connection;
 
-    function __construct()
-    {
-        $this->_connection = null;
-    }
-
-    public function connect($connection)
+    function __construct($connection)
     {
         $this->_connection = $connection;
     }

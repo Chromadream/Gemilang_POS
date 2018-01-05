@@ -20,14 +20,15 @@
             if($connection->checkConnection())
             {
                 krumo($connection->getConnection());
-                $accountDAO = new account_DAO();
-                $accountDAO->connect($connection->getConnection());
+                $accountDAO = new account_DAO($connection->getConnection());
                 krumo($accountDAO);
                 $username = $_POST["username"];
                 $password = $_POST["password"];
                 $hashed_password = hash("sha256",$password);
                 $role = $_POST["role"];
+                krumo::includes();
                 $result = $accountDAO->new_user($username,$hashed_password,$role);
+                krumo($result);
                 echo $result." account is successfully created.";
             }
             else
