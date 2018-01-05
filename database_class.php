@@ -11,11 +11,11 @@ class Database
 
     function __construct()
     {
-        $this->setParams();
-        $this->connect();
+        $this->_setParams();
+        $this->_connect();
     }
 
-    private function setParams()
+    private function _setParams()
     {
         global $USER, $PASS, $DB, $HOST;
         $this->_username = $USER;
@@ -24,7 +24,7 @@ class Database
         $this->_host = $HOST;
     }
 
-    private function connect()
+    private function _connect()
     {
         error_reporting(E_ERROR);
         $this->_conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
