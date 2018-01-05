@@ -13,14 +13,7 @@ class account_DAO
         $query = "INSERT INTO ACCOUNT (user_id, user_password, user_role) VALUES (?,?,?)";
         $prepared_query = mysqli_prepare($this->_connection, $query);
         $prepared_query->bind_param('sss',$username,$hashed_password,$role_level);
-        if($prepared_query->execute())
-        {
-            echo "success";
-        }
-        else
-        {
-            echo "fail";
-        }
+        $prepared_query->execute();
         return $username;
     }
 
