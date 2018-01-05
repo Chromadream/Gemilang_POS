@@ -2,8 +2,8 @@
 require("connection_file.php");
 class Database
 {
-    private $_user;
-    private $_pass;
+    private $_username;
+    private $_password;
     private $_db;
     private $_host;
     private $_conn;
@@ -26,7 +26,7 @@ class Database
     public function connect()
     {
         error_reporting(E_ERROR);
-        $this->_conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
+        $this->_conn = new mysqli($this->_host,$this->_username,$this->_password,$this->_db);
         error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
         if ($this->_conn->connect_errno)
         {
