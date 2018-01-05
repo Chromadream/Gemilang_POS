@@ -1,11 +1,12 @@
 <?php
+require("connection_file.php");
 class account_DAO
 {
     private $_connection;
 
-    function __construct($connection)
+    function __construct()
     {
-        $this->_connection = $connection;
+        $this->_connection = new mysqli($GLOBALS["host"],$GLOBALS["user"],$GLOBALS["pass"],$GLOBALS["db"]);
     }
 
     public function new_user($username,$hashed_password,$role_level)
