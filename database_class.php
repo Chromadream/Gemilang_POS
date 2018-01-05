@@ -1,5 +1,5 @@
 <?php
-include("connection_file.php");
+require("connection_file.php");
 class Database
 {
     private $_user;
