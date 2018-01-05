@@ -6,7 +6,7 @@ class Database
     private $_pass;
     private $_db;
     private $_host;
-    private $_conn;
+    public $conn;
     private $_connerr;
 
     function __construct()

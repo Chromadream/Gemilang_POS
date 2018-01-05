@@ -18,7 +18,7 @@
             $connection = new Database();
             if($connection->checkConnection())
             {
-                $accountDAO = new account_DAO($connection->getConnection());
+                $accountDAO = new account_DAO($connection->conn);
                 $username = $_POST["username"];
                 echo $username;
                 $password = $_POST["password"];
