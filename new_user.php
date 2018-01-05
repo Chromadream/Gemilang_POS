@@ -19,9 +19,8 @@
             $connection = new Database();
             if($connection->checkConnection())
             {
-                krumo($connection->conn);
-                $conn = $connection->conn;
-                $accountDAO = new account_DAO($conn);
+                krumo($connection->getConnection());
+                $accountDAO = new account_DAO($connection->getConnection());
                 krumo($accountDAO);
                 $username = $_POST["username"];
                 $password = $_POST["password"];
