@@ -21,11 +21,13 @@
             {
                 krumo($connection->conn);
                 $accountDAO = new account_DAO($connection->conn);
+                krumo($accountDAO);
                 $username = $_POST["username"];
                 $password = $_POST["password"];
                 $hashed_password = hash("sha256",$password);
                 $role = $_POST["role"];
                 $result = $accountDAO->new_user($username,$hashed_password,$role);
+                krumo($result);
                 echo $result." account is successfully created.";
             }
             else
