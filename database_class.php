@@ -11,11 +11,11 @@ class Database
 
     function __construct()
     {
-        $this->_setParams();
-        $this->_connect();
+        $this->setParams();
+        $this->connect();
     }
 
-    private function _setParams()
+    public function setParams()
     {
         //global $USER, $PASS, $DB, $HOST;
         $this->_username = "GEMILANG";
@@ -24,7 +24,7 @@ class Database
         $this->_host = "localhost";
     }
 
-    private function _connect()
+    public function connect()
     {
         //error_reporting(E_ERROR);
         $this->_conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
