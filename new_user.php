@@ -18,7 +18,9 @@
             $connection = new Database();
             $accountDAO = new account_DAO($connection);
             $username = $_POST["username"];
+            echo $username;
             $password = $_POST["password"];
+            echo $password;
             $hashed_password = hash("sha256",$password);
             $role = $_POST["role"];
             $accountDAO->new_user($username,$hashed_password,$role);
