@@ -12,7 +12,10 @@ class account_DAO
     {
         $query = "INSERT INTO ACCOUNT (user_id, user_password, user_role) VALUES (?,?,?)";
         $prepared_query = mysqli_prepare($this->_connection, $query);
-        $prepared_query->bind_param('sss',$username,$hashed_password,$role_level);
+        $prepared_query->bind_param('sss',$uname,$hpass,$role);
+        $uname = $username;
+        $hpass = $hashed_password;
+        $role = $role_level;
         $prepared_query->execute();
         return $username;
     }
