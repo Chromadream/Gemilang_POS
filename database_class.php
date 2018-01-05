@@ -21,7 +21,7 @@ class Database
         $this->_username = "GEMILANG";
         $this->_password = "gemilang_adm";
         $this->_db = "GEMILANG";
-        $this->_host = "localhost";
+        $this->_host = "127.0.0.1";
     }
 
     public function connect()
