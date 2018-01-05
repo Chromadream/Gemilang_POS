@@ -23,6 +23,7 @@
             echo $password;
             $hashed_password = hash("sha256",$password);
             $role = $_POST["role"];
+            echo $role;
             $accountDAO->new_user($username,$hashed_password,$role);
             echo $username." account is successfully created.";
         }
