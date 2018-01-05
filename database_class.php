@@ -26,13 +26,12 @@ class Database
     public function connect()
     {
         error_reporting(E_ERROR);
-        $this->_conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
+        $this->conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
         error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
-        if ($this->_conn->connect_errno)
+        if ($this->conn->connect_errno)
         {
-            $this->_connerr = $this->_conn->_connect_error;
+            $this->_connerr = $this->conn->_connect_error;
         }
-        echo $this->_conn;
     }
 
     public function getConnection()
