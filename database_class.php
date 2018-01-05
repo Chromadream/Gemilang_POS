@@ -6,7 +6,7 @@ class Database
     private $_pass;
     private $_db;
     private $_host;
-    public $conn;
+    private $_conn;
     private $_connerr;
 
     function __construct()
@@ -26,11 +26,11 @@ class Database
     public function connect()
     {
         error_reporting(E_ERROR);
-        $this->conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
+        $this->_conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
         error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
-        if ($this->conn->connect_errno)
+        if ($this->_conn->connect_errno)
         {
-            $this->_connerr = $this->conn->_connect_error;
+            $this->_connerr = $this->_conn->_connect_error;
         }
     }
 
