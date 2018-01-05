@@ -1,5 +1,5 @@
 <?php
-require("connection_file.php");
+include("connection_file.php");
 class Database
 {
     private $_user;
@@ -26,9 +26,9 @@ class Database
 
     private function _connect()
     {
-        error_reporting(E_ERROR);
+        //error_reporting(E_ERROR);
         $this->_conn = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
-        error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+        //error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
         if ($this->_conn->connect_errno)
         {
             $this->_connerr = $this->_conn->_connect_error;
