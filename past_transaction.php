@@ -37,7 +37,7 @@
     $current = $detail->getNext(new transaction_DAO($connection),0);
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
-        <h1>Transaksi</h1>
+        <h1>Invoice</h1>
         <ul class="list-group">
             <li class="list-group-item">Nomor Transaksi: <?php $current->transact_id;?></li>
             <li class="list-group-item">Tanggal: <?php $current->transact_date;?></li>
@@ -65,6 +65,18 @@
                     <td><?php $subtotal = $multiplier*$current_price;echo $subtotal;$subtotal_price+=$subtotal;?></td>
                     </tr>
                 <?php } ?>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Subtotal</td>
+                    <td><?php echo $subtotal_price;?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Total akhir</td>
+                    <td><?php echo $subtotal_price*$price_percentage;?></td>
+                </tr>
             </tbody>
         </table>
         <button type="button" class="btn btn-primary" btn-lg btn-block><a href="printmode.php?id="<?php echo $_GET["id"];?>""><i class="fa fa-print" aria-hidden="true"></i> Print Invoice</a></button>
