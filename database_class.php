@@ -33,6 +33,10 @@ class Database
         {
             $this->_connerr = $this->_conn->_connect_error;
         }
+        else
+        {
+            echo "Connection successful";
+        }
     }
 
     public function getConnection()
