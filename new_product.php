@@ -11,7 +11,35 @@
   </head>
   <body>
     <?php
-        if(empty($_POST["product_name"]))
+        if(!empty($_POST["product_name"]))
+        {
+           include_once("database_class.php");
+            include_once("product_DAO.php");
+            $connection = new Database();
+            $productDAO = new product_DAO($connection);
+            $product_name = $_POST["product_name"];
+            if(!empty($_POST["product_purchase_price"]))
+            {
+                $product_purchase_price = (int) $_POST["product_purchase_price"];
+            }
+            else
+            {
+                $product_purchase_price = 0;
+            }
+            $product_sale_price = (int) $_POST["product_sale_price"];
+            if(!empty($_POST["product_stock_quantity"]))
+            {
+                $product_stock_quantity = (int) $_POST["product_stock_quantity"];
+            }
+            else
+            {
+                $product_stock_quantity = NULL;
+            }
+            $product_stock_unit = $_POST["product_stock_unit"];
+            $new_id = $productDAO->add_new_product($product_name,$product_purchase_price,$product_sale_price,$product_stock_quantity,$product_stock_unit);
+            echo "Produk sudah ditambahkan. ID: ".$new_id; 
+        }
+        else
         {?>
             <div class="container">
               <h1>Produk Baru</h1>
@@ -44,35 +72,7 @@
               <button type="submit" class="btn btn-primary">Tambah Produk</button>
               </form>
             </div>
-        <?}
-        else
-        {
-            include_once("database_class.php");
-            include_once("product_DAO.php");
-            $connection = new Database();
-            $productDAO = new product_DAO($connection);
-            $product_name = $_POST["product_name"];
-            if(!empty($_POST["product_purchase_price"]))
-            {
-                $product_purchase_price = (int) $_POST["product_purchase_price"];
-            }
-            else
-            {
-                $product_purchase_price = 0;
-            }
-            $product_sale_price = (int) $_POST["product_sale_price"];
-            if(!empty($_POST["product_stock_quantity"]))
-            {
-                $product_stock_quantity = (int) $_POST["product_stock_quantity"];
-            }
-            else
-            {
-                $product_stock_quantity = NULL;
-            }
-            $product_stock_unit = $_POST["product_stock_unit"];
-            $new_id = $productDAO->add_new_product($product_name,$product_purchase_price,$product_sale_price,$product_stock_quantity,$product_stock_unit);
-            echo "Produk sudah ditambahkan. ID: ".$new_id;
-        }?>      
+        <?php }?>      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
