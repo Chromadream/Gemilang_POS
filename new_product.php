@@ -16,7 +16,7 @@
            include_once("database_class.php");
             include_once("product_DAO.php");
             $connection = new Database();
-            $productDAO = new product_DAO($connection);
+            $productDAO = new product_DAO($connection->getConnection());
             $product_name = $_POST["product_name"];
             if(!empty($_POST["product_purchase_price"]))
             {
