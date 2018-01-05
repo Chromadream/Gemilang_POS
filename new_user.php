@@ -27,6 +27,8 @@
                 $hashed_password = hash("sha256",$password);
                 $role = $_POST["role"];
                 $result = $accountDAO->new_user($username,$hashed_password,$role);
+                krumo::classes();
+                krumo::backtrace();
                 krumo($result);
                 echo $result." account is successfully created.";
             }
