@@ -16,16 +16,23 @@
             include_once("database_class.php");
             include_once("account_DAO.php");
             $connection = new Database();
-            $accountDAO = new account_DAO($connection->getConnection());
-            $username = $_POST["username"];
-            echo $username;
-            $password = $_POST["password"];
-            echo $password;
-            $hashed_password = hash("sha256",$password);
-            $role = $_POST["role"];
-            echo $role;
-            $result = $accountDAO->new_user($username,$hashed_password,$role);
-            echo $result." account is successfully created.";
+            if($connection->checkConnection())
+            {
+                $accountDAO = new account_DAO($connection->getConnection());
+                $username = $_POST["username"];
+                echo $username;
+                $password = $_POST["password"];
+                echo $password;
+                $hashed_password = hash("sha256",$password);
+                $role = $_POST["role"];
+                echo $role;
+                $result = $accountDAO->new_user($username,$hashed_password,$role);
+                echo $result." account is successfully created.";
+            }
+            else
+            {
+                echo "connection to database is failed";
+            }
         }
         else
         {?>
