@@ -17,11 +17,11 @@ class Database
 
     private function _setParams()
     {
-        global $USER, $PASS, $DB, $HOST;
-        $this->_username = $USER;
-        $this->_password = $PASS;
-        $this->_db = $DB;
-        $this->_host = $HOST;
+        //global $USER, $PASS, $DB, $HOST;
+        $this->_username = "GEMILANG";
+        $this->_password = "gemilang_adm";
+        $this->_db = "GEMILANG";
+        $this->_host = "localhost";
     }
 
     private function _connect()
