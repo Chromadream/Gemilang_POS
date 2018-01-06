@@ -51,6 +51,7 @@
         $items = $item_DAO->list_all_items_from_order($id);
         krumo($items);
         $customer_id = $transaction_DAO->customer_id;
+        krumo($customer_id);
         $customers = $customer_DAO->list_all_customers();
         krumo($customers);
         $price_percentage = 1;
