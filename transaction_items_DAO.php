@@ -10,7 +10,7 @@ class transaction_line_DAO
 
     function __construct($connection)
     {
-        $this->_connection = $construct;
+        $this->_connection = $connection;
     }
 
     public function list_all_items_from_order($id)
