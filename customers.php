@@ -13,7 +13,7 @@
     <?php
     session_start();
     include("vendor/autoload.php");
-    //krumo::disable();
+    krumo::disable();
     if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
     {
       header("location: login.php?redirposition=customers.php");
