@@ -13,6 +13,7 @@
   <body>
     <?php
     session_start();
+    include_once("vendor/autoload.php");
     if(!isset($_SESSION["level"]) || ($_SESSION["level"] != "B" && $_SESSION["level"] != "T"))
     {
       header("location: login.php?redirposition=invoice.php");
@@ -26,6 +27,7 @@
     $transaction_DAO = new transaction_DAO($connection->getConnection());
     $item_DAO = new transaction_items_DAO($connection->getConnection());
     $customer_DAO = new customer_DAO($connection->getConnection());
+    krumo($_GET);
     if(!empty($_GET["mode"]))
     {
         $id = $_GET["mode"];
