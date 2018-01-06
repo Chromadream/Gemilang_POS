@@ -83,8 +83,8 @@
                             for($i=0;$i<$customers->rowCount();$i++)
                             {
                                 $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);
-                                $currentID = $current->$customer_id;
                                 krumo($current);
+                                $currentID = $current->$customer_id;
                                 krumo($currentID); ?>
                                 <option value="<?php echo $currentID;?>" <?php echo selected($currentID,$customer_id);?>>
                                     <?php echo $current->$customer_name;?>
