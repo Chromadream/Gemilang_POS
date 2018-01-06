@@ -20,7 +20,7 @@
     }
     include_once("database_class.php");
     include_once("transaction_DAO.php");
-    include_once("transaction_items_DAO.php");
+    include_once("transaction_line_DAO.php");
     include_once("customer_DAO.php");
     include_once("selected.php");
     krumo::includes();
