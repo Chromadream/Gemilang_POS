@@ -50,7 +50,7 @@
         {
             $price_percentage = 0.98;
         }
-    }?>
+    ?>
     <div class="container"> 
         <h1>Invoice</h1>
         <table class="table">
@@ -126,6 +126,7 @@
             </tbody>
         </table>
     </div>
+    <?php } ?>
 
     <!-- Optional JavaScript -->
     <script src="update_customer.js"/>
