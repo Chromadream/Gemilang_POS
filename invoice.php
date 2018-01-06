@@ -52,7 +52,7 @@
         krumo($items);
         $customer_id = $transaction_DAO->customer_id;
         krumo($customer_id);
-        $customers = $customer_DAO->list_all_customers();
+        $customers = $customer_DAO->list_all_customer();
         krumo($customers);
         $price_percentage = 1;
         $subtotal_price = 0;
