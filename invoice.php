@@ -56,7 +56,7 @@
         krumo($customers);
         $price_percentage = 1;
         $subtotal_price = 0;
-        $discount_presence = $transact_DAO->check_discount($_GET["id"]);
+        $discount_presence = $transact_DAO->check_discount($id);
         krumo($discount_presence);
         if($discount_presence)
         {
