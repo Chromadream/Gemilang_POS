@@ -23,7 +23,7 @@
     include_once("customer_DAO.php");
     include_once("selected.php");
     $connection = new Database();
-    $transaction_DAO = new transaction_DAO($connection->getConnection();
+    $transaction_DAO = new transaction_DAO($connection->getConnection());
     $item_DAO = new transaction_items_DAO($connection->getConnection());
     $customer_DAO = new customer_DAO($connection->getConnection());
     if(!isset($_GET["mode"]))
