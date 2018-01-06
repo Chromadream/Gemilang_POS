@@ -29,6 +29,7 @@
     $item_DAO = new transaction_items_DAO($connection->getConnection());
     $customer_DAO = new customer_DAO($connection->getConnection());
     krumo::get();
+    krumo::session();
     if(!empty($_GET["mode"]))
     {
         $id = $_GET["mode"];
