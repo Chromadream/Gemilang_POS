@@ -24,7 +24,7 @@
     include_once("transaction_items_DAO.php");
     include_once("customer_DAO.php");
     include_once("selected.php");
-    krumo::included();
+    krumo::includes();
     $connection = new Database();
     $transaction_DAO = new transaction_DAO($connection->getConnection());
     $item_DAO = new transaction_items_DAO($connection->getConnection());
