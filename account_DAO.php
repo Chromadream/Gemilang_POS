@@ -20,6 +20,7 @@ class account_DAO
 
     public function login($username,$hashed_password)
     {
+        krumo::disable();
         $query = "SELECT user_role FROM ACCOUNT WHERE USER_ID = ? AND USER_PASSWORD = ?";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('ss',$username,$hashed_password);
