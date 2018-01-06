@@ -26,12 +26,7 @@
     $transaction_DAO = new transaction_DAO($connection->getConnection());
     $item_DAO = new transaction_items_DAO($connection->getConnection());
     $customer_DAO = new customer_DAO($connection->getConnection());
-    if(empty($_GET["mode"]))
-    {
-        $transID = $transaction_DAO->init_transaction();
-        header("invoice.php?mode=".$transID);
-    }
-    else
+    if(!empty($_GET["mode"]))
     {
         $id = $_GET["mode"];
         $trans = $transaction_DAO->get_transaction_detail($id);
@@ -46,6 +41,11 @@
         {
             $price_percentage = 0.98;
         }
+    }
+    else
+    {
+        $transID = $transaction_DAO->init_transaction();
+        header("invoice.php?mode=".$transID);
     }?>
     <div class="container"> 
         <h1>Invoice</h1>
