@@ -17,7 +17,7 @@
             include_once("database_class.php");
             include_once("account_DAO.php");
             $connection = new Database();
-            $accountDAO = new account_DAO($connection);
+            $accountDAO = new account_DAO($connection->getConnection());
             $username = $_POST["username"];
             $password = $_POST["password"];
             $hashed_password = hash("sha256",$password);
