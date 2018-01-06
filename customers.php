@@ -41,10 +41,10 @@
             krumo($currentRow);
         ?>
             <tr>
-                <td scope="row"><?php echo $currentRow->customer_ID;?></td>
+                <td scope="row"><?php echo $currentRow->customer_id;?></td>
                 <td><?php echo $currentRow->customer_name;?></td>
                 <td><?php echo $currentRow->customer_phone;?></td>
-                <td><a name="<?php echo $currentRow->customer_ID;?>" class="btn btn-primary" href="orders.php?cust_id=<?php echo $currentRow->customer_ID;?>&cust_name=<?php echo $currentRow->customer_name;?>" role="button">List semua order</a>
+                <td><a name="<?php echo $currentRow->customer_id;?>" class="btn btn-primary" href="orders.php?cust_id=<?php echo $currentRow->customer_id;?>&cust_name=<?php echo $currentRow->customer_name;?>" role="button">List semua order</a>
             </tr>
         <?php };?>
             </tbody>
