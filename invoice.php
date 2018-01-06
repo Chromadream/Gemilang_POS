@@ -18,7 +18,6 @@
     {
       header("location: login.php?redirposition=invoice.php");
     }
-    krumo::backtrace();
     include_once("database_class.php");
     include_once("transaction_DAO.php");
     include_once("transaction_items_DAO.php");
@@ -29,7 +28,7 @@
     $transaction_DAO = new transaction_DAO($connection->getConnection());
     $item_DAO = new transaction_items_DAO($connection->getConnection());
     $customer_DAO = new customer_DAO($connection->getConnection());
-    krumo($_GET);
+    krumo::get();
     if(!empty($_GET["mode"]))
     {
         $id = $_GET["mode"];
