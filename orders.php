@@ -12,6 +12,7 @@
   <body>
     <?php
     session_start();
+    include("vendor/autoload.php");
     if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
     {
       header("location: login.php?redirposition=orders.php");
@@ -23,6 +24,7 @@
     if(isset($_GET["cust_id"]))
     {
         $result = $transact_DAO->list_all_transactions_from_customer($_GET["cust_id"]);
+        krumo($result);
         $title = "Transaksi dari ".$_GET["cust_name"];
     }
     else
