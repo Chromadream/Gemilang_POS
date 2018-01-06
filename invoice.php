@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Invoice</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,6 +18,7 @@
     {
       header("location: login.php?redirposition=invoice.php");
     }
+    krumo::backtrace();
     include_once("database_class.php");
     include_once("transaction_DAO.php");
     include_once("transaction_items_DAO.php");
