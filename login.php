@@ -21,7 +21,7 @@
             $username = $_POST["username"];
             $password = $_POST["password"];
             $hashed_password = hash("sha256",$password);
-            $status = $accountDAO->login($username,$password);
+            $status = $accountDAO->login($username,$hashed_password);
             if(!$status)
             {
                 echo "Login details incorrect";
