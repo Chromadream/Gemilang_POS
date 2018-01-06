@@ -19,7 +19,7 @@
     include_once("database_class.php");
     include_once("transaction_DAO.php");
     $connection = new Database();
-    $transact_DAO = new transaction_DAO($connection);
+    $transact_DAO = new transaction_DAO($connection->getConnection());
     if(isset($_GET["cust_id"]))
     {
         $result = $transact_DAO->list_all_transactions_from_customer($_GET["cust_id"]);
@@ -46,7 +46,7 @@
     <?php
     for($i = 0;$i<$result->rowCount();$i++)
     {
-        $currentRow = $result->getNext(new transaction_DAO($connection),$i);
+        $currentRow = $result->getNext(new transaction_DAO($connection->getConnection()),$i);
     ?>
             <tr>
                 <td scope="row"><?php echo $currentRow->transact_id;?></td>

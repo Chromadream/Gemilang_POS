@@ -24,8 +24,8 @@
     include_once("transaction_DAO.php");
     include_once("transaction_items_DAO.php");
     $connection = new Database();
-    $transact_DAO = new transaction_DAO($connection);
-    $transactitem_DAO = new transaction_items_DAO($connection);
+    $transact_DAO = new transaction_DAO($connection->getConnection());
+    $transactitem_DAO = new transaction_items_DAO($connection->getConnection());
     $price_percentage = 1;
     $subtotal_price = 0;
     $discount_presence = $transact_DAO->check_discount($_GET["id"]);
@@ -34,7 +34,7 @@
         $price_percentage = 0.98;
     }
     $detail = $transact_DAO->get_transaction_detail($_GET["id"]);
-    $current = $detail->getNext(new transaction_DAO($connection),0);
+    $current = $detail->getNext(new transaction_DAO($connection->getConnection()),0);
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
         <h1>Invoice</h1>
@@ -57,7 +57,7 @@
                 <?php
                 for($i=0;$i<$items->rowCount();$i++)
                 {
-                    $current_item = $items->getNext(new transaction_items_DAO($connection),$i);?>
+                    $current_item = $items->getNext(new transaction_items_DAO($connection->getConnection()),$i);?>
                     <tr>
                     <td scope="row"><?php $multiplier = (int)$current_item->transact_item_quantity;echo $multiplier;?></td>
                     <td><?php echo $current_item->product_name;?></td>

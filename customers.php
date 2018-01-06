@@ -19,7 +19,7 @@
     include_once("database_class.php");
     include_once("customer_DAO.php");
     $connection = new Database();
-    $customer_DAO = new customer_DAO($connection);
+    $customer_DAO = new customer_DAO($connection->getConnection());
     $result =  $customer_DAO->list_all_customer();?>
     <div class="container">
         <table class="table">
@@ -35,7 +35,7 @@
     <?php
         for($i = 0;$i <$result->rowCount();$i++)
         {
-            $currentRow = $result->getNext(new customer_DAO($connection),$i);
+            $currentRow = $result->getNext(new customer_DAO($connection->getConnection()),$i);
         ?>
             <tr>
                 <td scope="row"><?php echo $currentRow->customer_ID;?></td>

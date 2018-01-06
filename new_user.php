@@ -19,6 +19,7 @@
             $connection = new Database();
             if($connection->checkConnection())
             {
+                krumo::disable();
                 krumo($connection->getConnection());
                 $accountDAO = new account_DAO($connection->getConnection());
                 krumo($accountDAO);

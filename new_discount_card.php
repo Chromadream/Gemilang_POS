@@ -34,7 +34,7 @@
         include_once("database_class.php");
         include_once("discount_card_DAO.php");
         $connection = new Database();
-        $discount_card_DAO = new discount_card_DAO($connection);
+        $discount_card_DAO = new discount_card_DAO($connection->getConnection());
         $discount_phone = $_POST["discount_phone"];
         $id = $discount_card_DAO->new_discount_card($discount_phone);
         echo "Kartu diskon telah berhasil ditambahkan. ID: ".$id;

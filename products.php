@@ -20,7 +20,7 @@
       include_once("database_class.php");
       include_once("product_DAO.php");
       $connection = new Database();
-      $product_DAO = new Product_DAO($connection);
+      $product_DAO = new Product_DAO($connection->getConnection());
       if(empty($_POST["check"]))
       {
         $product_List = $product_DAO->list_all_product();?>
@@ -45,7 +45,7 @@
         <?php
         for ($i = 0; $i<$product_List->rowCount();$i++)
         {
-            $currentRow = $product_List->getNext(new Product_DAO($connection),$i);?>
+            $currentRow = $product_List->getNext(new Product_DAO($connection->getConnection()),$i);?>
             <tr>
               <td scope="row"><?php echo $currentRow->product_id; ?></td>
               <td><?php echo $currentRow->product_name; ?></td>

@@ -23,9 +23,9 @@
     include_once("customer_DAO.php");
     include_once("selected.php");
     $connection = new Database();
-    $transaction_DAO = new transaction_DAO($connection);
-    $item_DAO = new transaction_items_DAO($connection);
-    $customer_DAO = new customer_DAO($connection);
+    $transaction_DAO = new transaction_DAO($connection->getConnection();
+    $item_DAO = new transaction_items_DAO($connection->getConnection());
+    $customer_DAO = new customer_DAO($connection->getConnection());
     if(!isset($_GET["mode"]))
     {
         $transID = $transaction_DAO->init_transaction();
@@ -35,7 +35,7 @@
     {
         $id = $_GET["mode"];
         $trans = $transaction_DAO->get_transaction_detail($id);
-        $details = $trans->getNext(new transaction_DAO($connection),0);
+        $details = $trans->getNext(new transaction_DAO($connection->getConnection()),0);
         $items = $item_DAO->list_all_items_from_order($id);
         $customer_id = $details->customer_id;
         $customers = $customer_DAO->list_all_customers();
@@ -65,7 +65,7 @@
                             <?php
                             for($i=0;$i<$customers->rowCount();$i++)
                             {
-                                $current = $customers->getNext(new customer_DAO($connection),$i);?>
+                                $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);?>
                                 <option value="<?php $currentID = $current->$customer_id; echo $currentID;?>" <?php echo selected($currentID,$customer_id);?>>
                                     <?php echo $current->$customer_name;?>
                                 </option>
@@ -93,7 +93,7 @@
                 <?php
                 for($i=0;$i<$items->rowCount();$i++)
                 {
-                    $current_item = $items->getNext(new transaction_items_DAO($connection),$i);
+                    $current_item = $items->getNext(new transaction_items_DAO($connection->getConnection()),$i);
                     $multiplier = (int)$current_item->transact_item_quantity;?>
                     <tr>
                     <td scope="row"><div class="form-group">
