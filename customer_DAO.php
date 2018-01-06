@@ -1,4 +1,5 @@
 <?php
+include("vendor/autoload.php");
 class customer_DAO
 {
     public $customer_id;
@@ -18,6 +19,7 @@ class customer_DAO
         if($result->num_rows > 0)
         {
             $allrows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            krumo($allrows);
             include_once('result_set.php');
             return new result_set($allrows);
         }
