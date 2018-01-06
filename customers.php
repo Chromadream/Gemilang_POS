@@ -12,15 +12,17 @@
   <body>
     <?php
     session_start();
+    include("vendor/autoload.php");
     if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
     {
-      header("location: login.php?redirposition=new_discount_card.php");
+      header("location: login.php?redirposition=customers.php");
     }
     include_once("database_class.php");
     include_once("customer_DAO.php");
     $connection = new Database();
     $customer_DAO = new customer_DAO($connection->getConnection());
-    $result =  $customer_DAO->list_all_customer();?>
+    $result =  $customer_DAO->list_all_customer();
+    krumo($result);?>
     <div class="container">
         <table class="table">
             <thead>
@@ -36,6 +38,7 @@
         for($i = 0;$i <$result->rowCount();$i++)
         {
             $currentRow = $result->getNext(new customer_DAO($connection->getConnection()),$i);
+            krumo($currentRow);
         ?>
             <tr>
                 <td scope="row"><?php echo $currentRow->customer_ID;?></td>
