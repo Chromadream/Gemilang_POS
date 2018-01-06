@@ -1,4 +1,5 @@
 <?php
+include("vendor/autoload.php");
 class account_DAO
 {
     private $_connection;
@@ -26,7 +27,9 @@ class account_DAO
         $prepared_query->bind_result($user_role);
         if(!empty($prepared_query->fetch()))
         {
+            krumo($user_role);
             $_SESSION["level"] = $user_role;
+            krumo($_SESSION);
             return true;
         }
         else 
