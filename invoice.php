@@ -25,10 +25,13 @@
     include_once("selected.php");
     krumo::includes();
     $connection = new Database();
+    krumo($connection);
     $transaction_DAO = new transaction_DAO($connection->getConnection());
+    krumo($transaction_DAO);
     $item_DAO = new transaction_items_DAO($connection->getConnection());
+    krumo($item_DAO);
     $customer_DAO = new customer_DAO($connection->getConnection());
-    krumo($transaction_DAO,$item_DAO,$customer_DAO);
+    krumo($customer_DAO);
     krumo($_GET);
     if($_GET["mode"]=="new")
     {
