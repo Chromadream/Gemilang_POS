@@ -38,7 +38,7 @@
         include_once("database_class.php");
         include_once("customer_DAO.php");
         $connection = new Database();
-        $customer_DAO = new customer_DAO($connection);
+        $customer_DAO = new customer_DAO($connection->getConnection());
         $customer_name = $_POST["customer_name"];
         $customer_phone = $_POST["customer_phone"];
         $id = $customer_DAO->add_new_customer($customer_name,$customer_phone);
