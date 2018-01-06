@@ -1,4 +1,5 @@
 <?php
+include("vendor/autoload.php");
 class result_set{
     private $_results;
 
@@ -13,6 +14,7 @@ class result_set{
         foreach($row as $key=>$value)
         {
             $dataobject->$key = $value;
+            krumo($dataobject,$key,$value);
         }
         return $dataobject;
     }
