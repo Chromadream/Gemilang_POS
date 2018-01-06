@@ -70,11 +70,11 @@
                 <tbody>
                     <tr>
                         <td scope="row">Nomor Transaksi</td>
-                        <td><?php $details->transact_id;?></td>
+                        <td><?php $transaction_DAO->transact_id;?></td>
                     </tr>
                     <tr>
                         <td scope="row">Tanggal</td>
-                        <td><?php $details->transact_date;?></td>
+                        <td><?php $transaction_DAO->transact_date;?></td>
                     </tr>
                     <tr>
                         <td scope="row">Customer</td>
@@ -83,7 +83,7 @@
                             for($i=0;$i<$customers->rowCount();$i++)
                             {
                                 $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);?>
-                                <option value="<?php $currentID = $current->$customer_id; echo $currentID;?>" <?php echo selected($currentID,$customer_id);?>>
+                                <option value="<?php $currentID = $current->$customer_id; echo $currentID;krumo($currentID);?>" <?php echo selected($currentID,$customer_id);?>>
                                     <?php echo $current->$customer_name;?>
                                 </option>
                             <?php } ?>
@@ -91,7 +91,7 @@
                     </tr>
                     <tr>
                         <td scope="row">Discount ID</td>
-                        <td><a href="use_discount_card.php?tid=<?php echo $id;?>"><?php $current->discount_id;?></a></td>
+                        <td><a href="use_discount_card.php?tid=<?php echo $id;?>"><?php $transaction_DAO->discount_id;?></a></td>
                 </tbody>
         </table>
         <a class="btn btn-primary" href="add_to_invoice.php?tid=<?php echo $id;?>" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Tambah item ke invoice</a>
