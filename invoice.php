@@ -14,6 +14,7 @@
     <?php
     session_start();
     include_once("vendor/autoload.php");
+    krumo::disable();
     if(!isset($_SESSION["level"]) || ($_SESSION["level"] != "B" && $_SESSION["level"] != "T"))
     {
       header("location: login.php?redirposition=invoice.php");
