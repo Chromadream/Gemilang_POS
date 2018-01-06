@@ -28,6 +28,7 @@
     $transaction_DAO = new transaction_DAO($connection->getConnection());
     $item_DAO = new transaction_items_DAO($connection->getConnection());
     $customer_DAO = new customer_DAO($connection->getConnection());
+    krumo($transaction_DAO,$item_DAO,$customer_DAO);
     krumo($_GET);
     if($_GET["mode"]=="new")
     {
