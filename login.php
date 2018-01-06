@@ -12,7 +12,7 @@
   <body>
         <?php
         session_start();
-        if(!isset($_POST["username"]))
+        if(!empty($_POST["username"]))
         {?>
             <div class="container">
                 <form method="post">
