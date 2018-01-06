@@ -30,6 +30,7 @@
     else
     {
         $result = $transact_DAO->list_all_transactions();
+        krumo($result);
         $title = "Semua transaksi";
     }?>
     <div class="container">
