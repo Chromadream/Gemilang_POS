@@ -23,6 +23,7 @@ class account_DAO
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('ss',$username,$hashed_password);
         $prepared_query->execute();
+        $prepared_query->bind_result($user_role);
         if(!empty($prepared_query->fetch()))
         {
             $_SESSION["level"] = $user_role;
