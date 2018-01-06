@@ -1,4 +1,5 @@
 <?php
+include("vendor/autoload.php");
 class transaction_DAO
 {
     public $transact_id;
@@ -89,6 +90,7 @@ class transaction_DAO
         $result = $prepared_query->get_result();
         if($result->num_rows>0)
         {
+            krumo($result);
             include_once('result_set.php');
             return new result_set($result);
         }
