@@ -47,6 +47,7 @@
     else
     {
         $transID = $transaction_DAO->init_transaction();
+        krumo($transID);
         header("invoice.php?mode=".$transID);
     }?>
     <div class="container"> 

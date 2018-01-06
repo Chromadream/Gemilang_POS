@@ -29,7 +29,7 @@ class transaction_DAO
 
     function init_transaction()
     {
-        $query = "INSERT INTO TRANSACT (transact_date) VALUES (CURRENT_TIMESTAMP())";
+        $query = "INSERT INTO TRANSACT (transact_date) VALUES (NOW())";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->execute();
         return mysqli_insert_id($this->_connection);
