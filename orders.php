@@ -21,7 +21,7 @@
     include_once("transaction_DAO.php");
     $connection = new Database();
     $transact_DAO = new transaction_DAO($connection->getConnection());
-    if(isset($_GET["cust_id"]))
+    if(!empty($_GET["cust_id"]))
     {
         $result = $transact_DAO->list_all_transactions_from_customer($_GET["cust_id"]);
         krumo($result);
