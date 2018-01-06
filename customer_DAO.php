@@ -25,6 +25,16 @@ class customer_DAO
         }
     }
 
+    public function get_name($id)
+    {
+        $query = "SELECT customer_name FROM CUSTOMER WHERE customer_id = ?";
+        $prepared_query = mysqli_prepare($this->_connection,$query);
+        $prepared_query->bind_param('i',$id);
+        $prepared_query->execute();
+        $prepared_query->bind_result($customer_name);
+        return $customer_name;
+    }
+
     public function add_new_customer($name, $phone)
     {
         $query = "INSERT INTO CUSTOMER (customer_name, customer_phone) VALUES (?,?)";

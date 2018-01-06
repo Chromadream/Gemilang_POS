@@ -67,5 +67,8 @@ class Product_DAO
             return new result_set($allrows);
         }
     }
+
+    public function get_product_details($id)
+    {}
 }
 ?>

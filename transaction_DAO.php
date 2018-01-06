@@ -89,13 +89,7 @@ class transaction_DAO
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('i', $transact_id);
         $prepared_query->execute();
-        $result = $prepared_query->get_result();
-        if($result->num_rows>0)
-        {
-            krumo($result);
-            include_once('result_set.php');
-            return new result_set($result);
-        }
+        $prepared_query->bind_result($this->transact_id,$this->transact_date,$this->customer_id,$this->customer_name,$this->discount_id);
     }
 }
 ?>
