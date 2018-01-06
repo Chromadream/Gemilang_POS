@@ -90,6 +90,7 @@ class transaction_DAO
         $prepared_query->bind_param('i', $transact_id);
         $prepared_query->execute();
         $prepared_query->bind_result($this->transact_id,$this->transact_date,$this->customer_id,$this->customer_name,$this->discount_id);
+        krumo($this->transact_id,$this->transact_date,$this->customer_id,$this->customer_name,$this->discount_id);
     }
 }
 ?>
