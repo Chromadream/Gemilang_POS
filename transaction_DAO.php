@@ -55,18 +55,16 @@ class transaction_DAO
         return $transact_id;
     }
 
-    function check_discount($transact_id)
+    function check_discount()
     {
-        $query = "SELECT discount_id from TRANSACT WHERE transact_id = ?";
-        $prepared_query = mysqli_prepare($this->_connection,$query);
-        $prepared_query->bind_param('i',$transact_id);
-        $prepared_query->execute();
-        $result = $prepared_query->get_result();
-        if($result->num_rows>0)
+        if($this->discount_id==NULL)
+        {
+            return FALSE;
+        }
+        else
         {
             return TRUE;
         }
-        return FALSE;
     }
 
     function list_all_transactions()
