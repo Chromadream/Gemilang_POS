@@ -14,7 +14,6 @@
     <?php
     session_start();
     include_once("vendor/autoload.php");
-    krumo::disable();
     if(!isset($_SESSION["level"]) || ($_SESSION["level"] != "B" && $_SESSION["level"] != "T"))
     {
       header("location: login.php?redirposition=invoice.php");
@@ -24,16 +23,16 @@
     include_once("transaction_line_DAO.php");
     include_once("customer_DAO.php");
     include_once("selected.php");
-    krumo::includes();
+    //krumo::includes();
     $connection = new Database();
-    krumo($connection);
+    //krumo($connection);
     $transaction_DAO = new transaction_DAO($connection->getConnection());
-    krumo($transaction_DAO);
+    //krumo($transaction_DAO);
     $item_DAO = new transaction_line_DAO($connection->getConnection());
-    krumo($item_DAO);
+    //krumo($item_DAO);
     $customer_DAO = new customer_DAO($connection->getConnection());
-    krumo($customer_DAO);
-    krumo($_GET);
+    //krumo($customer_DAO);
+    //krumo($_GET);
     if($_GET["mode"]=="new")
     {
         $transID = $transaction_DAO->init_transaction();
