@@ -29,7 +29,7 @@ CREATE TABLE DISCOUNT_CARD(
 
 CREATE TABLE TRANSACT(
     transact_id INT AUTO_INCREMENT,
-    transact_date TIMESTAMP NOT NULL,
+    transact_date TIMESTAMP,
     customer_id INT DEFAULT 10000001,
     discount_id INT,
     CONSTRAINT pk_transact PRIMARY KEY (transact_id),
