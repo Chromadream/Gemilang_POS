@@ -42,16 +42,21 @@
     }   
     else
     {
-        
+        krumo::enable();
         $id = $_GET["mode"];
+        krumo($id);
         $trans = $transaction_DAO->get_transaction_detail($id);
         $details = $trans->getNext(new transaction_DAO($connection->getConnection()),0);
+        krumo($details);
         $items = $item_DAO->list_all_items_from_order($id);
+        krumo($items);
         $customer_id = $details->customer_id;
         $customers = $customer_DAO->list_all_customers();
+        krumo($customers);
         $price_percentage = 1;
         $subtotal_price = 0;
         $discount_presence = $transact_DAO->check_discount($_GET["id"]);
+        krumo($discount_presence);
         if($discount_presence)
         {
             $price_percentage = 0.98;
