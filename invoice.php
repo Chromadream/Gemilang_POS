@@ -41,7 +41,7 @@
     }   
     else
     {
-        krumo::enable();
+        krumo::disable();
         $id = $_GET["mode"];
         krumo($id);
         $transaction_DAO->get_transaction_detail($id);
@@ -80,6 +80,7 @@
                         <td scope="row">Customer</td>
                         <td><select name="customer" onchange="update_customer(<?php echo $id;?>)">
                             <?php
+                            krumo::enable();
                             for($i=0;$i<$customers->rowCount();$i++)
                             {
                                 $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);
