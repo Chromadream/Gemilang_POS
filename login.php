@@ -13,24 +13,6 @@
         <?php
         session_start();
         if(!empty($_POST["username"]))
-        {?>
-            <div class="container">
-                <form method="post">
-                    <div class="form-group">
-                      <label for="username"></label>
-                      <input type="text" class="form-control" name="username" aria-describedby="helpId" placeholder="username" required>
-                      <small id="helpId" class="form-text text-muted">Isi username</small>
-                    </div>
-                    <div class="form-group">
-                      <label for="password"></label>
-                      <input type="password" class="form-control" name="password" placeholder="password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </form>
-            </div>
-        <?
-        }
-        else
         {
             include_once("database_class.php");
             include_once("account_DAO.php");
@@ -49,7 +31,25 @@
                 $direction = $_GET["redirposition"];
                 header("location: $direction");
             }
-        }?>
+        }
+        else
+        {?>
+        <div class="container">
+                <form method="post">
+                    <div class="form-group">
+                      <label for="username"></label>
+                      <input type="text" class="form-control" name="username" aria-describedby="helpId" placeholder="username" required>
+                      <small id="helpId" class="form-text text-muted">Isi username</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="password"></label>
+                      <input type="password" class="form-control" name="password" placeholder="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            
+        <?php }?>
         
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
