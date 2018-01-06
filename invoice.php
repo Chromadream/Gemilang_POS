@@ -31,7 +31,7 @@
     $item_DAO = new transaction_line_DAO($connection->getConnection());
     //krumo($item_DAO);
     $customer_DAO = new customer_DAO($connection->getConnection());
-    krumo($customer_DAO);
+    //krumo($customer_DAO);
     //krumo($_GET);
     if($_GET["mode"]=="new")
     {
@@ -56,12 +56,13 @@
         krumo($customers);
         $price_percentage = 1;
         $subtotal_price = 0;
-        $discount_presence = $transact_DAO->check_discount($id);
+        $discount_presence = $transaction_DAO->check_discount($id);
         krumo($discount_presence);
         if($discount_presence)
         {
             $price_percentage = 0.98;
         }
+        krumo($price_percentage);
     ?>
     <div class="container"> 
         <h1>Invoice</h1>
