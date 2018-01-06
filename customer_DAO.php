@@ -18,7 +18,7 @@ class customer_DAO
         $result = $this->_connection->query($query);
         if($result->num_rows > 0)
         {
-            $allrows = $result->fetch();
+            $allrows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             krumo($allrows);
             include_once('result_set.php');
             return new result_set($allrows);

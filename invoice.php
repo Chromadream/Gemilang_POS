@@ -31,7 +31,7 @@
     $item_DAO = new transaction_line_DAO($connection->getConnection());
     //krumo($item_DAO);
     $customer_DAO = new customer_DAO($connection->getConnection());
-    //krumo($customer_DAO);
+    krumo($customer_DAO);
     //krumo($_GET);
     if($_GET["mode"]=="new")
     {
