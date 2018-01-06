@@ -28,6 +28,7 @@
     $transaction_DAO = new transaction_DAO($connection->getConnection());
     $item_DAO = new transaction_items_DAO($connection->getConnection());
     $customer_DAO = new customer_DAO($connection->getConnection());
+    krumo($_GET);
     if($_GET["mode"]=="new")
     {
         $transID = $transaction_DAO->init_transaction();
