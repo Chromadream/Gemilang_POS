@@ -10,6 +10,8 @@ $transactID = $_GET["tid"];
 $secondaryID = $_GET["id"];
 $quantity = $_GET["qty"];
 switch ($functionality) {
+    case 'add_prod':
+        $result = $item_DAO->add_new_item_to_line($transactID,$secondaryID,1);
     case 'update_cust':
         $result = $transaction_DAO->change_customer_code($transactID,$secondaryID);
         echo $result;
