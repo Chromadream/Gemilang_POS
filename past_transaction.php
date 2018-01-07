@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <?php
@@ -96,8 +97,8 @@
                 </tr>
             </tbody>
         </table>
-        <button type="button" class="btn btn-primary" btn-lg btn-block><a href="printmode.php?id="<?php echo $_GET["id"];?>""><i class="fa fa-print" aria-hidden="true"></i> Print Invoice</a></button>
-        <button type="button" class="btn btn-secondary" btn-lg btn-block><a href="index.php">Kembali ke menu awal</a></button>
+        <a name="printmode" id="printmode" class="btn btn-primary" href="printmode.php?id=<?php echo $_GET["id"];?>" role="button"><i class="fa fa-print" aria-hidden="true"></i> Print Invoice</a>
+        <a name="home" id="home" class="btn btn-secondary" href="#" role="button"></a>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
