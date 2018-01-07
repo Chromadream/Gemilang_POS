@@ -33,7 +33,7 @@
     {
         $price_percentage = 0.98;
     }
-    $detail = $transact_DAO->get_transaction_detail($_GET["id"]);
+    $transact_DAO->get_transaction_detail($_GET["id"]);
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
         <h1>Invoice</h1>
