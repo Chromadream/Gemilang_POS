@@ -88,7 +88,7 @@
         {
             $product_DAO->update_product_prices($id,$_POST["purchase".$id],$_POST["sale".$id]);
             $product_DAO->update_product_stock($id,$_POST["stock".$id]);
-            echo "Stock produk ".$id." telah terupdate dengan sukses<br/>";
+            echo "Produk ".$id." telah terupdate dengan sukses<br/>";
         }?>
         <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
         
