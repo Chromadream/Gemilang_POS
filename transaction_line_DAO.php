@@ -24,8 +24,9 @@ class transaction_line_DAO
         $result = $prepared_query->get_result();
         if($result->num_rows>0)
         {
+            $allrows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             include_once('result_set.php');
-            return new result_set($result);
+            return new result_set($allrows);
         }
     }
 
