@@ -13,9 +13,9 @@
   <body>
       <?php
       session_start();
-      if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B" || $_SESSION["level"] != "S")
+      if(!isset($_SESSION["level"]) || ($_SESSION["level"] != "B" && $_SESSION["level"] != "S"))
       {
-        header("location: login.php?redirposition=products.php");
+        header("location: login.php?redirposition=inventory.php");
       }
       include_once("database_class.php");
       include_once("product_DAO.php");
