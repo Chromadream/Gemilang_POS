@@ -80,8 +80,6 @@
                         <td scope="row">Customer</td>
                         <td><select name="customer" onchange="update_customer(<?php echo $id;?>)">
                             <?php
-                            krumo::enable();
-                            krumo::backtrace();
                             krumo($customers->rowCount());
                             for ($i=0; $i<$customers->rowCount(); $i++)
                             {
