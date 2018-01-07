@@ -45,7 +45,7 @@
     }   
     else
     {
-        krumo::enable();
+        krumo::disable();
         $id = $_GET["mode"];
         krumo($id);
         $transaction_DAO->get_transaction_detail($id);
