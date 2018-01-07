@@ -31,7 +31,7 @@
         {?>
             <a class="btn btn-primary" href="new_product.php" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Produk baru</a>
         <?php } ?>
-        <form method="post" action="update_stock.php">
+        <form method="post" action="inventory.php">
         <table class="table">
             <thead>
                 <tr>
