@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
               <label for="customer_phone">Nomor handphone customer</label>
-              <input type="text" class="form-control" name="customer_phone" required>
+              <input type="text" class="form-control" name="customer_phone">
             </div>
             <button type="submit" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Tambah customer</button>
             </form>

@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
       <?php
@@ -25,7 +26,7 @@
               <label for="discount_phone">Nomor handphone</label>
               <input type="text" class="form-control" name="discount_phone" required>
             </div>
-            <button type="submit" class="btn btn-primary">Tambah kartu diskon</button>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Tambah kartu diskon</button>
             </form>
         </div>  
       <?php }
@@ -38,7 +39,7 @@
         $discount_phone = $_POST["discount_phone"];
         $id = $discount_card_DAO->new_discount_card($discount_phone);
         echo "Kartu diskon telah berhasil ditambahkan. ID: ".$id;
-        echo '<button type="button" class="btn btn-primary" btn-lg btn-block><a href="index.php">Kembali ke menu awal</a></button>';
+        echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>';
       }?>.
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

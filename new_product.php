@@ -38,6 +38,7 @@
             $product_stock_unit = $_POST["product_stock_unit"];
             $new_id = $productDAO->add_new_product($product_name,$product_purchase_price,$product_sale_price,$product_stock_quantity,$product_stock_unit);
             echo "Produk sudah ditambahkan. ID: ".$new_id; 
+            echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>';
         }
         else
         {?>
@@ -45,31 +46,21 @@
               <h1>Produk Baru</h1>
               <form method="post">
               <div class="form-group">
-                <label for="product_name"></label>
                 <input type="text" class="form-control" name="product_name" aria-describedby="helpId" placeholder="Nama Produk Baru" required>
-                <small id="helpId" class="form-text text-muted">Nama produk baru</small>
               </div>
               <div class="form-group">
-                <label for="product_purchase_price"></label>
                 <input type="number" class="form-control" name="product_purchase_price" aria-describedby="helpId" placeholder="Modal Produk">
-                <small id="helpId" class="form-text text-muted">Modal dasar produk</small>
               </div>
               <div class="form-group">
-                <label for="product_sale_price"></label>
                 <input type="number" class="form-control" name="product_sale_price" aria-describedby="helpId" placeholder="Harga Jual Produk" required>
-                <small id="helpId" class="form-text text-muted">Harga jual produk</small>
               </div>
               <div class="form-group">
-                <label for="product_stock_quantity"></label>
                 <input type="number" class="form-control" name="product_stock_quantity" aria-describedby="helpId" placeholder="Stock awal">
-                <small id="helpId" class="form-text text-muted">Stock yang tersedia di awal pengisian data</small>
               </div>
               <div class="form-group">
-                <label for="product_stock_unit"></label>
                 <input type="text" class="form-control" name="product_stock_unit" aria-describedby="helpId" placeholder="Satuan produk" required>
-                <small id="helpId" class="form-text text-muted">Satuan stock produk</small>
               </div>
-              <button type="submit" class="btn btn-primary">Tambah Produk</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Produk</button>
               </form>
             </div>
         <?php }?>      
