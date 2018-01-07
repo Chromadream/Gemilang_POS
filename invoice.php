@@ -89,7 +89,7 @@
                                 krumo($current);
                                 $currentID = $current->$customer_id;
                                 krumo($currentID); ?>
-                                <option value="<?php echo $currentID;?>" <?php echo selected($currentID,$customer_id);?>>
+                                <option value="<?php echo $currentID;?>">
                                     <?php echo $current->$customer_name;?>
                                 </option>
                             <?php } ?>
