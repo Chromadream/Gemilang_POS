@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
   <?php
@@ -37,7 +38,7 @@
             <div class="form-group">
               <input type="text" class="form-control" name="search" id="searchBar" aria-describedby="helpId" placeholder="Cari produk">
             </div>
-            <button type="submit" class="btn btn-secondary">Cari produk</button> 
+            <button type="submit" class="btn btn-secondary"><i class="fa fa-search" aria-hidden="true"></i> Cari produk</button> 
         </form>
         <form method="post" action="products.php">
         <table class="table">
@@ -75,7 +76,7 @@
         <?php } ?>
           </tbody>
         </table>
-        <button type="submit" class="btn btn-primary">Update stock produk</button> 
+        <button type="submit" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update stock produk</button> 
         </form>
         </div>   
     <?php }
