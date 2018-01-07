@@ -38,10 +38,10 @@
     <div class="container">
         <h1>Invoice</h1>
         <ul class="list-group">
-            <li class="list-group-item">Nomor Transaksi: <?php $transact_DAO->transact_id;?></li>
-            <li class="list-group-item">Tanggal: <?php $transact_DAO->transact_date;?></li>
-            <li class="list-group-item">Customer: <?php $transact_DAO->customer_name;?></li>
-            <li class="list-group-item">Discount ID: <?php $transact_DAO->discount_id;?></li>
+            <li class="list-group-item">Nomor Transaksi: <?php echo $transact_DAO->transact_id;?></li>
+            <li class="list-group-item">Tanggal: <?php echo $transact_DAO->transact_date;?></li>
+            <li class="list-group-item">Customer: <?php echo $transact_DAO->customer_name;?></li>
+            <li class="list-group-item">Discount ID: <?php echo $transact_DAO->discount_id;?></li>
         </ul>
         <table class="table table-striped">
             <thead class="thead-inverse">
