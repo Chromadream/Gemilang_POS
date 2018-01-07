@@ -62,6 +62,7 @@
             $price_percentage = 0.98;
         }
         krumo($price_percentage);
+    }
     ?>
     <div class="container"> 
         <h1>Invoice</h1>
@@ -81,7 +82,7 @@
                             <?php
                             krumo::enable();
                             krumo($customers->rowCount());
-                            for($i=0;$i<$customers->rowCount();$i++)
+                            for ($i=0; $i<$customers->rowCount(); $i++)
                             {
                                 krumo($i);
                                 $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);
@@ -144,7 +145,6 @@
             </tbody>
         </table>
     </div>
-    <?php } ?>
 
     <!-- Optional JavaScript -->
     <script src="update_customer.js"/>
