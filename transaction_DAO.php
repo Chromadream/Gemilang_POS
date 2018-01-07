@@ -25,7 +25,7 @@ class transaction_DAO
         {
             $allrows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             include_once('result_set.php');
-            return new result_set($result);
+            return new result_set($allrows);
         }
     }
 
