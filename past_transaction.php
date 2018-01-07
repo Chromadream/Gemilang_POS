@@ -22,10 +22,10 @@
     }
     include_once("database_class.php");
     include_once("transaction_DAO.php");
-    include_once("transaction_items_DAO.php");
+    include_once("transaction_line_DAO.php");
     $connection = new Database();
     $transact_DAO = new transaction_DAO($connection->getConnection());
-    $transactitem_DAO = new transaction_items_DAO($connection->getConnection());
+    $transactitem_DAO = new transaction_line_DAO($connection->getConnection());
     $price_percentage = 1;
     $subtotal_price = 0;
     $discount_presence = $transact_DAO->check_discount($_GET["id"]);
@@ -34,15 +34,14 @@
         $price_percentage = 0.98;
     }
     $detail = $transact_DAO->get_transaction_detail($_GET["id"]);
-    $current = $detail->getNext(new transaction_DAO($connection->getConnection()),0);
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
         <h1>Invoice</h1>
         <ul class="list-group">
-            <li class="list-group-item">Nomor Transaksi: <?php $current->transact_id;?></li>
-            <li class="list-group-item">Tanggal: <?php $current->transact_date;?></li>
-            <li class="list-group-item">Customer: <?php $current->customer_name;?></li>
-            <li class="list-group-item">Discount ID: <?php $current->discount_id;?></li>
+            <li class="list-group-item">Nomor Transaksi: <?php $transact_DAO->transact_id;?></li>
+            <li class="list-group-item">Tanggal: <?php $transact_DAO->transact_date;?></li>
+            <li class="list-group-item">Customer: <?php $transact_DAO->customer_name;?></li>
+            <li class="list-group-item">Discount ID: <?php $transact_DAO->discount_id;?></li>
         </ul>
         <table class="table table-striped">
             <thead class="thead-inverse">
@@ -57,7 +56,7 @@
                 <?php
                 for($i=0;$i<$items->rowCount();$i++)
                 {
-                    $current_item = $items->getNext(new transaction_items_DAO($connection->getConnection()),$i);?>
+                    $current_item = $items->getNext(new transaction_line_DAO($connection->getConnection()),$i);?>
                     <tr>
                     <td scope="row"><?php $multiplier = (int)$current_item->transact_item_quantity;echo $multiplier;?></td>
                     <td><?php echo $current_item->product_name;?></td>
