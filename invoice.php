@@ -87,7 +87,7 @@
                             {
                                 $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);
                                 ?>
-                                <option value="<?php echo $current->customer_id;?>">
+                                <option value="<?php echo $current->customer_id;?>" <?php echo selected($current->customer_id,$customer_id);?>>
                                     <?php echo $current->customer_name;?>
                                 </option>
                             <?php } ?>
