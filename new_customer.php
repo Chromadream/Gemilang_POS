@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
       <?php
@@ -43,7 +44,7 @@
         $customer_phone = $_POST["customer_phone"];
         $id = $customer_DAO->add_new_customer($customer_name,$customer_phone);
         echo "Customer telah berhasil ditambahkan. ID: ".$id;
-        echo '<button type="button" class="btn btn-primary" btn-lg btn-block><a href="index.php">Kembali ke menu awal</a></button>';
+        echo '<br/><a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>';
       }?>.
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
