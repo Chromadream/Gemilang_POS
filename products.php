@@ -13,7 +13,7 @@
   <body>
   <?php
       session_start();
-      if(!isset($_SESSION["level"]) || ($_SESSION["level"] != "B" && $_SESSION["level"] != "S"))
+      if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
       {
         header("location: login.php?redirposition=inventory.php");
       }

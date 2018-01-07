@@ -11,6 +11,11 @@
   </head>
   <body>
     <?php
+        session_start();
+        if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
+        {
+          header("location: login.php?redirposition=new_customer.php");
+        }
         if(!empty($_POST["product_name"]))
         {
            include_once("database_class.php");
