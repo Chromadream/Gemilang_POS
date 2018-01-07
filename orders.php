@@ -24,13 +24,11 @@
     if(!empty($_GET["cust_id"]))
     {
         $result = $transact_DAO->list_all_transactions_from_customer($_GET["cust_id"]);
-        krumo($result);
         $title = "Transaksi dari ".$_GET["cust_name"];
     }
     else
     {
         $result = $transact_DAO->list_all_transactions();
-        krumo($result);
         $title = "Semua transaksi";
     }?>
     <div class="container">
@@ -54,7 +52,7 @@
             <tr>
                 <td scope="row"><?php echo $currentRow->transact_id;?></td>
                 <td><?php echo $currentRow->transact_date;?></td>
-                <td><?php echo $currentRow->customer_name;?></td>
+                <td><a href="orders.php?cust_id=<?php echo $currentRow->customer_id;?>&cust_name=<?php echo $currentRow->customer_name;?>"><?php echo $currentRow->customer_name;?></td>
                 <td><?php echo $currentRow->discount_id;?></td>
                 <td><a name="<?php echo $currentRow->transact_id;?>" class="btn btn-dark" href="past_transaction.php?id=<?php echo $currentRow->transact_id;?>" role="button">Lihat transaksi</a>
             </tr>
