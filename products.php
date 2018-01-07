@@ -1,17 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Update stock</title>
+    <title>Products</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-      <?php
+  <?php
       session_start();
       if(!isset($_SESSION["level"]) || ($_SESSION["level"] != "B" && $_SESSION["level"] != "S"))
       {
@@ -23,15 +22,31 @@
       $product_DAO = new Product_DAO($connection->getConnection());
       if(empty($_POST["check"]))
       {
-        $product_List = $product_DAO->list_all_product();?>
+        if(empty($_POST["search"]))
+        {
+            $product_List = $product_DAO->list_all_product();
+        }
+        else
+        {
+            $product_List = $product_DAO->find_product_by_name($_POST["search"]);
+        }?>
         <div class="container">
-        <h1>Update Stock</h1>
-        <form method="post" action="inventory.php">
+        <h1>List Produk</h1>
+        <a class="btn btn-primary" href="new_product.php" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Produk baru</a>
+        <form action="products.php" method="post">
+            <div class="form-group">
+              <input type="text" class="form-control" name="search" id="searchBar" aria-describedby="helpId" placeholder="Cari produk">
+            </div>
+            <button type="submit" class="btn btn-secondary">Cari produk</button> 
+        </form>
+        <form method="post" action="products.php">
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nama</th>
+                    <th>Modal</th>
+                    <th>Harga jual</th>
                     <th>Stock tersedia</th>
                     <th>Edit?</th>
                 </tr>
@@ -45,7 +60,13 @@
               <td scope="row"><?php echo $currentRow->product_id; ?></td>
               <td><?php echo $currentRow->product_name; ?></td>
               <td><div class="form-group">
-                <input type="text" class="form-control" name="<?php echo $currentRow->product_id; ?>" value="<?php echo $currentRow->product_stock_quantity;?>">
+                <input type="text" class="form-control" name="<?php echo "purchase".$currentRow->product_id; ?>" value="<?php echo $currentRow->product_purchase_price;?>">
+              </div></td>
+              <td><div class="form-group">
+                <input type="text" class="form-control" name="<?php echo "sale".$currentRow->product_id; ?>" value="<?php echo $currentRow->product_sale_price;?>">
+              </div></td>
+              <td><div class="form-group">
+                <input type="text" class="form-control" name="<?php echo "stock".$currentRow->product_id; ?>" value="<?php echo $currentRow->product_stock_quantity;?>">
               </div></td>
               <td><div class="form-check">
                   <input type="checkbox" class="form-check-input" name="check[]" value="<?php echo $currentRow->product_id; ?>">
@@ -55,13 +76,15 @@
           </tbody>
         </table>
         <button type="submit" class="btn btn-primary">Update stock produk</button> 
+        </form>
         </div>   
     <?php }
     else
     {
         foreach($_POST["check"] as $id)
         {
-            $product_DAO->update_product_stock($id,$_POST[$id]);
+            $product_DAO->update_product_prices($id,$_POST["purchase".$id],$_POST["sale".$id]);
+            $product_DAO->update_product_stock($id,$_POST["stock".$id]);
             echo "Stock produk ".$id." telah terupdate dengan sukses";
         }?>
         <button type="button" class="btn btn-primary" btn-lg btn-block><a href="index.php">Kembali ke menu awal</a></button>
