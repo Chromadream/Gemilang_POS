@@ -37,6 +37,8 @@
             <a name="disc" id="disc" class="btn btn-link" href="discount_cards.php" role="button"><i class="fa fa-id-card-o" aria-hidden="true"></i> Kartu diskon</a><br/>
         <?php }
         ?>
+            <a name="logout" id="logout" class="btn btn-link" href="logout.php" role="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Keluar dari akun</a><br/>
+
         </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
