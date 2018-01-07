@@ -58,7 +58,7 @@
               <td scope="row"><?php echo $currentRow->product_id; ?></td>
               <td><?php echo $currentRow->product_name; ?></td>
               <td><?php echo $currentRow->product_sale_price;?></td>
-              <td><button type="button" class="btn btn-dark"><i class="fa fa-check" aria-hidden="true" onclick="add_prod(<?php echo $currentRow->product_id;?>,<?php echo $id;?>)"></i></button></td>
+              <td><button type="button" class="btn btn-dark" onclick="add_prod(<?php echo $currentRow->product_id;?>,<?php echo $id;?>)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
             </tr>
         <?php } ?>
           </tbody>
