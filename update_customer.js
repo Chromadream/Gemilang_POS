@@ -1,7 +1,7 @@
 function update_customer(id) {
     try
     {
-        xmlhttp = new XMLHttpRequest();
+        var xmlhttp = new XMLHttpRequest();
     }
     catch(e)
     {
@@ -18,6 +18,7 @@ function update_customer(id) {
 
     function triggered() {
         result = xmlhttp.responseText;
+        console.log(xmlhttp.responseText);
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             alert("Customer telah didaftarkan dalam invoice.");
