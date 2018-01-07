@@ -81,8 +81,10 @@
                         <td><select name="customer" onchange="update_customer(<?php echo $id;?>)">
                             <?php
                             krumo::enable();
+                            krumo($customers->rowCount());
                             for($i=0;$i<$customers->rowCount();$i++)
                             {
+                                krumo($i);
                                 $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);
                                 krumo($current);
                                 $currentID = $current->$customer_id;
