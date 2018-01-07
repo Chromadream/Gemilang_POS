@@ -18,7 +18,7 @@
         header("location: login.php?redirposition=inventory.php");
       }
       include_once("database_class.php");
-      include_once("product_DAO.php");
+      include_once("DAO/product_DAO.php");
       $connection = new Database();
       $product_DAO = new Product_DAO($connection->getConnection());
       if(empty($_POST["check"]))

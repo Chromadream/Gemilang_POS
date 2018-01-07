@@ -9,9 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="update_customer.js"></script>
-    <script src="change_quantity.js"></script>
-    <script src="remove_prod.js"></script>
+    <script src="js/update_customer.js"></script>
+    <script src="js/change_quantity.js"></script>
+    <script src="js/remove_prod.js"></script>
   </head>
   <body>
     <?php
@@ -22,10 +22,10 @@
       header("location: login.php?redirposition=invoice.php?mode=".$_GET["mode"]);
     }
     include_once("database_class.php");
-    include_once("transaction_DAO.php");
-    include_once("transaction_line_DAO.php");
-    include_once("customer_DAO.php");
-    include_once("selected.php");
+    include_once("DAO/transaction_DAO.php");
+    include_once("DAO/transaction_line_DAO.php");
+    include_once("DAO/customer_DAO.php");
+    include_once("func/selected.php");
     //krumo::includes();
     $connection = new Database();
     //krumo($connection);

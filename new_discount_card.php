@@ -33,7 +33,7 @@
       else
       {
         include_once("database_class.php");
-        include_once("discount_card_DAO.php");
+        include_once("DAO/discount_card_DAO.php");
         $connection = new Database();
         $discount_card_DAO = new discount_card_DAO($connection->getConnection());
         $discount_phone = $_POST["discount_phone"];

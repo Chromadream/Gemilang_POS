@@ -37,7 +37,7 @@
       else
       {
         include_once("database_class.php");
-        include_once("customer_DAO.php");
+        include_once("DAO/customer_DAO.php");
         $connection = new Database();
         $customer_DAO = new customer_DAO($connection->getConnection());
         $customer_name = $_POST["customer_name"];

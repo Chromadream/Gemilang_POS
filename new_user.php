@@ -15,7 +15,7 @@
         if(!empty($_POST["username"]))
         {
             include_once("database_class.php");
-            include_once("account_DAO.php");
+            include_once("DAO/account_DAO.php");
             $connection = new Database();
             if($connection->checkConnection())
             {
