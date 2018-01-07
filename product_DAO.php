@@ -21,11 +21,9 @@ class Product_DAO
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $name = "%".$name."%";
         $prepared_query->bind_param('s',$name);
-        krumo($prepared_query);
-        krumo($name);
         $prepared_query->execute();
         $result = $prepared_query->get_result();
-        krumo($result);
+
         if($result->num_rows>0)
         {
             $allrows = mysqli_fetch_all($result, MYSQLI_ASSOC);
