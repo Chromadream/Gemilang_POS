@@ -37,18 +37,33 @@
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
         <h1>Invoice</h1>
-        <ul class="list-group">
-            <li class="list-group-item">Nomor Transaksi: <?php echo $transact_DAO->transact_id;?></li>
-            <li class="list-group-item">Tanggal: <?php echo $transact_DAO->transact_date;?></li>
-            <li class="list-group-item">Customer: <?php echo $transact_DAO->customer_name;?></li>
-            <li class="list-group-item">Discount ID: <?php echo $transact_DAO->discount_id;?></li>
-        </ul>
+        <table class="table">
+                <tbody>
+                    <tr>
+                        <td scope="row">Nomor Transaksi</td>
+                        <td><?php echo $transact_DAO->transact_id;?></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Tanggal</td>
+                        <td><?php echo $transact_DAO->transact_date;?></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Customer</td>
+                        <td><?php echo $transact_DAO->customer_name;?> </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Discount ID</td>
+                        <td><a href="use_discount_card.php?tid=<?php echo $id;?>"><?php $transact_DAO->discount_id;?></a></td>
+                    </tr>
+                </tbody>
+        </table>
         <table class="table table-striped">
             <thead class="thead-inverse">
                 <tr>
                     <th>Qty</th>
                     <th>Nama</th>
                     <th>Harga satuan</th>
+                    <th>Satuan</th>
                     <th>Harga akhir item</th>
                 </tr>
             </thead>
@@ -60,6 +75,7 @@
                     <tr>
                     <td scope="row"><?php $multiplier = (int)$current_item->transact_item_quantity;echo $multiplier;?></td>
                     <td><?php echo $current_item->product_name;?></td>
+                    <td><?php echo $current_item->stock
                     <td><?php $current_price = (int)$current_item->product_sale_price;echo $current_price;?></td>
                     <td><?php $subtotal = $multiplier*$current_price;echo $subtotal;$subtotal_price+=$subtotal;?></td>
                     </tr>
