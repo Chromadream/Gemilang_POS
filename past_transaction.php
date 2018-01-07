@@ -98,7 +98,7 @@
             </tbody>
         </table>
         <a name="printmode" id="printmode" class="btn btn-primary" href="printmode.php?id=<?php echo $_GET["id"];?>" role="button"><i class="fa fa-print" aria-hidden="true"></i> Print Invoice</a>
-        <a name="home" id="home" class="btn btn-secondary" href="#" role="button"></a>
+        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
