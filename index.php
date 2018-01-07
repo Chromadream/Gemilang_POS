@@ -22,17 +22,19 @@
         if($_SESSION["level"]=="B" || $_SESSION["level"]=="T")
         {?>
             <a name="invoice" id="invoice" class="btn btn-link" href="invoice.php?mode=new" role="button"><i class="fa fa-exchange" aria-hidden="true"></i> Kasir</a>
+            <br/>
         <?php }
         if($_SESSION["level"]=="S")
         {?>
             <a name="inventory" id="inventory" class="btn btn-link" href="inventory.php" role="button"><i class="fa fa-archive" aria-hidden="true"></i> Stock</a>
+            <br/>
         <?php }
         if($_SESSION["level"]=="B")
         {?>
-            <a name="product" id="product" class="btn btn-link" href="products.php" role="button"><i class="fa fa-archive" aria-hidden="true"></i> Produk</a>
-            <a name="order" id="order" class="btn btn-link" href="orders.php" role="button"><i class="fa fa-line-chart" aria-hidden="true"></i> Transaksi</a>
-            <a name="cust" id="cust" class="btn btn-link" href="customers.php" role="button"><i class="fa fa-user" aria-hidden="true"></i> Pelanggan</a>
-            <a name="disc" id="disc" class="btn btn-link" href="discount_cards.php" role="button"><i class="fa fa-id-card-o" aria-hidden="true"></i> Kartu diskon</a>
+            <a name="product" id="product" class="btn btn-link" href="products.php" role="button"><i class="fa fa-archive" aria-hidden="true"></i> Produk</a><br/>
+            <a name="order" id="order" class="btn btn-link" href="orders.php" role="button"><i class="fa fa-line-chart" aria-hidden="true"></i> Transaksi</a><br/>
+            <a name="cust" id="cust" class="btn btn-link" href="customers.php" role="button"><i class="fa fa-user" aria-hidden="true"></i> Pelanggan</a><br/>
+            <a name="disc" id="disc" class="btn btn-link" href="discount_cards.php" role="button"><i class="fa fa-id-card-o" aria-hidden="true"></i> Kartu diskon</a><br/>
         <?php }
         ?>
         </div>
