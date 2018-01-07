@@ -19,7 +19,7 @@ class Product_DAO
     {
         $query = "SELECT * FROM PRODUCT WHERE product_name LIKE ?";
         $prepared_query = mysqli_prepare($this->_connection,$query);
-        $name = '%'.$name.'%';
+        $name = "%".$name."%";
         $prepared_query->bind_param('s',$name);
         krumo($prepared_query);
         krumo($name);
@@ -28,6 +28,7 @@ class Product_DAO
         krumo($result);
         if($result->num_rows>0)
         {
+            $allrows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             include_once('result_set.php');
             return new result_set($result);
         }
