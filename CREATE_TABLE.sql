@@ -40,7 +40,7 @@ CREATE TABLE TRANSACT(
 CREATE TABLE TRANSACTLINE(
     transact_id INT NOT NULL,
     product_id INT NOT NULL,
-    TRANSACT_ITEM_QUANTITY INT NOT NULL,
+    transact_item_quantity INT NOT NULL,
     CONSTRAINT fk_transactline_TRANSACT FOREIGN KEY (transact_id) REFERENCES TRANSACT (transact_id),
     CONSTRAINT fk_transactline_product FOREIGN KEY (product_id) REFERENCES PRODUCT (product_id),
     CONSTRAINT pk_transactline PRIMARY KEY (transact_id,product_id)
