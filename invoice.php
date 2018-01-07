@@ -119,7 +119,7 @@
                     $multiplier = (int)$current_item->transact_item_quantity;?>
                     <tr>
                     <td scope="row"><div class="form-group">
-                      <input type="number" class="form-control" id="<?php echo $current_item->product_id;?>" value="<?php echo $multiplier;?>" onchange="change_qty(<?php echo $current_item->product_id;?>,<?php echo $id;?>)">
+                      <input type="number" class="form-control input-sm" id="<?php echo $current_item->product_id;?>" value="<?php echo $multiplier;?>" onchange="change_qty(<?php echo $current_item->product_id;?>,<?php echo $id;?>)">
                     </div></td>
                     <td><?php echo $current_item->product_name;?></td>
                     <td><button type="button" class="btn btn-link" onclick="remove_prod(<?php echo $id;?>,<?php echo $current_item->product_id;?>)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
