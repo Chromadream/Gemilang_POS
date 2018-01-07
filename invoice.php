@@ -81,7 +81,7 @@
                     </tr>
                     <tr>
                         <td scope="row">Customer</td>
-                        <td><select name="customer" onchange="update_customer(<?php echo $id;?>)">
+                        <td><select name="customer" id="customer" onchange="update_customer(<?php echo $id;?>)">
                             <?php
                             for ($i=0; $i<$customers->rowCount(); $i++)
                             {
