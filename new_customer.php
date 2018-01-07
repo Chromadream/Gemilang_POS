@@ -30,7 +30,7 @@
               <label for="customer_phone">Nomor handphone customer</label>
               <input type="text" class="form-control" name="customer_phone" required>
             </div>
-            <button type="submit" class="btn btn-primary">Tambah customer</button>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Tambah customer</button>
             </form>
         </div>  
       <?php }
