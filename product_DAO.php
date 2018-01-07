@@ -1,4 +1,5 @@
 <?php
+include_once("vendor/autoload.php");
 class Product_DAO
 {
     public $product_id;
@@ -22,6 +23,7 @@ class Product_DAO
         $prepared_query->bind_param('s',$name);
         $prepared_query->execute();
         $result = $prepared_query->get_result();
+        krumo($result);
         if($result->num_rows>0)
         {
             include_once('result_set.php');
