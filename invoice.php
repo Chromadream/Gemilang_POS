@@ -114,7 +114,7 @@
                 <?php
                 for($i=0;$i<$items->rowCount();$i++)
                 {
-                    $current_item = $items->getNext(new transaction_items_DAO($connection->getConnection()),$i);
+                    $current_item = $items->getNext(new transaction_line_DAO($connection->getConnection()),$i);
                     $multiplier = (int)$current_item->transact_item_quantity;?>
                     <tr>
                     <td scope="row"><div class="form-group">
