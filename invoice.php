@@ -107,6 +107,7 @@
                     <th>Nama</th>
                     <th></th>
                     <th>Harga satuan</th>
+                    <th>Satuan</th>
                     <th>Harga akhir item</th>
                 </tr>
             </thead>
@@ -123,6 +124,7 @@
                     <td><?php echo $current_item->product_name;?></td>
                     <td><button type="button" class="btn btn-link" onclick="remove_prod(<?php echo $id;?>,<?php echo $current_item->product_id;?>)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
                     <td><?php $current_price = (int)$current_item->product_sale_price;echo $current_price;?></td>
+                    <td><?php echo $current_item->product_stock_unit;?></td>
                     <td><?php $subtotal = $multiplier*$current_price;echo $subtotal;$subtotal_price+=$subtotal;?></td>
                     </tr>
                 <?php } ?>
@@ -130,10 +132,12 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                     <td>Subtotal</td>
                     <td><?php echo $subtotal_price;?></td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
