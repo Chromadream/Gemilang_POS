@@ -80,7 +80,6 @@
                         <td scope="row">Customer</td>
                         <td><select name="customer" onchange="update_customer(<?php echo $id;?>)">
                             <?php
-                            krumo($customers->rowCount());
                             for ($i=0; $i<$customers->rowCount(); $i++)
                             {
                                 $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);
