@@ -83,9 +83,8 @@
                             for ($i=0; $i<$customers->rowCount(); $i++)
                             {
                                 $current = $customers->getNext(new customer_DAO($connection->getConnection()),$i);
-                                $currentID = $current->$customer_id;
                                 ?>
-                                <option value="<?php echo $currentID;?>">
+                                <option value="<?php echo $current->$customer_id;?>">
                                     <?php echo $current->$customer_name;?>
                                 </option>
                             <?php } ?>
