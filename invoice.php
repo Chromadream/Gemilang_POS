@@ -35,19 +35,18 @@
     //krumo($_GET);
     if($_GET["mode"]=="new")
     {
+        krumo::disable();
         $transID = $transaction_DAO->init_transaction();
         krumo($transID);
         header("location: invoice.php?mode=".$transID);
     }   
     else
     {
-        krumo::disable();
+        krumo::enable();
         $id = $_GET["mode"];
         krumo($id);
         $transaction_DAO->get_transaction_detail($id);
         krumo($transaction_DAO);
-        //$details = $trans->getNext(new transaction_DAO($connection->getConnection()),0);
-        //krumo($details);
         $items = $item_DAO->list_all_items_from_order($id);
         krumo($items);
         $customer_id = $transaction_DAO->customer_id;
