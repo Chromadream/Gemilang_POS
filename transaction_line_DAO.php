@@ -31,7 +31,7 @@ class transaction_line_DAO
         }
     }
 
-    public function add_new_item_to_line($product_id,$transact_id,$transact_item_quantity)
+    public function add_new_item_to_line($transact_id,$product_id,$transact_item_quantity)
     {
         $query = "INSERT INTO TRANSACTLINE (transact_id,product_id,transact_item_quantity) VALUES (?,?,?)";
         $prepared_query = mysqli_prepare($this->_connection,$query);
