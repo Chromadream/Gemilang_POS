@@ -34,6 +34,7 @@
         <div class="container">
         <h1>List Produk</h1>
         <a class="btn btn-primary" href="new_product.php" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Produk baru</a>
+        <br/>
         <form action="products.php" method="post">
             <div class="form-group">
               <input type="text" class="form-control" name="search" id="searchBar" aria-describedby="helpId" placeholder="Cari produk">
@@ -86,9 +87,9 @@
         {
             $product_DAO->update_product_prices($id,$_POST["purchase".$id],$_POST["sale".$id]);
             $product_DAO->update_product_stock($id,$_POST["stock".$id]);
-            echo "Stock produk ".$id." telah terupdate dengan sukses";
+            echo "Stock produk ".$id." telah terupdate dengan sukses<br/>";
         }?>
-        <button type="button" class="btn btn-primary" btn-lg btn-block><a href="index.php">Kembali ke menu awal</a></button>
+        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
         
     <?php }?>
     <!-- Optional JavaScript -->
