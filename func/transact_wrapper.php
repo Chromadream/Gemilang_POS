@@ -1,5 +1,5 @@
 <?php
-include_once("database_class.php");
+include_once("/database_class.php");
 include_once("/DAO/transaction_DAO.php");
 include_once("/DAO/transaction_line_DAO.php");
 $connection = new Database();
