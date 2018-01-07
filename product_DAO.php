@@ -21,6 +21,7 @@ class Product_DAO
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $name = '%'.$name.'%';
         $prepared_query->bind_param('s',$name);
+        krumo($name);
         $prepared_query->execute();
         $result = $prepared_query->get_result();
         krumo($result);
