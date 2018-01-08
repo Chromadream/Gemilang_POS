@@ -42,7 +42,8 @@
                 $product_stock_quantity = NULL;
             }
             $product_stock_unit = $_POST["product_stock_unit"];
-            $new_id = $productDAO->add_new_product($product_name,$product_purchase_price,$product_sale_price,$product_stock_quantity,$product_stock_unit);
+            $product_description = $_POST["product_description"];
+            $new_id = $productDAO->add_new_product($product_name,$product_purchase_price,$product_sale_price,$product_stock_quantity,$product_stock_unit,$product_description);
             echo "Produk sudah ditambahkan. ID: ".$new_id; 
             echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>';
         }
@@ -65,6 +66,9 @@
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" name="product_stock_unit" aria-describedby="helpId" placeholder="Satuan produk" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="product_description" aria-describedby="helpId" placeholder="Deskripsi produk" required>
               </div>
               <button type="submit" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Produk</button>
               </form>

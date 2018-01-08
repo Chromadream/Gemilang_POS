@@ -18,6 +18,7 @@ CREATE TABLE PRODUCT(
     product_sale_price INT NOT NULL,
     product_stock_quantity INT,
     product_stock_unit VARCHAR(8) NOT NULL,
+    product_description VARCHAR(150) NOT NULL,
     CONSTRAINT pk_product PRIMARY KEY (product_id)
 );
 

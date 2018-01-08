@@ -8,6 +8,7 @@ class Product_DAO
     public $product_sale_price;
     public $product_stock_quantity;
     public $product_stock_unit;
+    public $product_description;
     private $_connection;
 
     function __construct($connection)
