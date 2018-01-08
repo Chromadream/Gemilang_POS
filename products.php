@@ -34,6 +34,7 @@
         <div class="container">
         <h1>List Produk</h1>
         <a class="btn btn-primary" href="new_product.php" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Produk baru</a>
+        <a name="home" id="home" class="btn btn-dark" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
         <br />
         <br />
         <form action="products.php" method="post">
@@ -78,7 +79,7 @@
         <?php } ?>
           </tbody>
         </table>
-        <button type="submit" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update stock produk</button> 
+        <button type="submit" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update stock produk</button> 
         </form>
         </div>   
     <?php }
