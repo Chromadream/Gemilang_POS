@@ -35,6 +35,7 @@
     <div class="container">
         <h1><?php echo $title;?></h1>
         <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
+        <br />
         <table class="table">
             <thead>
                 <tr>
