@@ -38,6 +38,7 @@
     $transact_DAO->get_transaction_detail($_GET["id"]);
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
+        <img src="http://via.placeholder.com/200x65">
         <h1>Invoice</h1>
         <table class="table">
                 <tbody>
