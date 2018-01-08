@@ -54,7 +54,7 @@
         <?php } ?>
           </tbody>
         </table>
-        <button type="submit" class="btn btn-primary">Update stock produk</button> 
+        <button type="submit" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update stock produk</button> 
         </div>   
     <?php }
     else
@@ -64,7 +64,7 @@
             $product_DAO->update_product_stock($id,$_POST[$id]);
             echo "Stock produk ".$id." telah terupdate dengan sukses";
         }?>
-        <button type="button" class="btn btn-primary" btn-lg btn-block><a href="index.php">Kembali ke menu awal</a></button>
+        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
         
     <?php }?>
     <!-- Optional JavaScript -->
