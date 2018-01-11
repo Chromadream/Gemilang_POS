@@ -20,7 +20,9 @@
       include_once("database_class.php");
       include_once("DAO/discount_card_DAO.php");
       $connection = new Database();
+      krumo($connection);
       $discount_card_DAO = new discount_card_DAO($connection->getConnection());
+      krumo($discount_card_DAO);
       $result = $discount_card_DAO->list_all_cards();
       krumo($result);?>
       <div class="container">
