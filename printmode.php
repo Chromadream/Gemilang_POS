@@ -30,12 +30,12 @@
     $transactitem_DAO = new transaction_line_DAO($connection->getConnection());
     $price_percentage = 1;
     $subtotal_price = 0;
+    $transact_DAO->get_transaction_detail($_GET["id"]);
     $discount_presence = $transact_DAO->check_discount($_GET["id"]);
     if($discount_presence)
     {
         $price_percentage = 0.98;
     }
-    $transact_DAO->get_transaction_detail($_GET["id"]);
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
         <img src="http://via.placeholder.com/200x65">

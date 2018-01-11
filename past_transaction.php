@@ -14,6 +14,7 @@
     <?php
     session_start();
     include_once("vendor/autoload.php");
+    krumo::disable();
     if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
     {
       header("location: login.php?redirposition=orders.php");
