@@ -26,6 +26,7 @@
         $product_List = $product_DAO->list_all_product();?>
         <div class="container">
         <h1>Update Stock</h1>
+        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
         <form method="post" action="inventory.php">
         <table class="table">
             <thead>
