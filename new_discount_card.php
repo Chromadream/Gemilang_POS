@@ -13,6 +13,7 @@
   <body>
       <?php
       session_start();
+      include_once("vendor/autoload.php");
       if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
       {
         header("location: login.php?redirposition=new_discount_card.php");
