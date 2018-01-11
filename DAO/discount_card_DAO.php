@@ -26,6 +26,7 @@ class discount_card_DAO
         $prepared_query->bind_param('s',$phone);
         $prepared_query->execute();
         $prepared_query->bind_result($result);
+        $prepared_query->fetch();
         if($result!=NULL)
         {
             return $result;
