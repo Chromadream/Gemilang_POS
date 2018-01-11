@@ -33,6 +33,7 @@
       <?php }
       else
       {
+        krumo::disable();
         include_once("database_class.php");
         include_once("DAO/discount_card_DAO.php");
         $connection = new Database();
@@ -42,7 +43,7 @@
         $id = $discount_card_DAO->new_discount_card($discount_phone);
         echo "Kartu diskon telah berhasil ditambahkan. ID: ".$id;
         echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>';
-      }?>.
+      }?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
