@@ -20,7 +20,7 @@
     }
     if(!isset($_GET["id"]))
     {
-        header("orders.php");
+        header("location: orders.php");
     }
     include_once("database_class.php");
     include_once("DAO/transaction_DAO.php");
@@ -28,9 +28,10 @@
     $connection = new Database();
     $transact_DAO = new transaction_DAO($connection->getConnection());
     $transactitem_DAO = new transaction_line_DAO($connection->getConnection());
+    $id = $_GET["id"];
     $price_percentage = 1;
     $subtotal_price = 0;
-    $discount_presence = $transact_DAO->check_discount($_GET["id"]);
+    $discount_presence = $transact_DAO->check_discount($id);
     if($discount_presence)
     {
         $price_percentage = 0.98;
