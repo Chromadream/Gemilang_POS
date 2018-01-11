@@ -19,7 +19,7 @@ function search_by_phone(tid)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("result").innerHTML = result;
+            document.getElementById("phresult").innerHTML = result;
         }
     }
 }
@@ -45,7 +45,7 @@ function search_by_id(tid)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("result").innerHTML = result;
+            document.getElementById("idresult").innerHTML = result;
         }
     }
 }
