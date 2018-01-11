@@ -57,7 +57,7 @@
                     </tr>
                     <tr>
                         <td scope="row">Discount ID</td>
-                        <td><a href="use_discount_card.php?tid=<?php echo $id;?>"><?php $transact_DAO->discount_id;?></a></td>
+                        <td><a href="use_discount_card.php?tid=<?php echo $id;?>"><?php echo $transact_DAO->discount_id;?></a></td>
                     </tr>
                 </tbody>
         </table>
