@@ -25,10 +25,10 @@ class discount_card_DAO
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('s',$phone);
         $prepared_query->execute();
-        $result = $prepared_query->get_result();
-        if($result->num_rows > 0)
+        $prepared_query->bind_result($result);
+        if($result!=NULL)
         {
-            return $result["discount_id"];
+            return $result;
         }
         return NULL;
     }
