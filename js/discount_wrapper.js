@@ -37,7 +37,7 @@ function search_by_id(tid)
     }
     let value = document.getElementById("cardid").value;
 
-    xmlhttp.open("GET","func/discount_wrapper.php?mode=phone&id="+value+"&tid="+tid);
+    xmlhttp.open("GET","func/discount_wrapper.php?mode=id&id="+value+"&tid="+tid);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
 
