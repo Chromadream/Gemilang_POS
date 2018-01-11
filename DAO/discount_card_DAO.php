@@ -59,14 +59,5 @@ class discount_card_DAO
             return new result_set($allrows);
         }
     }
-
-    public function remove_card($id)
-    {
-        $query = "DELETE FROM DISCOUNT_CARD WHERE DISCOUNT_ID = ?";
-        $prepared_query = mysqli_prepare($this->_connection,$query);
-        $prepared_query->bind_param('i',$id);
-        $prepared_query->execute();
-        return $id;
-    }
 }
 ?>
