@@ -59,7 +59,8 @@
           <?php };?>
               </tbody>
           </table>
-          <button type="submit" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Hapus kartu diskon</button> 
+          <button type="submit" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Hapus kartu diskon</button>
+          </form>
       </div>
           <?php }
           else
