@@ -13,6 +13,7 @@
       <?php
       session_start();
       include_once("vendor/autoload.php");
+      krumo::disable();
       if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
       {
         header("location: login.php?redirposition=discount_cards.php");
@@ -23,7 +24,7 @@
       krumo($connection);
       $discount_card_DAO = new discount_card_DAO($connection->getConnection());
       krumo($discount_card_DAO);
-      $result = $discount_card_DAO->list_all_cards();
+      
       krumo($result);?>
       <div class="container">
           <h1>Daftar Kartu Diskon</h1>
@@ -38,6 +39,7 @@
               </thead>
               <tbody>
       <?php
+            $result = $discount_card_DAO->list_all_cards();
           for($i = 0;$i <$result->rowCount();$i++)
           {
               $currentRow = $result->getNext(new discount_card_DAO($connection->getConnection()),$i);
