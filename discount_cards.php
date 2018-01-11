@@ -37,7 +37,6 @@
           for($i = 0;$i <$result->rowCount();$i++)
           {
               $currentRow = $result->getNext(new discount_card_DAO($connection->getConnection()),$i);
-              krumo($currentRow);
           ?>
               <tr>
                   <td scope="row"><?php echo $currentRow->discount_id;?></td>
