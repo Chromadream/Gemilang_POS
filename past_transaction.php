@@ -31,13 +31,13 @@
     $id = $_GET["id"];
     $price_percentage = 1;
     $subtotal_price = 0;
+    $transact_DAO->get_transaction_detail($_GET["id"]);
     $discount_presence = $transact_DAO->check_discount($id);
     if($discount_presence)
     {
         $price_percentage = 0.98;
     }
     krumo($discount_presence,$price_percentage);
-    $transact_DAO->get_transaction_detail($_GET["id"]);
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
         <h1>Invoice</h1>
@@ -57,7 +57,7 @@
                     </tr>
                     <tr>
                         <td scope="row">Discount ID</td>
-                        <td><a href="use_discount_card.php?tid=<?php echo $id;?>"><?php echo $transact_DAO->discount_id;?></a></td>
+                        <td><?php echo $transact_DAO->discount_id;?></td>
                     </tr>
                 </tbody>
         </table>
