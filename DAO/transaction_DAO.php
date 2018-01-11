@@ -34,7 +34,9 @@ class transaction_DAO
         $query = "INSERT INTO TRANSACT (transact_date) VALUES (NOW())";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->execute();
-        return mysqli_insert_id($this->_connection);
+        $x = mysqli_insert_id($this->_connection);
+        krumo($x);
+        return $x;
     }
 
     function change_customer_code($transact_id,$customer_id)
