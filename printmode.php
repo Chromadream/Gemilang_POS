@@ -25,6 +25,7 @@
     include_once("database_class.php");
     include_once("DAO/transaction_DAO.php");
     include_once("DAO/transaction_line_DAO.php");
+    include_once("func/terbilang.php");
     $connection = new Database();
     $transact_DAO = new transaction_DAO($connection->getConnection());
     $transactitem_DAO = new transaction_line_DAO($connection->getConnection());
@@ -96,6 +97,15 @@
                     <td></td>
                     <td>Total akhir (Rp)</td>
                     <td><?php echo $subtotal_price*$price_percentage;?></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><?php echo Terbilang($subtotal_price*$price_percentage)." Rupiah";?></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
