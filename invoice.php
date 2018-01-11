@@ -95,7 +95,7 @@
                     </tr>
                     <tr>
                         <td scope="row"><a href="use_discount_card.php?tid=<?php echo $id;?>">Discount ID</a></td>
-                        <td><?php $transaction_DAO->discount_id;?></td>
+                        <td><?php echo $transaction_DAO->discount_id;?></td>
                 </tbody>
         </table>
         <a class="btn btn-primary" href="add_to_invoice.php?tid=<?php echo $id;?>" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Tambah item ke invoice</a>
