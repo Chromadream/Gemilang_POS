@@ -13,6 +13,7 @@
   <body>
     <?php
     session_start();
+    include_once("vendor/autoload.php");
     if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
     {
       header("location: login.php?redirposition=orders.php");
@@ -34,6 +35,7 @@
     {
         $price_percentage = 0.98;
     }
+    krumo($discount_presence,$price_percentage);
     $transact_DAO->get_transaction_detail($_GET["id"]);
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container">
