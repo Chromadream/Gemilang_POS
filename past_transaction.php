@@ -105,7 +105,7 @@
         <table class="table">
             <tbody>
                 <tr>
-                    <td><?php echo Terbilang($subtotal_price*$price_percentage);?></td>
+                    <td><?php echo Terbilang($subtotal_price*$price_percentage)." Rupiah";?></td>
                     <td></td>
                     <td></td>
                 </tr>
