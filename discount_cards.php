@@ -33,7 +33,7 @@
           <h1>Daftar Kartu Diskon</h1>
           <a name="new_card" id="new_card" class="btn btn-primary" href="new_discount_card.php" role="button"><i class="fa fa-address-book" aria-hidden="true"></i>Registrasi Kartu Diskon Baru</a>
           <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
-          <form action="discount_cards.php" method="post"></form>
+          <form action="discount_cards.php" method="post">
           <table class="table">
               <thead>
                   <tr>
