@@ -51,6 +51,7 @@
                     <th>Nama</th>
                     <th>Modal</th>
                     <th>Harga jual</th>
+                    <th>Satuan</th>
                     <th>Stock tersedia</th>
                     <th>Deskripsi</th>
                     <th>Edit?</th>
@@ -73,6 +74,7 @@
               <td><div class="form-group">
                 <input type="text" class="form-control" name="<?php echo "stock".$currentRow->product_id; ?>" value="<?php echo $currentRow->product_stock_quantity;?>">
               </div></td>
+              <td><?php echo $currentRow->product_stock_unit;?></td>
               <td><?php echo $currentRow->product_description;?></td>
               <td><div class="form-check">
                   <input type="checkbox" class="form-check-input" name="check[]" value="<?php echo $currentRow->product_id; ?>">
