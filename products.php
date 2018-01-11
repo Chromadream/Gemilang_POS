@@ -51,8 +51,8 @@
                     <th>Nama</th>
                     <th>Modal</th>
                     <th>Harga jual</th>
-                    <th>Satuan</th>
                     <th>Stock tersedia</th>
+                    <th>Satuan</th>
                     <th>Deskripsi</th>
                     <th>Edit?</th>
                 </tr>
