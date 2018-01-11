@@ -1,7 +1,7 @@
 <?php
 function Terbilang($x)
 {
-  $abil = array("", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas");
+  $abil = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas");
   if ($x < 12)
     return " " . $abil[$x];
   elseif ($x < 20)
