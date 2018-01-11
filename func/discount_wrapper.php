@@ -1,5 +1,6 @@
 <?php
 include_once($_SERVER["DOCUMENT_ROOT"]."/database_class.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/vendor/autoload.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/DAO/transaction_DAO.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/DAO/discount_card_DAO.php");
 $connection = new Database();
@@ -10,7 +11,9 @@ $transactID = $_GET["tid"];
 $sentID = $_GET["id"];
 switch ($mode) {
     case 'phone':
+        krumo($sentID);
         $ID = $discount_DAO->search_from_phone($sentID);
+        krumo($ID);
         if($ID==NULL)
         {
             echo "Tidak ada kartu yang teregistrasi dengan nomor ini.<br/>";
