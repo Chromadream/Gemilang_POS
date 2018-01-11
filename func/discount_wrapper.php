@@ -11,9 +11,7 @@ $transactID = $_GET["tid"];
 $sentID = $_GET["id"];
 switch ($mode) {
     case 'phone':
-        krumo($sentID);
         $ID = $discount_DAO->search_from_phone($sentID);
-        krumo($ID);
         if($ID==NULL)
         {
             echo "Tidak ada kartu yang teregistrasi dengan nomor ini.<br/>";
