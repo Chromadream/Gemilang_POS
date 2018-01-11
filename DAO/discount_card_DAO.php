@@ -7,7 +7,7 @@ class discount_card_DAO
 
     function __construct($connection)
     {
-        $this->_connection = $construct;
+        $this->_connection = $connection;
     }
 
     public function new_discount_card($phone)
@@ -21,7 +21,7 @@ class discount_card_DAO
 
     public function search_from_phone($phone)
     {
-        $query = "SELECT discount_id FROM DISCOUNT_CARD WHERE DISCOUNT_PHONE = ?";
+        $query = "SELECT discount_id FROM DISCOUNT_CARD WHERE discount_phone = ?";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('s',$phone);
         $prepared_query->execute();
