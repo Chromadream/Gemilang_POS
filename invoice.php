@@ -38,7 +38,6 @@
     //krumo($_GET);
     if($_GET["mode"]=="new")
     {
-        krumo::disable();
         $transID = $transaction_DAO->init_transaction();
         krumo($transID);
         header("location: invoice.php?mode=".$transID);
