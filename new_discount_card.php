@@ -38,6 +38,7 @@
         $connection = new Database();
         $discount_card_DAO = new discount_card_DAO($connection->getConnection());
         $discount_phone = $_POST["discount_phone"];
+        krumo($discount_phone);
         $id = $discount_card_DAO->new_discount_card($discount_phone);
         echo "Kartu diskon telah berhasil ditambahkan. ID: ".$id;
         echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>';
