@@ -12,6 +12,7 @@
   <body>
       <?php
       session_start();
+      include_once("vendor/autoload.php");
       if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
       {
         header("location: login.php?redirposition=discount_cards.php");
@@ -20,7 +21,8 @@
       include_once("DAO/discount_card_DAO.php");
       $connection = new Database();
       $discount_card_DAO = new discount_card_DAO($connection->getConnection());
-      $result = $discount_card_DAO->list_all_cards();?>
+      $result = $discount_card_DAO->list_all_cards();
+      krumo($result);?>
       <div class="container">
           <h1>Daftar Kartu Diskon</h1>
           <a name="new_card" id="new_card" class="btn btn-primary" href="new_discount_card.php" role="button"><i class="fa fa-address-book" aria-hidden="true"></i>Registrasi Kartu Diskon Baru</a>
