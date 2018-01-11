@@ -46,5 +46,17 @@ class discount_card_DAO
         }
         return NULL;
     }
+
+    public function list_all_cards()
+    {
+        $query = "SELECT * FROM DISCOUNT_CARD";
+        $result = $this->_connection->query($query);
+        if($result->num_rows > 0)
+        {
+            $allrows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            include_once('result_set.php');
+            return new result_set($allrows);
+        }
+    }
 }
 ?>
