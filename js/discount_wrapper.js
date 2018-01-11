@@ -10,7 +10,7 @@ function search_by_phone(tid)
         window.location.href = "https://google.com/chrome";
     }
     let value = document.getElementById("phonenum").value;
-
+    console.log(value);s
     xmlhttp.open("GET","func/discount_wrapper.php?mode=phone&id="+value+"&tid="+tid);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
