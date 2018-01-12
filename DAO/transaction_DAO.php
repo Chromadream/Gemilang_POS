@@ -16,7 +16,7 @@ class transaction_DAO
 
     function list_all_transactions_from_customer($customer_id)
     {
-        $query = "SELECT t.transact_id, date_format(t.transact_date, '%m/%d/%Y %T') transact_date, t.customer_id, c.customer_name, t.discount_id FROM TRANSACT t, CUSTOMER c WHERE c.customer_id = ? AND c.customer_id = t.customer_id";
+        $query = "SELECT t.transact_id, date_format(t.transact_date, '%d/%m/%Y %T') transact_date, t.customer_id, c.customer_name, t.discount_id FROM TRANSACT t, CUSTOMER c WHERE c.customer_id = ? AND c.customer_id = t.customer_id";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('i', $customer_id);
         $prepared_query->execute();
@@ -69,7 +69,7 @@ class transaction_DAO
 
     function list_all_transactions()
     {
-        $query = "SELECT t.transact_id, date_format(t.transact_date, '%m/%d/%Y %T') transact_date, t.customer_id, c.customer_name, t.discount_id FROM TRANSACT t, CUSTOMER c WHERE c.customer_id = t.customer_id";
+        $query = "SELECT t.transact_id, date_format(t.transact_date, '%d/%m/%Y %T') transact_date, t.customer_id, c.customer_name, t.discount_id FROM TRANSACT t, CUSTOMER c WHERE c.customer_id = t.customer_id";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->execute();
         $result = $prepared_query->get_result();
@@ -83,7 +83,7 @@ class transaction_DAO
     
     function get_transaction_detail($transact_id)
     {
-        $query = "SELECT t.transact_id, date_format(t.transact_date, '%m/%d/%Y %T') transact_date, t.customer_id, c.customer_name, t.discount_id FROM TRANSACT t, CUSTOMER c WHERE transact_id = ? AND c.customer_id = t.customer_id";
+        $query = "SELECT t.transact_id, date_format(t.transact_date, '%d/%m/%Y %T') transact_date, t.customer_id, c.customer_name, t.discount_id FROM TRANSACT t, CUSTOMER c WHERE transact_id = ? AND c.customer_id = t.customer_id";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('i', $transact_id);
         $prepared_query->execute();
