@@ -10,6 +10,8 @@ html{
     }
 
 body{
+    zoom: 0.5;
+    -moz-transform: scale(0.5);
     font-family: 'Comic Sans MS',sans-serif;
     font-size: 11pt;
 }
