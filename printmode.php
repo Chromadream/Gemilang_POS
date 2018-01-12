@@ -63,7 +63,7 @@
                     </tr>
                 </tbody>
         </table>
-        <table class="table table-striped table-sm">
+        <table class="table table-bordered table-sm">
             <thead class="thead-inverse">
                 <tr>
                     <th>Qty</th>
