@@ -39,7 +39,7 @@
         $price_percentage = 0.98;
     }
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
-    <div class="container">
+    <div class="container-fluid">
         <img src="img/logo.jpg">
         <h1>Invoice</h1>
         <table class="table table-sm">
