@@ -3,3 +3,9 @@ html{
     width:21.5cm;
     font-family: 'Comic Sans MS',sans-serif;
 }
+
+@page 
+    {
+        size:  auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
