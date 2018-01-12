@@ -42,7 +42,7 @@
     <div class="container">
         <img src="img/logo.jpg">
         <h1>Invoice</h1>
-        <table class="table">
+        <table class="table table-sm">
                 <tbody>
                     <tr>
                         <td scope="row">Nomor Transaksi</td>
