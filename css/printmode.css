@@ -10,9 +10,9 @@ html{
     }
 
 body{
-    zoom: 0.5;
-    -moz-transform: scale(0.5);
-    margin-top: 5mm;
+    zoom: 0.75;
+    -moz-transform: scale(0.75);
+    margin-top: 3mm;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 12pt;
+    font-size: 14pt;
 }
