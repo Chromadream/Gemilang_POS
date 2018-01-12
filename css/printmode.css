@@ -9,7 +9,3 @@ html{
         size:  auto;   /* auto is the initial value */
         margin: 0mm;  /* this affects the margin in the printer settings */
     }
-
-body{
-    margin: 1mm 0mm 0mm 0mm;
-}
