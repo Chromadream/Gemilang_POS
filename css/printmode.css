@@ -1,6 +1,6 @@
 html{
-    height:21.5cm;
-    width:14cm;
+    max-width:21.5cm;
+    max-height:14cm;
     font-family: 'Comic Sans MS',sans-serif;
 }
 
