@@ -1,7 +1,6 @@
 html{
-    max-width:21.5cm;
-    max-height:14cm;
-    font-family: 'Comic Sans MS',sans-serif;
+    width:21.5cm;
+    height:14cm;
 }
 
 @page 
@@ -9,3 +8,7 @@ html{
         size:  auto;   /* auto is the initial value */
         margin: 0mm;  /* this affects the margin in the printer settings */
     }
+
+body{
+    font-family: 'Comic Sans MS',sans-serif;
+}
