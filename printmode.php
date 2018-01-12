@@ -57,10 +57,14 @@
                         <td scope="row">Customer</td>
                         <td><?php echo $transact_DAO->customer_name;?> </td>
                     </tr>
+                    <?php 
+                    if($transact_DAO->discount_id!=NULL)
+                    {?>
                     <tr>
                         <td scope="row">Discount ID</td>
                         <td><?php echo $transact_DAO->discount_id;?></td>
                     </tr>
+                    <?php } ?>
                 </tbody>
         </table>
         <table class="table table-bordered table-sm">
