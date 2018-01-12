@@ -42,7 +42,7 @@
     $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);?>
     <div class="container-fluid">
         <img src="img/logo.jpg">
-        <h1>Invoice</h1>
+        <h4>Invoice</h4>
         <table class="table table-sm">
                 <tbody>
                     <tr>
