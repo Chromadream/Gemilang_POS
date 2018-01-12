@@ -27,6 +27,7 @@
     include_once("DAO/transaction_DAO.php");
     include_once("DAO/transaction_line_DAO.php");
     include_once("func/terbilang.php");
+    include_once("func/format_wrapper.php");
     $connection = new Database();
     $transact_DAO = new transaction_DAO($connection->getConnection());
     $transactitem_DAO = new transaction_line_DAO($connection->getConnection());
@@ -80,9 +81,9 @@
                     <tr>
                     <td scope="row"><?php $multiplier = (int)$current_item->transact_item_quantity;echo $multiplier;?></td>
                     <td><?php echo $current_item->product_name;?></td>
-                    <td><?php $current_price = (int)$current_item->product_sale_price;echo $current_price;?></td>
+                    <td><?php $current_price = (int)$current_item->product_sale_price;echo formatting($current_price);?></td>
                     <td><?php echo $current_item->product_stock_unit;?></td>
-                    <td><?php $subtotal = $multiplier*$current_price;echo $subtotal;$subtotal_price+=$subtotal;?></td>
+                    <td><?php $subtotal = $multiplier*$current_price;echo formatting($subtotal);$subtotal_price+=$subtotal;?></td>
                     </tr>
                 <?php } ?>
                 <tr>
@@ -90,14 +91,14 @@
                     <td></td>
                     <td></td>
                     <td>Subtotal (Rp)</td>
-                    <td><?php echo $subtotal_price;?></td>
+                    <td><?php echo formatting($subtotal_price);?></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>Total akhir (Rp)</td>
-                    <td><?php echo $subtotal_price*$price_percentage;?></td>
+                    <td><?php echo formatting($subtotal_price*$price_percentage);?></td>
                 </tr>
             </tbody>
         </table>

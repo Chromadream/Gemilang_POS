@@ -27,6 +27,7 @@
     include_once("DAO/transaction_line_DAO.php");
     include_once("DAO/customer_DAO.php");
     include_once("func/selected.php");
+    include_once("func/format_wrapper.php");
     //krumo::includes();
     $connection = new Database();
     //krumo($connection);
@@ -123,9 +124,9 @@
                     </div></td>
                     <td><?php echo $current_item->product_name;?></td>
                     <td><button type="button" class="btn btn-link" onclick="remove_prod(<?php echo $id;?>,<?php echo $current_item->product_id;?>)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
-                    <td><?php $current_price = (int)$current_item->product_sale_price;echo $current_price;?></td>
+                    <td><?php $current_price = (int)$current_item->product_sale_price;echo formatting($current_price);?></td>
                     <td><?php echo $current_item->product_stock_unit;?></td>
-                    <td><?php $subtotal = $multiplier*$current_price;echo $subtotal;$subtotal_price+=$subtotal;?></td>
+                    <td><?php $subtotal = $multiplier*$current_price;echo formatting($subtotal);$subtotal_price+=$subtotal;?></td>
                     </tr>
                 <?php } ?>
                 <tr>
@@ -134,7 +135,7 @@
                     <td></td>
                     <td></td>
                     <td>Subtotal</td>
-                    <td><?php echo $subtotal_price;?></td>
+                    <td><?php echo formatting($subtotal_price);?></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -142,7 +143,7 @@
                     <td></td>
                     <td></td>
                     <td>Total akhir</td>
-                    <td><?php $total = $subtotal_price*$price_percentage;echo $total;?></td>
+                    <td><?php $total = $subtotal_price*$price_percentage;echo formatting($total);?></td>
                 </tr>
             </tbody>
         </table>
