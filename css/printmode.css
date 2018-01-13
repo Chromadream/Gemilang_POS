@@ -1,6 +1,6 @@
 html{
-    width:21.5cm;
-    max-height:14cm;
+    width:21.5cm !important;
+    max-height:14cm !important;
 }
 
 @page 
