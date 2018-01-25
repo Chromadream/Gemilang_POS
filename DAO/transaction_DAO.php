@@ -7,6 +7,7 @@ class transaction_DAO
     public $customer_id;
     public $customer_name;
     public $discount_id;
+    public $transact_total;
     private $_connection;
     
     function __construct($connection)
@@ -90,6 +91,15 @@ class transaction_DAO
         $prepared_query->bind_result($this->transact_id,$this->transact_date,$this->customer_id,$this->customer_name,$this->discount_id);
         $prepared_query->fetch();
         //krumo($this->transact_id,$this->transact_date,$this->customer_id,$this->customer_name,$this->discount_id);
+    }
+
+    function update_transaction_total($transact_total)
+    {
+        $query = "UPDATE TRANSACT SET transact_total = ? WHERE transact_id = ?";
+        $prepared_query = mysqli_prepare($this->_connection,$query);
+        $prepared_query->bind_param('ii',$transact_total,$this->transact_id);
+        $prepared_query->execute();
+        return true;
     }
 }
 ?>

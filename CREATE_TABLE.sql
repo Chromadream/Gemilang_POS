@@ -33,6 +33,7 @@ CREATE TABLE TRANSACT(
     transact_date TIMESTAMP,
     customer_id INT DEFAULT 10000001,
     discount_id INT,
+    transact_total INT,
     CONSTRAINT pk_transact PRIMARY KEY (transact_id),
     CONSTRAINT fk_transact_customer FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id),
     CONSTRAINT fk_transact_discount FOREIGN KEY (discount_id) REFERENCES DISCOUNT_CARD (discount_id)
