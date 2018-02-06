@@ -43,6 +43,7 @@
                     <th>Tanggal</th>
                     <th>Customer</th>
                     <th>Kartu Diskon</th>
+                    <th>Total Transaksi</th>
                     <th></th>
                 </tr>
             </thead>
@@ -57,6 +58,7 @@
                 <td><?php echo $currentRow->transact_date;?></td>
                 <td><a href="orders.php?cust_id=<?php echo $currentRow->customer_id;?>&cust_name=<?php echo $currentRow->customer_name;?>"><?php echo $currentRow->customer_name;?></td>
                 <td><?php echo $currentRow->discount_id;?></td>
+                <td><?php echo $currentRow->transact_total;?></td>
                 <td><a name="<?php echo $currentRow->transact_id;?>" class="btn btn-dark" href="past_transaction.php?id=<?php echo $currentRow->transact_id;?>" role="button">Lihat transaksi</a>
             </tr>
     <?php } ?>
