@@ -22,17 +22,17 @@
           <tbody>
             <tr>
               <td scope="row">Harian</td>
-              <td><input type="date" id="dailypicker" /></td>
+              <td><input type="date" id="dailypicker" /><br /><button type="button" class="btn btn-primary" onclick="dailyreportwrapper();">Submit</button></td>
               <td><div id="daily_sum"></div></td>
             </tr>
             <tr>
               <td scope="row">Bulanan</td>
-              <td><div id="monthreporting"></div></td>
+              <td><div id="monthreporting"></div><br /><button type="button" class="btn btn-primary" onclick="monthlyreportwrapper();">Submit</button></td>
               <td><div id="monthly_sum"></div></td>
             </tr>
             <tr>
               <td scope="row">Tahunan</td>
-              <td><div id="yearreporting"></div></td>
+              <td><div id="yearreporting"></div><br /><button type="button" class="btn btn-primary" onclick="yearlyreportwrapper();">Submit</button></td>
               <td><div id="yearly_sum"></div></td>
             </tr>
           </tbody>

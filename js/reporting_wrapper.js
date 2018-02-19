@@ -111,3 +111,22 @@ window.onload = function () {
     monthly_report(month,year);
     yearly_report(year);
 }
+
+function dailyreportwrapper() {
+    const date = new Date(document.getElementById('dailypicker').value);
+    const year = date.getFullYear();
+    const month = date.getMonth()+1;
+    const day = date.getDate();
+    daily_report(day,month,year);
+}
+
+function monthlyreportwrapper(){
+    const month = document.getElementById("monthselectormonthreport").value
+    const year = document.getElementById("yearselectormonthreport").value
+    monthly_report(month,year);
+}
+
+function yearlyreportwrapper(){
+    const year = document.getElementById("yearselectoryearreport").value
+    yearly_report(year)
+}
