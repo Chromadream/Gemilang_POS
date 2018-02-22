@@ -1,5 +1,5 @@
 <?php
-include_once("vendor/autoload.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."vendor/autoload.php");
 class Product_DAO
 {
     public $product_id;
@@ -35,6 +35,7 @@ class Product_DAO
 
     public function add_new_product($name, $purchase, $sale, $quantity, $unit)
     {
+        krumo($name,$purchase,$sale,$quantity,$unit);
         $query = "INSERT INTO PRODUCT (product_name, product_purchase_price, product_sale_price, product_stock_quantity, product_stock_unit) VALUES (?,?,?,?,?)";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('siiis',$name,$purchase,$sale,$quantity,$unit);
