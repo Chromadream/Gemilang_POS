@@ -22,21 +22,23 @@
   <body>
     <div class="container">
     <h1>Laporan Pemasukan</h1>
+    <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
+    <br />
     <table class="table table-inverse table-responsive">
           <tbody>
             <tr>
               <td scope="row">Harian</td>
-              <td><input type="date" id="dailypicker" /><br /><button type="button" class="btn btn-primary btn-sm" onclick="dailyreportwrapper();">Submit</button></td>
+              <td><input type="date" id="dailypicker" /><br /><button type="button" class="btn btn-secondary btn-sm" onclick="dailyreportwrapper();">Submit</button></td>
               <td><div id="daily_sum"></div></td>
             </tr>
             <tr>
               <td scope="row">Bulanan</td>
-              <td><div id="monthreporting"></div><br /><button type="button" class="btn btn-primary btn-sm" onclick="monthlyreportwrapper();">Submit</button></td>
+              <td><div id="monthreporting"></div><br /><button type="button" class="btn btn-secondary btn-sm" onclick="monthlyreportwrapper();">Submit</button></td>
               <td><div id="monthly_sum"></div></td>
             </tr>
             <tr>
               <td scope="row">Tahunan</td>
-              <td><div id="yearreporting"></div><br /><button type="button" class="btn btn-primary btn-sm" onclick="yearlyreportwrapper();">Submit</button></td>
+              <td><div id="yearreporting"></div><br /><button type="button" class="btn btn-secondary btn-sm" onclick="yearlyreportwrapper();">Submit</button></td>
               <td><div id="yearly_sum"></div></td>
             </tr>
           </tbody>
