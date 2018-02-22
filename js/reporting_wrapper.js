@@ -112,6 +112,10 @@ window.onload = function () {
     daily_report(day,month,year);
     monthly_report(month,year);
     yearly_report(year);
+    document.getElementById("monthselectormonthreport").onchange = monthlyreportwrapper();
+    document.getElementById("yearselectormonthreport").onchange = monthlyreportwrapper();
+    document.getElementById("yearselectoryearreport").onchange = yearlyreportwrapper();
+    document.getElementById('dailypicker').onchange = dailyreportwrapper();
 }
 
 function dailyreportwrapper() {
@@ -132,3 +136,4 @@ function yearlyreportwrapper(){
     const year = document.getElementById("yearselectoryearreport").value
     yearly_report(year)
 }
+
