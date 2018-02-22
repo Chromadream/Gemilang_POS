@@ -83,7 +83,7 @@
         <?php } ?>
           </tbody>
         </table>
-        <button type="submit" class="btn btn-success"><i class="fas fa-pencil"></i> Update stock produk</button> 
+        <button type="submit" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Update stock produk</button> 
         </form>
         </div>   
     <?php }

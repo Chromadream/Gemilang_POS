@@ -38,7 +38,7 @@
             <a name="disc" id="disc" class="btn btn-link" href="discount_cards.php" role="button"><i class="fas fa-id-card"></i> Kartu diskon</a><br/>
         <?php }
         ?>
-            <a name="logout" id="logout" class="btn btn-link" href="logout.php" role="button"><i class="fas fa-sign-out"></i> Keluar</a><br/>
+            <a name="logout" id="logout" class="btn btn-link" href="logout.php" role="button"><i class="fas fa-sign-out-alt"></i> Keluar</a><br/>
 
         </div>
     <!-- Optional JavaScript -->
