@@ -104,6 +104,7 @@ window.onload = function () {
     const todaydate = new Date();
     const year = todaydate.getFullYear();
     const month = todaydate.getMonth()+1;
+    console.log(month);
     const day = todaydate.getDate();
     document.getElementById("yearreporting").innerHTML = yearcalendar(year,"yearreport",year);
     document.getElementById("monthreporting").innerHTML = yearcalendar(year,"monthreport",year);
