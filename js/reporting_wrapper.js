@@ -76,7 +76,7 @@ function yearly_report(year){
         console.log(result)
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("yearly_sum").innerHTML = "Rp."+result;
+            document.getElementById("yearly_sum").innerHTML = "Rp."+money_formatting(result);
         }
     } 
 }
