@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="js/update_customer.js"></script>
     <script src="js/change_quantity.js"></script>
     <script src="js/remove_prod.js"></script>
@@ -99,8 +99,8 @@
                         <td><?php echo $transaction_DAO->discount_id;?></td>
                 </tbody>
         </table>
-        <a class="btn btn-primary" href="add_to_invoice.php?tid=<?php echo $id;?>" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Tambah item ke invoice</a>
-        <a name="printmode" id="printmode" class="btn btn-success" href="printmode.php?id=<?php echo $id;?>" role="button"><i class="fa fa-print" aria-hidden="true"></i> Print invoice</a>
+        <a class="btn btn-primary" href="add_to_invoice.php?tid=<?php echo $id;?>" role="button"><i class="fas fa-plus"></i> Tambah item ke invoice</a>
+        <a name="printmode" id="printmode" class="btn btn-success" href="printmode.php?id=<?php echo $id;?>" role="button"><i class="fas fa-print"></i> Print invoice</a>
         <table class="table table-striped">
             <thead class="thead-inverse">
                 <tr>
@@ -123,7 +123,7 @@
                       <input type="number" class="form-control" id="<?php echo $current_item->product_id;?>" value="<?php echo $multiplier;?>" onchange="change_qty(<?php echo $current_item->product_id;?>,<?php echo $id;?>)">
                     </div></td>
                     <td><?php echo $current_item->product_name;?></td>
-                    <td><button type="button" class="btn btn-link" onclick="remove_prod(<?php echo $id;?>,<?php echo $current_item->product_id;?>)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                    <td><button type="button" class="btn btn-link" onclick="remove_prod(<?php echo $id;?>,<?php echo $current_item->product_id;?>)"><i class="fas fa-times"></i></button></td>
                     <td><?php $current_price = (int)$current_item->product_sale_price;echo formatting($current_price);?></td>
                     <td><?php echo $current_item->product_stock_unit;?></td>
                     <td><?php $subtotal = $multiplier*$current_price;echo formatting($subtotal);$subtotal_price+=$subtotal;?></td>

@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
   <body>
       <?php
@@ -26,8 +26,8 @@
       $discount_card_DAO = new discount_card_DAO($connection->getConnection());?>
       <div class="container">
           <h1>Daftar Kartu Diskon</h1>
-          <a name="new_card" id="new_card" class="btn btn-primary" href="new_discount_card.php" role="button"><i class="fa fa-address-book" aria-hidden="true"></i>Registrasi Kartu Diskon Baru</a>
-          <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
+          <a name="new_card" id="new_card" class="btn btn-primary" href="new_discount_card.php" role="button"><i class="fas fa-address-book"></i></i>Registrasi Kartu Diskon Baru</a>
+          <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fas fa-home"></i> Kembali ke menu awal</a>
           <form action="discount_cards.php" method="post">
           <table class="table">
               <thead>

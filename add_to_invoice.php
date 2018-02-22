@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="js/add_prod.js"></script>
   </head>
   <body>
@@ -37,7 +37,7 @@
             <div class="form-group">
               <input type="text" class="form-control" name="search" id="searchBar" aria-describedby="helpId" placeholder="Cari produk">
             </div>
-            <button type="submit" class="btn btn-secondary"><i class="fa fa-search" aria-hidden="true"></i> Cari produk</button> 
+            <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i> Cari produk</button> 
         </form>
         <form method="post" action="products.php">
         <table class="table">
@@ -60,7 +60,7 @@
               <td><?php echo $currentRow->product_name; ?></td>
               <td><?php echo $currentRow->product_sale_price;?></td>
               <td><?php echo $currentRow->product_description;?></td>
-              <td><button type="button" class="btn btn-dark" onclick="add_prod(<?php echo $currentRow->product_id;?>,<?php echo $id;?>)"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+              <td><button type="button" class="btn btn-dark" onclick="add_prod(<?php echo $currentRow->product_id;?>,<?php echo $id;?>)"><i class="fas fa-check-square"></i></button></td>
             </tr>
         <?php } ?>
           </tbody>

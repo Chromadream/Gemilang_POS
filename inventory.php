@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
   <body>
       <?php
@@ -26,7 +26,7 @@
         $product_List = $product_DAO->list_all_product();?>
         <div class="container">
         <h1>Update Stock</h1>
-        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
+        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fas fa-home"></i> Kembali ke menu awal</a>
         <form method="post" action="inventory.php">
         <table class="table">
             <thead>
@@ -57,7 +57,7 @@
         <?php } ?>
           </tbody>
         </table>
-        <button type="submit" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update stock produk</button> 
+        <button type="submit" class="btn btn-primary"><i class="fas fa-pencil"></i> Update stock produk</button> 
         </div>   
     <?php }
     else
@@ -67,7 +67,7 @@
             $product_DAO->update_product_stock($id,$_POST[$id]);
             echo "Stock produk ".$id." telah terupdate dengan sukses";
         }?>
-        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
+        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fas fa-home"></i> Kembali ke menu awal</a>
         
     <?php }?>
     <!-- Optional JavaScript -->

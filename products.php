@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
   <body>
   <?php
@@ -33,15 +33,15 @@
         }?>
         <div class="container">
         <h1>List Produk</h1>
-        <a class="btn btn-primary" href="new_product.php" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Produk baru</a>
-        <a name="home" id="home" class="btn btn-dark" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
+        <a class="btn btn-primary" href="new_product.php" role="button"><i class="fas fa-plus"></i> Produk baru</a>
+        <a name="home" id="home" class="btn btn-dark" href="index.php" role="button"><i class="fas fa-home"></i> Kembali ke menu awal</a>
         <br />
         <br />
         <form action="products.php" method="post">
             <div class="form-group">
               <input type="text" class="form-control" name="search" id="searchBar" aria-describedby="helpId" placeholder="Cari produk">
             </div>
-            <button type="submit" class="btn btn-secondary"><i class="fa fa-search" aria-hidden="true"></i> Cari produk</button> 
+            <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i> Cari produk</button> 
         </form>
         <form method="post" action="products.php">
         <table class="table">
@@ -83,7 +83,7 @@
         <?php } ?>
           </tbody>
         </table>
-        <button type="submit" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update stock produk</button> 
+        <button type="submit" class="btn btn-success"><i class="fas fa-pencil"></i> Update stock produk</button> 
         </form>
         </div>   
     <?php }
@@ -95,7 +95,7 @@
             $product_DAO->update_product_stock($id,$_POST["stock".$id]);
             echo "Produk ".$id." telah terupdate dengan sukses<br/>";
         }?>
-        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
+        <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fas fa-home"></i> Kembali ke menu awal</a>
         
     <?php }?>
     <!-- Optional JavaScript -->

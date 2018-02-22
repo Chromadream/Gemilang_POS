@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
   <body>
       <?php
@@ -30,7 +30,7 @@
               <label for="customer_phone">Nomor handphone customer</label>
               <input type="text" class="form-control" name="customer_phone">
             </div>
-            <button type="submit" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Tambah customer</button>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i></i> Tambah customer</button>
             </form>
         </div>  
       <?php }
@@ -44,7 +44,7 @@
         $customer_phone = $_POST["customer_phone"];
         $id = $customer_DAO->add_new_customer($customer_name,$customer_phone);
         echo "Customer telah berhasil ditambahkan. ID: ".$id;
-        echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>';
+        echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fas fa-home"></i> Kembali ke menu awal</a>';
       }?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

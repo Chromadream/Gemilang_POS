@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
   <body>
     <?php
@@ -47,7 +47,7 @@
             $product_description = $_POST["product_description"];
             $new_id = $productDAO->add_new_product($product_name,$product_purchase_price,$product_sale_price,$product_stock_quantity,$product_stock_unit,$product_description);
             echo "Produk sudah ditambahkan. ID: ".$new_id; 
-            echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>';
+            echo '<br/><a name="home" id="home" class="btn btn-primary" href="index.php" role="button"><i class="fas fa-home"></i> Kembali ke menu awal</a>';
         }
         else
         {?>
@@ -56,6 +56,7 @@
               <form method="post">
               <div class="form-group">
                 <input type="text" class="form-control" name="product_name" aria-describedby="helpId" placeholder="Nama Produk Baru" required>
+               
               </div>
               <div class="form-group">
                 <input type="number" class="form-control" name="product_purchase_price" aria-describedby="helpId" placeholder="Modal Produk">
