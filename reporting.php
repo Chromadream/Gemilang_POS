@@ -13,7 +13,7 @@
   <?php
   if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
   {
-    header("location: login.php?redirposition=invoice.php?mode=".$_GET["mode"]);
+    header("location: login.php?redirposition=reporting.php");
   }
   else
   { ?>
