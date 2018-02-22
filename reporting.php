@@ -33,12 +33,12 @@
             </tr>
             <tr>
               <td scope="row">Bulanan</td>
-              <td><div id="monthreporting"></div><br/><br/><button type="button" class="btn btn-secondary btn-sm" onclick="monthlyreportwrapper();">Submit</button></td>
+              <td><div id="monthreporting"></div><br/><button type="button" class="btn btn-secondary btn-sm" onclick="monthlyreportwrapper();">Submit</button></td>
               <td><div id="monthly_sum"></div></td>
             </tr>
             <tr>
               <td scope="row">Tahunan</td>
-              <td><div id="yearreporting"></div><br/><br/><button type="button" class="btn btn-secondary btn-sm" onclick="yearlyreportwrapper();">Submit</button></td>
+              <td><div id="yearreporting"></div><br/><button type="button" class="btn btn-secondary btn-sm" onclick="yearlyreportwrapper();">Submit</button></td>
               <td><div id="yearly_sum"></div></td>
             </tr>
           </tbody>
