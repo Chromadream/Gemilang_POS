@@ -105,7 +105,8 @@ window.onload = function () {
     const month = todaydate.getMonth()+1;
     const day = todaydate.getDate();
     document.getElementById("yearreporting").innerHTML = yearcalendar(year,"yearreport",year);
-    document.getElementById("monthreporting").innerHTML = yearcalendar(year,"monthreport",year)+monthcalendar("monthreport",month);
+    document.getElementById("monthreporting").innerHTML = yearcalendar(year,"monthreport",year);
+    document.getElementById("monthreporting").innerHTML+=monthcalendar("monthreport",month);
     document.getElementById("dailypicker").value = todaydate.toISOString().substring(0,10);
     daily_report(day,month,year);
     monthly_report(month,year);
