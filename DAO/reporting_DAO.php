@@ -2,7 +2,9 @@
 include_once($_SERVER["DOCUMENT_ROOT"]."vendor/autoload.php");
 class reporting_DAO
 {
-    public $sum_at_given_time;
+    private $_monthly_sum;
+    private $_daily_sum;
+    private $_yearly_sum;
     private $_connection;
 
     function __construct($connection)
@@ -16,9 +18,9 @@ class reporting_DAO
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('ii',$month,$year);
         $prepared_query->execute();
-        $prepared_query->bind_result($this->sum_at_given_time);
+        $prepared_query->bind_result($this->_monthly_sum);
         $prepared_query->fetch();
-        return $this->sum_at_given_time;
+        return $this->_monthly_sum;
     }
 
     public function yearly_sum($year)
@@ -27,9 +29,9 @@ class reporting_DAO
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('i',$year);
         $prepared_query->execute();
-        $prepared_query->bind_result($this->sum_at_given_time);
+        $prepared_query->bind_result($this->_yearly_sum);
         $prepared_query->fetch();
-        return $this->sum_at_given_time;
+        return $this->_yearly_sum;
     }
 
     public function daily_sum($day,$month,$year)
@@ -38,9 +40,9 @@ class reporting_DAO
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('iii',$day,$month,$year);
         $prepared_query->execute();
-        $prepared_query->bind_result($this->sum_at_given_time);
+        $prepared_query->bind_result($this->_daily_sum);
         $prepared_query->fetch();
-        return $this->sum_at_given_time;
+        return $this->_daily_sum;
     }
 }
 ?>)
