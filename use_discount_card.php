@@ -29,7 +29,7 @@
         <br />
         <div class="form-group">
           <label for="phoneid">Cari berdasarkan Nomor Telepon</label>
-          <input type="text" class="form-control" id="phonenum" placeholder="ID kartu">
+          <input type="text" class="form-control" id="phonenum" placeholder="Nomor HP">
           <button type="button" onclick="search_by_phone(<?php echo $_GET['tid'];?>)" class="btn btn-danger" btn-lg btn-block>Apply</button>
           <div id="phresult"></div>
         </div>
