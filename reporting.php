@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <?php
+  session_start();
   if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
   {
     header("location: login.php?redirposition=reporting.php");
