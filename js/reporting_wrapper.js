@@ -67,7 +67,7 @@ function yearly_report(year){
         alert("AJAX not supported, please use newer browser");
         window.location.href = "https://google.com/chrome";
     }
-
+    console.log(year);
     xmlhttp.open("GET","func/reporting_wrapper.php?func=yearly&y"+year);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
