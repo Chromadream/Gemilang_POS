@@ -40,7 +40,7 @@ class reporting_DAO
         $prepared_query->execute();
         $prepared_query->bind_result($this->sum_at_given_time);
         $prepared_query->fetch();
-        krumo($this->sum_at_given_time);
+        echo($this->sum_at_given_time);
         return $this->sum_at_given_time;
     }
 }
