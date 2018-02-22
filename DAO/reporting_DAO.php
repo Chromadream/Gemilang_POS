@@ -1,4 +1,5 @@
 <?php
+include_once($_SERVER["DOCUMENT_ROOT"]."vendor/autoload.php");
 class reporting_DAO
 {
     public $sum_at_given_time;
@@ -39,6 +40,7 @@ class reporting_DAO
         $prepared_query->execute();
         $prepared_query->bind_result($this->sum_at_given_time);
         $prepared_query->fetch();
+        krumo($this->sum_at_given_time);
         return $this->sum_at_given_time;
     }
 }
