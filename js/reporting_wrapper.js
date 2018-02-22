@@ -29,7 +29,7 @@ function daily_report(day,month,year)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("daily_sum").innerHTML = "Rp."+result.substring(1);
+            document.getElementById("daily_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
         }
     } 
 }
@@ -52,7 +52,7 @@ function monthly_report(month,year)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("monthly_sum").innerHTML = "Rp."+result.substring(1);
+            document.getElementById("monthly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
         }
     } 
 }
@@ -76,7 +76,7 @@ function yearly_report(year){
         console.log(result)
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("yearly_sum").innerHTML = "Rp."+result.substring(1);
+            document.getElementById("yearly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
         }
     } 
 }
