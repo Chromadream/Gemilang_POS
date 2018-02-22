@@ -18,6 +18,6 @@ switch ($functionality) {
         break;
     case 'daily':
         $result = $reporting_DAO->daily_sum($date,$month,$year);
-        //echo $result;
+        echo $result;
         break;
 }?>
