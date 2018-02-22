@@ -22,7 +22,7 @@
   <body>
     <div class="container">
     <h1>Laporan Pemasukan</h1>
-    <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
+    <a name="home" id="home" class="btn btn-dark btn-sm" href="index.php" role="button"><i class="fa fa-home" aria-hidden="true"></i> Kembali ke menu awal</a>
     <br />
     <table class="table table-inverse table-responsive">
           <tbody>
