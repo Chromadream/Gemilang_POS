@@ -20,25 +20,29 @@
   else
   { ?>
   <body>
-      <table class="table table-inverse table-responsive">
+    <div class="container">
+    <h1>Laporan Pemasukan</h1>
+    <table class="table table-inverse table-responsive">
           <tbody>
             <tr>
               <td scope="row">Harian</td>
-              <td><input type="date" id="dailypicker" /><br /><button type="button" class="btn btn-primary" onclick="dailyreportwrapper();">Submit</button></td>
+              <td><input type="date" id="dailypicker" /><br /><button type="button" class="btn btn-primary btn-sm" onclick="dailyreportwrapper();">Submit</button></td>
               <td><div id="daily_sum"></div></td>
             </tr>
             <tr>
               <td scope="row">Bulanan</td>
-              <td><div id="monthreporting"></div><br /><button type="button" class="btn btn-primary" onclick="monthlyreportwrapper();">Submit</button></td>
+              <td><div id="monthreporting"></div><br /><button type="button" class="btn btn-primary btn-sm" onclick="monthlyreportwrapper();">Submit</button></td>
               <td><div id="monthly_sum"></div></td>
             </tr>
             <tr>
               <td scope="row">Tahunan</td>
-              <td><div id="yearreporting"></div><br /><button type="button" class="btn btn-primary" onclick="yearlyreportwrapper();">Submit</button></td>
+              <td><div id="yearreporting"></div><br /><button type="button" class="btn btn-primary btn-sm" onclick="yearlyreportwrapper();">Submit</button></td>
               <td><div id="yearly_sum"></div></td>
             </tr>
           </tbody>
       </table>
+    </div>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
