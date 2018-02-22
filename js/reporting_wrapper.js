@@ -22,7 +22,7 @@ function daily_report(day,month,year)
         window.location.href = "https://google.com/chrome";
     }
 
-    xmlhttp.open("GET","func/reporting_wrapper.php?func=daily&d="+day+"&m="+month+"&y"+year);
+    xmlhttp.open("GET","func/reporting_wrapper.php?func=daily&d="+day+"&m="+month+"&y="+year);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
     function triggered(){
@@ -45,7 +45,7 @@ function monthly_report(month,year)
         window.location.href = "https://google.com/chrome";
     }
 
-    xmlhttp.open("GET","func/reporting_wrapper.php?func=monthly&m="+month+"&y"+year);
+    xmlhttp.open("GET","func/reporting_wrapper.php?func=monthly&m="+month+"&y="+year);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
     function triggered(){
@@ -68,7 +68,7 @@ function yearly_report(year){
         window.location.href = "https://google.com/chrome";
     }
     console.log(year);
-    xmlhttp.open("GET","func/reporting_wrapper.php?func=yearly&y"+year);
+    xmlhttp.open("GET","func/reporting_wrapper.php?func=yearly&y="+year);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
     function triggered(){
