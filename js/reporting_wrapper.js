@@ -112,10 +112,10 @@ window.onload = function () {
     daily_report(day,month,year);
     monthly_report(month,year);
     yearly_report(year);
-    document.getElementById("monthselectormonthreport").onchange = monthlyreportwrapper();
-    document.getElementById("yearselectormonthreport").onchange = monthlyreportwrapper();
-    document.getElementById("yearselectoryearreport").onchange = yearlyreportwrapper();
-    document.getElementById('dailypicker').onchange = dailyreportwrapper();
+    document.getElementById("monthselectormonthreport").addEventListener("change",monthlyreportwrapper);
+    document.getElementById("yearselectormonthreport").addEventListener("change",monthlyreportwrapper);
+    document.getElementById("yearselectoryearreport").addEventListener("change",yearlyreportwrapper);
+    document.getElementById('dailypicker').addEventListener("change",dailyreportwrapper);
 }
 
 function dailyreportwrapper() {
