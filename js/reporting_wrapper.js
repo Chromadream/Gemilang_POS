@@ -73,6 +73,7 @@ function yearly_report(year){
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
+        console.log(result)
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             document.getElementById("yearly_sum").innerHTML = "Rp."+result;
