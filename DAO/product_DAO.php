@@ -33,12 +33,12 @@ class Product_DAO
         }
     }
 
-    public function add_new_product($name, $purchase, $sale, $quantity, $unit)
+    public function add_new_product($name, $purchase, $sale, $quantity, $unit, $description)
     {
-        krumo($name,$purchase,$sale,$quantity,$unit);
-        $query = "INSERT INTO PRODUCT (product_name, product_purchase_price, product_sale_price, product_stock_quantity, product_stock_unit) VALUES (?,?,?,?,?)";
+        //krumo($name,$purchase,$sale,$quantity,$unit);
+        $query = "INSERT INTO PRODUCT (product_name, product_purchase_price, product_sale_price, product_stock_quantity, product_stock_unit, product_description) VALUES (?,?,?,?,?,?)";
         $prepared_query = mysqli_prepare($this->_connection,$query);
-        $prepared_query->bind_param('siiis',$name,$purchase,$sale,$quantity,$unit);
+        $prepared_query->bind_param('siiis',$name,$purchase,$sale,$quantity,$unit,$description);
         $prepared_query->execute();
         return mysqli_insert_id($this->_connection);
     }

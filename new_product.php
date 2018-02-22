@@ -13,7 +13,7 @@
   <body>
     <?php
         session_start();
-        include_once("vendor/autoload.php");
+        //include_once("vendor/autoload.php");
         if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
         {
           header("location: login.php?redirposition=new_customer.php");
@@ -24,7 +24,7 @@
             include_once("DAO/product_DAO.php");
             $connection = new Database();
             $productDAO = new product_DAO($connection->getConnection());
-            krumo($productDAO);krumo($connection);
+            //krumo($productDAO);krumo($connection);
             $product_name = $_POST["product_name"];
             if(!empty($_POST["product_purchase_price"]))
             {
