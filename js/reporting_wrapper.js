@@ -61,7 +61,7 @@ function batch_daily_report(month,year)
     }
 }
 
-function monthly_report(day,month,year)
+function monthly_report(month,year)
 {
     try
     {
@@ -139,7 +139,7 @@ window.onload = function () {
     document.getElementById("monthreporting").innerHTML+=monthcalendar("monthreport",month);
     document.getElementById("dailypicker").value = todaydate.toISOString().substring(0,10);
     daily_report(day,month,year,"daily_sum","");
-    monthly_report(day,month,year);
+    monthly_report(month,year);
     yearly_report(year);
     document.getElementById("monthselectormonthreport").addEventListener("change",monthlyreportwrapper);
     document.getElementById("yearselectormonthreport").addEventListener("change",monthlyreportwrapper);
