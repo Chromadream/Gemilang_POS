@@ -22,7 +22,7 @@ function daily_AJAX(day,month,year)
     }
 
     xmlhttp.open("GET","func/reporting_wrapper.php?func=daily&d="+day+"&m="+month+"&y="+year);
-    return xmlhttp.onreadystatechange = triggered;
+    return xmlhttp.onreadystatechange = triggered();
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
