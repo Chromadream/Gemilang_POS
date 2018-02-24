@@ -14,7 +14,6 @@ function daily_AJAX(day,month,year)
     try
     {
         var xmlhttp = new XMLHttpRequest();
-        var returned;
     }
     catch(e)
     {
@@ -23,7 +22,7 @@ function daily_AJAX(day,month,year)
     }
 
     xmlhttp.open("GET","func/reporting_wrapper.php?func=daily&d="+day+"&m="+month+"&y="+year);
-    xmlhttp.onreadystatechange = triggered;
+    return xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
@@ -32,9 +31,8 @@ function daily_AJAX(day,month,year)
         {
             returned = "Rp."+money_formatting(result.substring(1));
         }
+        return returned;
     }
-    console.log(returned);
-    return returned;
 }
 function daily_report(day,month,year)
 {
