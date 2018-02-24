@@ -36,7 +36,7 @@
               <td><div id="monthreporting"></div></td>
               <td><div id="monthly_sum"></div></td>
             </tr>
-            <tr id="monthlyspecs_wrapper" hidden>
+            <tr id="monthlyspecs_wrapper" style="visibility:false;">
               <td scope="row"></td>
               <td><div id="monthlyspecs"></div></td>
               <td></td>

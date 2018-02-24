@@ -44,15 +44,17 @@ function daily_report(day,month,year,returnLocation)
 
 function batch_daily_report(endDate,month,year)
 {
-    var outputHTML="";
-    var location = document.getElementById("monthlyspecs");
-    var wrapper = document.getElementById("monthlyspecs_wrapper");
-    for (let index = 1; index <= endDate; index++) {
-        outputHTML+=daily_AJAX(index,month,year);
-        outputHTML+="<br/>";
+    var returnLocation = "monthlyspecs";
+    var parentElement = document.getElementById("monthlyspecs_wrapper");
+    parentElement.style.visibility = "visible";
+    var crDate = new Date(year,month-1,endDate);
+    var MonthName = crDate.getMonth();
+    for(let i = 1;i<=endDate;i++)
+    {
+        document.getElementById(returnLocation).value+=i+" "+MonthName+" "+year+" ";
+        daily_report(i,month,year,returnLocation);
+        document.getElementById(returnLocation).value+="<br />"
     }
-    wrapper.style.visibility = 'visible';
-    location.innerHTML = outputHTML;
 }
 
 function monthly_report(day,month,year)
@@ -74,7 +76,7 @@ function monthly_report(day,month,year)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            //batch_daily_report(day,month,year);
+            batch_daily_report(day,month,year);
             document.getElementById("monthly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
         }
     } 
