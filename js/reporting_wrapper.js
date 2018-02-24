@@ -105,13 +105,11 @@ function yearly_report(year){
         alert("AJAX not supported, please use newer browser");
         window.location.href = "https://google.com/chrome";
     }
-    console.log(year);
     xmlhttp.open("GET","func/reporting_wrapper.php?func=yearly&y="+year);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
-        console.log(result)
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             document.getElementById("yearly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
