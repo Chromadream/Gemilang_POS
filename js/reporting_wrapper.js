@@ -62,7 +62,7 @@ function batch_daily_report(month,year)
     {
         var message = i+" "+MonthName+" "+year+": ";
         daily_report(i,month,year,returnLocation,message);
-        sleep(10);
+        sleep(5);
     }
 }
 
