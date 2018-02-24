@@ -49,7 +49,7 @@ function batch_daily_report(month,year)
     parentElement.style.visibility = "visible";
     var crDate = new Date(year,month,0);
     var endDate = crDate.getDate();
-    var MonthName = crDate.toLocaleString(locale,{month: long});
+    var MonthName = crDate.toLocaleString("en-us",{month: long});
     for(let i = 1;i<=endDate;i++)
     {
         document.getElementById("monthlyspecs").innerHTML+=i+" "+MonthName+" "+year+" ";
