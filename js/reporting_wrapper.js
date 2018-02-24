@@ -51,7 +51,7 @@ function batch_daily_report(endDate,month,year)
     location.innerHTML = outputHTML;
 }
 
-function monthly_report(month,year)
+function monthly_report(day,month,year)
 {
     try
     {
@@ -70,6 +70,7 @@ function monthly_report(month,year)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
+            batch_daily_report(day,month,year);
             document.getElementById("monthly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
         }
     } 
@@ -128,7 +129,7 @@ window.onload = function () {
     document.getElementById("monthreporting").innerHTML+=monthcalendar("monthreport",month);
     document.getElementById("dailypicker").value = todaydate.toISOString().substring(0,10);
     daily_report(day,month,year);
-    monthly_report(month,year);
+    monthly_report(day,month,year);
     yearly_report(year);
     document.getElementById("monthselectormonthreport").addEventListener("change",monthlyreportwrapper);
     document.getElementById("yearselectormonthreport").addEventListener("change",monthlyreportwrapper);
@@ -145,9 +146,10 @@ function dailyreportwrapper() {
 }
 
 function monthlyreportwrapper(){
+    const day = new Date().getDate();
     const month = document.getElementById("monthselectormonthreport").value
     const year = document.getElementById("yearselectormonthreport").value
-    monthly_report(month,year);
+    monthly_report(day,month,year);
 }
 
 function yearlyreportwrapper(){
