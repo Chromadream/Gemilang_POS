@@ -42,12 +42,13 @@ function daily_report(day,month,year,returnLocation)
     }
 }
 
-function batch_daily_report(endDate,month,year)
+function batch_daily_report(month,year)
 {
     var returnLocation = "monthlyspecs";
     var parentElement = document.getElementById("monthlyspecs_wrapper");
     parentElement.style.visibility = "visible";
-    var crDate = new Date(year,month-1,endDate);
+    var crDate = new Date(year,month,0);
+    var endDate = crDate.getDate();
     var MonthName = crDate.getMonth();
     for(let i = 1;i<=endDate;i++)
     {
@@ -76,7 +77,7 @@ function monthly_report(day,month,year)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            batch_daily_report(day,month,year);
+            batch_daily_report(month,year);
             document.getElementById("monthly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
         }
     } 
@@ -152,10 +153,9 @@ function dailyreportwrapper() {
 }
 
 function monthlyreportwrapper(){
-    const day = new Date().getDate();
     const month = document.getElementById("monthselectormonthreport").value
     const year = document.getElementById("yearselectormonthreport").value
-    monthly_report(day,month,year);
+    monthly_report(month,year);
 }
 
 function yearlyreportwrapper(){
