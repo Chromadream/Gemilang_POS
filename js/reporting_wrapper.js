@@ -33,6 +33,7 @@ function daily_AJAX(day,month,year)
             returned = "Rp."+money_formatting(result.substring(1));
         }
     }
+    console.log(returned);
     return returned;
 }
 function daily_report(day,month,year)
