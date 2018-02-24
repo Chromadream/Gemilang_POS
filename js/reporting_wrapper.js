@@ -9,6 +9,10 @@ function money_formatting(n){
         j = (j = i.length) > 3 ? j % 3 : 0;
         return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
+function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+}
 
 function daily_report(day,month,year,returnLocation,message)
 {
@@ -58,7 +62,7 @@ function batch_daily_report(month,year)
     {
         var message = i+" "+MonthName+" "+year+": ";
         daily_report(i,month,year,returnLocation,message);
-        setTimeout(function(){console.log("x")},100);
+        sleep(300);
     }
 }
 
