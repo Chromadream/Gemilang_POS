@@ -52,9 +52,9 @@ function batch_daily_report(month,year)
     var MonthName = crDate.getMonth();
     for(let i = 1;i<=endDate;i++)
     {
-        document.getElementById(returnLocation).value+=i+" "+MonthName+" "+year+" ";
+        document.getElementById("monthlyspecs").innerHTML+=i+" "+MonthName+" "+year+" ";
         daily_report(i,month,year,returnLocation);
-        document.getElementById(returnLocation).value+="<br />"
+        document.getElementById("monthlyspecs").innerHTML+="<br />"
     }
 }
 
