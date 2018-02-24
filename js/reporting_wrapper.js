@@ -30,7 +30,14 @@ function daily_report(day,month,year,returnLocation)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById(returnLocation).innerHTML+= "Rp."+money_formatting(result.substring(1));
+            if (returnLocation!="daily_sum")
+            {
+                document.getElementById(returnLocation).innerHTML+= "Rp."+money_formatting(result.substring(1));
+            }
+            else
+            {
+                document.getElementById(returnLocation).innerHTML= "Rp."+money_formatting(result.substring(1));
+            }
         }
     }
 }
