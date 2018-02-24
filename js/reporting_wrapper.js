@@ -57,8 +57,8 @@ function batch_daily_report(month,year)
     for(let i = 1;i<=endDate;i++)
     {
         var message = i+" "+MonthName+" "+year+": ";
-        setTimeout(function(){daily_report(i,month,year,returnLocation,message);},100);
-        
+        daily_report(i,month,year,returnLocation,message);
+        setTimeout(function(){console.log("x")},100);
     }
 }
 
