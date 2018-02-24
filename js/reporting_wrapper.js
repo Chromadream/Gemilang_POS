@@ -37,7 +37,9 @@ function daily_AJAX(day,month,year)
 }
 function daily_report(day,month,year)
 {
-    document.getElementById("daily_sum").innerHTML = daily_AJAX(day,month,year);
+    let x = daily_AJAX(day,month,year);
+    console.log(x);
+    document.getElementById("daily_sum").innerHTML = x;
 }
 
 function batch_daily_report(endDate,month,year)
