@@ -9,11 +9,13 @@ function money_formatting(n){
         j = (j = i.length) > 3 ? j % 3 : 0;
         return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
-function daily_AJAX(day,month,year)
+
+function daily_report(day,month,year,returnLocation)
 {
     try
     {
         var xmlhttp = new XMLHttpRequest();
+        var returned;
     }
     catch(e)
     {
@@ -22,23 +24,15 @@ function daily_AJAX(day,month,year)
     }
 
     xmlhttp.open("GET","func/reporting_wrapper.php?func=daily&d="+day+"&m="+month+"&y="+year);
-    return xmlhttp.onreadystatechange = triggered();
+    xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
-        console.log(result);
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            returned = "Rp."+money_formatting(result.substring(1));
+            document.getElementById(returnLocation).innerHTML+= "Rp."+money_formatting(result.substring(1));
         }
-        return returned;
     }
-}
-function daily_report(day,month,year)
-{
-    let x = daily_AJAX(day,month,year);
-    console.log(x);
-    document.getElementById("daily_sum").innerHTML = x;
 }
 
 function batch_daily_report(endDate,month,year)
@@ -73,7 +67,7 @@ function monthly_report(day,month,year)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            batch_daily_report(day,month,year);
+            //batch_daily_report(day,month,year);
             document.getElementById("monthly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
         }
     } 
@@ -131,7 +125,7 @@ window.onload = function () {
     document.getElementById("monthreporting").innerHTML = yearcalendar(year,"monthreport",year);
     document.getElementById("monthreporting").innerHTML+=monthcalendar("monthreport",month);
     document.getElementById("dailypicker").value = todaydate.toISOString().substring(0,10);
-    daily_report(day,month,year);
+    daily_report(day,month,year,"daily_sum");
     monthly_report(day,month,year);
     yearly_report(year);
     document.getElementById("monthselectormonthreport").addEventListener("change",monthlyreportwrapper);
@@ -145,7 +139,7 @@ function dailyreportwrapper() {
     const year = date.getFullYear();
     const month = date.getMonth()+1;
     const day = date.getDate();
-    daily_report(day,month,year);
+    daily_report(day,month,year,"daily_sum");
 }
 
 function monthlyreportwrapper(){
