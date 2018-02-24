@@ -26,9 +26,11 @@ function daily_AJAX(day,month,year)
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
+        console.log(result);
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             returned = "Rp."+money_formatting(result.substring(1));
+            console.log(returned);
             return returned;
         }
     }
