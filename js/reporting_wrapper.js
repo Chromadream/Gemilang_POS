@@ -9,8 +9,7 @@ function money_formatting(n){
         j = (j = i.length) > 3 ? j % 3 : 0;
         return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
-
-function daily_report(day,month,year)
+function daily_AJAX(day,month,year)
 {
     try
     {
@@ -29,10 +28,29 @@ function daily_report(day,month,year)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("daily_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
+            let returned = "Rp."+money_formatting(result.substring(1));
+            return returned;
         }
-    } 
+    }
 }
+function daily_report(day,month,year)
+{
+    document.getElementById("daily_sum").innerHTML = daily_AJAX(day,month,year)
+}
+
+function batch_daily_report(endDate,month,year)
+{
+    var outputHTML="";
+    var location = document.getElementById("monthlyspecs");
+    var wrapper = document.getElementById("monthlyspecs_wrapper");
+    for (let index = 1; index <= endDate; index++) {
+        outputHTML+=daily_AJAX(index,month,year);
+        outputHTML+="<br/>";
+    }
+    wrapper.style.visibility = 'visible';
+    location.innerHTML = outputHTML;
+}
+
 function monthly_report(month,year)
 {
     try
