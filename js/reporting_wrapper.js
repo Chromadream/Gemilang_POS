@@ -10,7 +10,7 @@ function money_formatting(n){
         return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
 
-function daily_report(day,month,year,returnLocation)
+function daily_report(day,month,year,returnLocation,message)
 {
     try
     {
@@ -32,7 +32,9 @@ function daily_report(day,month,year,returnLocation)
         {
             if (returnLocation!="daily_sum")
             {
+                document.getElementById(returnLocation).innerHTML+=message;
                 document.getElementById(returnLocation).innerHTML+= "Rp."+money_formatting(result.substring(1));
+                document.getElementById(returnLocation).innerHTML+="<br />";
             }
             else
             {
@@ -54,9 +56,8 @@ function batch_daily_report(month,year)
     var MonthName = monthNames[crDate.getMonth()];
     for(let i = 1;i<=endDate;i++)
     {
-        document.getElementById("monthlyspecs").innerHTML+=i+" "+MonthName+" "+year+" ";
-        daily_report(i,month,year,returnLocation);
-        document.getElementById("monthlyspecs").innerHTML+="<br />"
+        var message = i+" "+MonthName+" "+year+" ";
+        daily_report(i,month,year,returnLocation,message);
     }
 }
 
@@ -137,7 +138,7 @@ window.onload = function () {
     document.getElementById("monthreporting").innerHTML = yearcalendar(year,"monthreport",year);
     document.getElementById("monthreporting").innerHTML+=monthcalendar("monthreport",month);
     document.getElementById("dailypicker").value = todaydate.toISOString().substring(0,10);
-    daily_report(day,month,year,"daily_sum");
+    daily_report(day,month,year,"daily_sum","");
     monthly_report(day,month,year);
     yearly_report(year);
     document.getElementById("monthselectormonthreport").addEventListener("change",monthlyreportwrapper);
@@ -151,7 +152,7 @@ function dailyreportwrapper() {
     const year = date.getFullYear();
     const month = date.getMonth()+1;
     const day = date.getDate();
-    daily_report(day,month,year,"daily_sum");
+    daily_report(day,month,year,"daily_sum","");
 }
 
 function monthlyreportwrapper(){
