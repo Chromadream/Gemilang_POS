@@ -30,7 +30,7 @@ function daily_report(day,month,year,returnLocation,message)
         alert("AJAX not supported, please use newer browser");
         window.location.href = "https://google.com/chrome";
     }
-
+    document.getElementById(returnLocation).innerHTML = '';
     xmlhttp.open("GET","func/reporting_wrapper.php?func=daily&d="+day+"&m="+month+"&y="+year);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
