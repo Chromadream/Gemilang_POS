@@ -14,6 +14,7 @@ function daily_AJAX(day,month,year)
     try
     {
         var xmlhttp = new XMLHttpRequest();
+        var returned;
     }
     catch(e)
     {
@@ -30,10 +31,9 @@ function daily_AJAX(day,month,year)
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             returned = "Rp."+money_formatting(result.substring(1));
-            console.log(returned);
-            return returned;
         }
     }
+    return returned;
 }
 function daily_report(day,month,year)
 {
