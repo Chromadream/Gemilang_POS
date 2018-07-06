@@ -9,6 +9,7 @@ $functionality = $_GET["func"];
 $transactID = $_GET["tid"];
 $secondaryID = $_GET["id"];
 $quantity = $_GET["qty"];
+$price = $_GET["price"];
 switch ($functionality) {
     case 'add_prod':
         $result = $item_DAO->add_new_item_to_line($transactID,$secondaryID,1);
@@ -24,6 +25,10 @@ switch ($functionality) {
         break; 
     case 'remove_prod':
         $result = $item_DAO->remove_item_from_line($transactID,$secondaryID);
+        echo $result;
+        break;
+    case 'change_price':
+        $result = $item_DAO->update_item_price($transactID,$secondaryID,$price);
         echo $result;
         break;
 }?>

@@ -124,7 +124,9 @@
                     </div></td>
                     <td><?php echo $current_item->product_name;?></td>
                     <td><button type="button" class="btn btn-link" onclick="remove_prod(<?php echo $id;?>,<?php echo $current_item->product_id;?>)"><i class="fas fa-times"></i></button></td>
-                    <td><?php $current_price = (int)$current_item->product_sale_price;echo formatting($current_price);?></td>
+                    <td><?php $current_price = (int)$current_item->product_sale_price;echo formatting($current_price);?><div class="form-group">
+                      <input type="number" class="form-control" id="<?php echo $id;?>" value="<?php echo formatting($current_price);?>" onchange="change_price(<?php echo $current_item->product_id;?>,<?php echo $id;?>)">
+                    </div></td>
                     <td><?php echo $current_item->product_stock_unit;?></td>
                     <td><?php $subtotal = $multiplier*$current_price;echo formatting($subtotal);$subtotal_price+=$subtotal;?></td>
                     </tr>
@@ -148,9 +150,6 @@
             </tbody>
         </table>
     </div>
-
-    <!-- Optional JavaScript -->
-    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
