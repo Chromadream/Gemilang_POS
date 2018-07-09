@@ -39,6 +39,7 @@ class transaction_line_DAO
         $query = "INSERT INTO TRANSACTLINE (transact_id,product_id,transact_item_quantity,transact_item_price) VALUES (?,?,?,?)";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('iiii',$transact_id,$product_id,$transact_item_quantity,$transact_item_price);
+        krumo($transact_id,$product_id,$transact_item_quantity,$transact_item_price);
         krumo($this->_connection,$query,$prepared_query);
         $prepared_query->execute();
         krumo($prepared_query->affected_rows);
