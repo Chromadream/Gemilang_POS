@@ -3,6 +3,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/database_class.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/DAO/transaction_DAO.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/DAO/transaction_line_DAO.php");
 $connection = new Database();
+echo $connection->checkConnection();
 $transaction_DAO = new transaction_DAO($connection->getConnection());
 $item_DAO = new transaction_line_DAO($connection->getConnection());
 $functionality = $_GET["func"];
