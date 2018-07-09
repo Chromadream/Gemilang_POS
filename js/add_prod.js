@@ -1,4 +1,4 @@
-function add_prod(id,tid)
+function add_prod(id,tid,price)
 {
     try
     {
@@ -10,7 +10,7 @@ function add_prod(id,tid)
         window.location.href = "https://google.com/chrome";
     }
 
-    xmlhttp.open("GET","func/transact_wrapper.php?func=add_prod&id="+id+"&tid="+tid);
+    xmlhttp.open("GET","func/transact_wrapper.php?func=add_prod&id="+id+"&tid="+tid+"&price="+price);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
 

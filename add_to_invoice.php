@@ -60,7 +60,7 @@
               <td><?php echo $currentRow->product_name; ?></td>
               <td><?php echo $currentRow->product_sale_price;?></td>
               <td><?php echo $currentRow->product_description;?></td>
-              <td><button type="button" class="btn btn-dark" onclick="add_prod(<?php echo $currentRow->product_id;?>,<?php echo $id;?>)"><i class="fas fa-check-square"></i></button></td>
+              <td><button type="button" class="btn btn-dark" onclick="add_prod(<?php echo $currentRow->product_id;?>,<?php echo $id;?>,<?php echo $currentRow->product_sale_price;?>)"><i class="fas fa-check-square"></i></button></td>
             </tr>
         <?php } ?>
           </tbody>

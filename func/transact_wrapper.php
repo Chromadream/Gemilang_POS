@@ -12,7 +12,7 @@ $quantity = $_GET["qty"];
 $price = $_GET["price"];
 switch ($functionality) {
     case 'add_prod':
-        $result = $item_DAO->add_new_item_to_line($transactID,$secondaryID,1);
+        $result = $item_DAO->add_new_item_to_line($transactID,$secondaryID,1,$price);
         echo $result;
         break;
     case 'update_cust':
