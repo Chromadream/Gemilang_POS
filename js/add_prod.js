@@ -1,6 +1,5 @@
 function add_prod(id,tid,price)
 {
-    console.log("This function is called, right?");
     try
     {
         var xmlhttp = new XMLHttpRequest();

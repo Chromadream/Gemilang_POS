@@ -35,11 +35,9 @@ class transaction_line_DAO
 
     public function add_new_item_to_line($transact_id,$product_id,$transact_item_quantity,$transact_item_price)
     {
-        include_once($_SERVER["DOCUMENT_ROOT"]."vendor/autoload.php");
         $query = "INSERT INTO TRANSACTLINE (transact_id,product_id,transact_item_quantity,transact_item_price) VALUES (?,?,?,?)";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('iiii',$transact_id,$product_id,$transact_item_quantity,$transact_item_price);
-        krumo($prepared_query);
         $prepared_query->execute();
         return $transact_id;
     }
