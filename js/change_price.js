@@ -11,7 +11,7 @@ function change_price(id,tid)
     }
     let value = document.getElementById(tid).value;
 
-    xmlhttp.open("GET","func/transact_wrapper.php?func=change_qty&id="+id+"&tid="+tid+"&qty="+value);
+    xmlhttp.open("GET","func/transact_wrapper.php?func=change_price&id="+id+"&tid="+tid+"&price="+value);
     xmlhttp.onreadystatechange = triggered;
     xmlhttp.send(null);
     
