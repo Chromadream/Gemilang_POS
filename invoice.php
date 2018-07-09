@@ -126,7 +126,7 @@
                     <td><?php echo $current_item->product_name;?></td>
                     <td><button type="button" class="btn btn-link" onclick="remove_prod(<?php echo $id;?>,<?php echo $current_item->product_id;?>)"><i class="fas fa-times"></i></button></td>
                     <td><div class="form-group">
-                      <input type="number" class="form-control" id="<?php echo $id;?>" value="<?php echo formatting($current_price);?>" onchange="change_price(<?php echo $current_item->product_id;?>,<?php echo $id;?>)">
+                      <input type="number" class="form-control" id="<?php echo $id;?>" value="<?php echo formatting((int)$current_item->product_sale_price);?>" onchange="change_price(<?php echo $current_item->product_id;?>,<?php echo $id;?>)">
                     </div></td>
                     <td><?php echo $current_item->product_stock_unit;?></td>
                     <td><?php $subtotal = $multiplier*$current_price;echo formatting($subtotal);$subtotal_price+=$subtotal;?></td>
