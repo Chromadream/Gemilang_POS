@@ -17,6 +17,7 @@ class transaction_line_DAO
 
     public function list_all_items_from_order($id)
     {
+        
         $query = "SELECT t.transact_item_quantity, t.transact_item_price, p.product_id,  p.product_name, p.product_sale_price, p.product_stock_unit 
                     FROM PRODUCT p, TRANSACTLINE t 
                     WHERE t.transact_id = ? AND t.product_id = p.product_id";
@@ -34,9 +35,11 @@ class transaction_line_DAO
 
     public function add_new_item_to_line($transact_id,$product_id,$transact_item_quantity,$transact_item_price)
     {
+        include_once($_SERVER["DOCUMENT_ROOT"]."vendor/autoload.php");
         $query = "INSERT INTO TRANSACTLINE (transact_id,product_id,transact_item_quantity,transact_item_price) VALUES (?,?,?,?)";
         $prepared_query = mysqli_prepare($this->_connection,$query);
         $prepared_query->bind_param('iiii',$transact_id,$product_id,$transact_item_quantity,$transact_item_price);
+        krumo($prepared_query);
         $prepared_query->execute();
         return $transact_id;
     }
