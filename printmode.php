@@ -85,7 +85,7 @@
                     <tr>
                     <td scope="row"><?php $multiplier = (int)$current_item->transact_item_quantity;echo $multiplier;?></td>
                     <td><?php echo $current_item->product_name;?></td>
-                    <td><?php $current_price = (int)$current_item->product_sale_price;echo formatting($current_price);?></td>
+                    <td><?php $current_price = (int)$current_item->transact_item_price;echo formatting($current_price);?></td>
                     <td><?php echo $current_item->product_stock_unit;?></td>
                     <td><?php $subtotal = $multiplier*$current_price;echo formatting($subtotal);$subtotal_price+=$subtotal;?></td>
                     </tr>
