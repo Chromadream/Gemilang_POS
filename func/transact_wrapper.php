@@ -8,8 +8,6 @@ $item_DAO = new transaction_line_DAO($connection->getConnection());
 $functionality = $_GET["func"];
 $transactID = $_GET["tid"];
 $secondaryID = $_GET["id"];
-$quantity = $_GET["qty"];
-$price = $_GET["price"];
 switch ($functionality) {
     case 'add_prod':
         $result = $item_DAO->add_new_item_to_line($transactID,$secondaryID,1,$price);
@@ -20,6 +18,7 @@ switch ($functionality) {
         echo $result;
         break;
     case 'change_qty':
+        $quantity = $_GET["qty"];
         $result = $item_DAO->update_item_quantity($transactID,$secondaryID,$quantity);
         echo $result;
         break; 
@@ -28,6 +27,7 @@ switch ($functionality) {
         echo $result;
         break;
     case 'change_price':
+        $price = $_GET["price"];
         $result = $item_DAO->update_item_price($transactID,$secondaryID,$price);
         echo $result;
         break;
