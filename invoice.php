@@ -119,7 +119,7 @@
                 {
                     $current_item = $items->getNext(new transaction_line_DAO($connection->getConnection()),$i);
                     $multiplier = (int)$current_item->transact_item_quantity;
-                    $current_price= (int)$current_item->product_sale_price?>
+                    $current_price= (int)$current_item->transact_item_price;?>
                     <tr>
                     <td scope="row"><div class="form-group">
                       <input type="number" class="form-control" id="qty<?php echo $current_item->product_id;?>" value="<?php echo $multiplier;?>" onchange="change_qty(<?php echo $current_item->product_id;?>,<?php echo $id;?>)">
