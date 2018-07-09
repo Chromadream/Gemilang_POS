@@ -11,6 +11,7 @@
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script src="js/update_customer.js"></script>
     <script src="js/change_quantity.js"></script>
+    <script src="js/change_price.js"></script>
     <script src="js/remove_prod.js"></script>
   </head>
   <body>
