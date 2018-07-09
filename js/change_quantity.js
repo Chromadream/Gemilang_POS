@@ -9,7 +9,7 @@ function change_qty(id,tid)
         alert("AJAX not supported, please use newer browser");
         window.location.href = "https://google.com/chrome";
     }
-    let value = document.getElementById(id).value;
+    let value = document.getElementById("qty"+id).value;
 
     xmlhttp.open("GET","func/transact_wrapper.php?func=change_qty&id="+id+"&tid="+tid+"&qty="+value);
     xmlhttp.onreadystatechange = triggered;

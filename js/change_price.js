@@ -9,7 +9,7 @@ function change_price(id,tid)
         alert("AJAX not supported, please use newer browser");
         window.location.href = "https://google.com/chrome";
     }
-    let value = document.getElementById(tid).value;
+    let value = document.getElementById("price"+id).value;
 
     xmlhttp.open("GET","func/transact_wrapper.php?func=change_price&id="+id+"&tid="+tid+"&price="+value);
     xmlhttp.onreadystatechange = triggered;
