@@ -41,7 +41,7 @@ class transaction_line_DAO
         $prepared_query->bind_param('iiii',$transact_id,$product_id,$transact_item_quantity,$transact_item_price);
         krumo($this->_connection,$query,$prepared_query);
         $prepared_query->execute();
-        krumo($prepared_query);
+        krumo($prepared_query->affected_rows);
         return $transact_id;
     }
 
