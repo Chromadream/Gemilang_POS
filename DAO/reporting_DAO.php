@@ -49,7 +49,7 @@ class reporting_DAO
     {
         $results = array();
         for ($i=1; $i <= $end_date; $i++) { 
-            $results[] = $this->daily_sum($i,$month,$year);
+            $results[] = $this->daily_sum($i,$month,$year) ?: 0;
         }
         return json_encode($results);
     }
