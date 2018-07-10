@@ -10,20 +10,11 @@ function money_formatting(n){
         return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
 
-//CPU-heavy
-//kills the CPU even on i7-6700hq
-//only usable on sub 100ms sleep
-function sleep(delay) {
-    var start = new Date().getTime();
-    while (new Date().getTime() < start + delay);
-}
-
 function daily_report(day,month,year,returnLocation,message)
 {
     try
     {
         var xmlhttp = new XMLHttpRequest();
-        var returned;
     }
     catch(e)
     {
@@ -45,7 +36,17 @@ function daily_report(day,month,year,returnLocation,message)
 
 function batch_daily_report(month,year)
 {
+    try
+    {
+        var xmlhttp = new XMLHttpRequest();
+    }
+    catch(e)
+    {
+        alert("AJAX not supported, please use newer browser");
+        window.location.href = "https://google.com/chrome";
+    }
     var returnLocation = "monthlyspecs";
+    document.getElementById(returnLocation).innerHTML = '';
     var parentElement = document.getElementById("monthlyspecs_wrapper");
     parentElement.style.visibility = "visible";
     var crDate = new Date(year,month,0);
@@ -53,11 +54,19 @@ function batch_daily_report(month,year)
     var monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
     var MonthName = monthNames[crDate.getMonth()];
-    for(let i = 1;i<=endDate;i++)
-    {
-        var message = i+" "+MonthName+" "+year+": ";
-        daily_report(i,month,year,returnLocation,message);
-        sleep(5);
+    xmlhttp.open("GET","func/reporting_wrapper.php?func=batch_daily&d="+endDate+"&m="+month+"&y="+year);
+    xmlhttp.onreadystatechange = triggered;
+    xmlhttp.send(null);
+    function triggered(){
+        result = JSON.parse(xmlhttp.responseText);
+        if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
+        {
+            for (let index = 1; index <= endDate; index++) {
+                document.getElementById(returnLocation).innerHTML += index + " " + MonthName + " " + year + ":";
+                document.getElementById(returnLocation).innerHTML += "Rp."+money_formatting(result[index-1]);
+                document.getElementById(returnLocation).innerHTML += "<br/>";
+            }
+        }
     }
 }
 
