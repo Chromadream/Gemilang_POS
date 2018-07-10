@@ -51,7 +51,7 @@ class reporting_DAO
         for ($i=1; $i <= $end_date; $i++) { 
             $results[] = $this->daily_sum($i,$month,$year);
         }
-        return $results;
+        return json_encode($results);
     }
 }
 ?>
