@@ -7,8 +7,8 @@ html, body{
     font-size: 12pt;
 }
 @page {
-        margin: 0mm;  /* this affects the margin in the printer settings */
-        size: 21.59cm 13.97cm;
+    margin: 0mm;  /* this affects the margin in the printer settings */
+    size: 21.59cm 13.97cm;
 }
 
 img{
