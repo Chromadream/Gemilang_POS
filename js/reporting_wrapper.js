@@ -29,7 +29,7 @@ function daily_report(day,month,year,returnLocation,message)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById(returnLocation).innerHTML= "Rp."+money_formatting(result.substring(1));
+            document.getElementById(returnLocation).innerHTML= "Rp."+money_formatting(result);
         }
     }
 }
@@ -90,7 +90,7 @@ function monthly_report(month,year)
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             batch_daily_report(month,year);
-            document.getElementById("monthly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
+            document.getElementById("monthly_sum").innerHTML = "Rp."+money_formatting(result);
         }
     } 
 }
@@ -112,7 +112,7 @@ function yearly_report(year){
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("yearly_sum").innerHTML = "Rp."+money_formatting(result.substring(1));
+            document.getElementById("yearly_sum").innerHTML = "Rp."+money_formatting(result);
         }
     } 
 }
