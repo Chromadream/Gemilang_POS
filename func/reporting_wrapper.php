@@ -20,4 +20,8 @@ switch ($functionality) {
         $result = $reporting_DAO->daily_sum($date,$month,$year);
         echo $result;
         break;
+    case 'batch_daily':
+        $result = $reporting_DAO->batch_daily_sum($date,$month,$year);
+        echo $result;
+        break;
 }?>

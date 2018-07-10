@@ -44,5 +44,14 @@ class reporting_DAO
         $prepared_query->fetch();
         return $this->_daily_sum;
     }
+
+    public function batch_daily_sum($end_date,$month,$year)
+    {
+        $results = array();
+        for ($i=1; $i <= $end_date; $i++) { 
+            $results[] = $this->daily_sum($i,$month,$year);
+        }
+        return $results;
+    }
 }
-?>)
+?>

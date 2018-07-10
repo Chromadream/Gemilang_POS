@@ -38,16 +38,7 @@ function daily_report(day,month,year,returnLocation,message)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            if (returnLocation!="daily_sum")
-            {
-                document.getElementById(returnLocation).innerHTML+=message;
-                document.getElementById(returnLocation).innerHTML+= "Rp."+money_formatting(result.substring(1));
-                document.getElementById(returnLocation).innerHTML+="<br />";
-            }
-            else
-            {
-                document.getElementById(returnLocation).innerHTML= "Rp."+money_formatting(result.substring(1));
-            }
+            document.getElementById(returnLocation).innerHTML= "Rp."+money_formatting(result.substring(1));
         }
     }
 }
