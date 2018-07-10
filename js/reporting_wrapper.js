@@ -27,7 +27,6 @@ function daily_report(day,month,year,returnLocation,message)
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
-        console.log(result);
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             document.getElementById(returnLocation).innerHTML= "Rp."+money_formatting(result);
@@ -60,7 +59,6 @@ function batch_daily_report(month,year)
     xmlhttp.send(null);
     function triggered(){
         result = JSON.parse(xmlhttp.responseText);
-        console.log(result);
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             for (let index = 1; index <= endDate; index++) {
@@ -89,7 +87,6 @@ function monthly_report(month,year)
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
-        console.log(result);
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             batch_daily_report(month,year);
@@ -113,7 +110,6 @@ function yearly_report(year){
     xmlhttp.send(null);
     function triggered(){
         result = xmlhttp.responseText;
-        console.log(result);
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             document.getElementById("yearly_sum").innerHTML = "Rp."+money_formatting(result);
