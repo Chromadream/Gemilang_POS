@@ -63,7 +63,7 @@ class Product_DAO
 
     public function list_all_product()
     {
-        $query = "SELECT * FROM PRODUCT";
+        $query = "SELECT * FROM PRODUCT WHERE product_id <> 30000001";
         $result = $this->_connection->query($query);
         if($result->num_rows > 0)
         {
