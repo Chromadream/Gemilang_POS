@@ -33,13 +33,13 @@
         {?>
             <a name="product" id="product" class="btn btn-link" href="products.php" role="button"><i class="fas fa-archive"></i> Produk</a><br/>
             <a name="order" id="order" class="btn btn-link" href="orders.php" role="button"><i class="fas fa-chart-line"></i> Transaksi</a><br/>
-            <a name="reporting" id="reporting" class="btn btn-link" href="reporting.php" role="button"><i class="fas fa-book"></i> Laporan</a><br/>
+            <a name="reporting" id="reporting" class="btn btn-link" href="reporting.php" role="button"><i class="fas fa-chart-line"></i> Laporan</a><br/>
+            <a name="end_of_day" id="end_of_day" class="btn btn-link" href="end_of_day.php" role="button"><i class="fas fa-file-invoice-dollar"></i> Tutup buku harian</a><br/>
             <a name="cust" id="cust" class="btn btn-link" href="customers.php" role="button"><i class="fas fa-user"></i> Pelanggan</a><br/>
             <a name="disc" id="disc" class="btn btn-link" href="discount_cards.php" role="button"><i class="fas fa-id-card"></i> Kartu diskon</a><br/>
         <?php }
         ?>
             <a name="logout" id="logout" class="btn btn-link" href="logout.php" role="button"><i class="fas fa-sign-out-alt"></i> Keluar</a><br/>
-
         </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
