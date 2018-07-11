@@ -33,14 +33,14 @@ class transaction_line_DAO
         }
     }
 
-    public function add_new_item_to_line($transact_id,$product_id,$transact_item_quantity,$transact_item_price)
+    public function add_new_item_to_line($transact_id,$product_id,$transact_item_price)
     {
         include_once($_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php");
         krumo::disable();
-        $query = "INSERT INTO TRANSACTLINE (transact_id,product_id,transact_item_quantity,transact_item_price) VALUES (?,?,?,?)";
+        $query = "INSERT INTO TRANSACTLINE (transact_id,product_id,transact_item_quantity,transact_item_price) VALUES (?,?,1,?)";
         $prepared_query = mysqli_prepare($this->_connection,$query);
-        $prepared_query->bind_param('iiii',$transact_id,$product_id,$transact_item_quantity,$transact_item_price);
-        krumo($transact_id,$product_id,$transact_item_quantity,$transact_item_price);
+        $prepared_query->bind_param('iii',$transact_id,$product_id,$transact_item_price);
+        krumo($transact_id,$product_id,$transact_item_price);
         krumo($this->_connection,$query,$prepared_query);
         $prepared_query->execute();
         krumo($prepared_query->affected_rows);

@@ -11,7 +11,7 @@ $secondaryID = $_GET["id"];
 switch ($functionality) {
     case 'add_prod':
         $price = $_GET["price"];
-        $result = $item_DAO->add_new_item_to_line($transactID,$secondaryID,1,$price);
+        $result = $item_DAO->add_new_item_to_line($transactID,$secondaryID,$price);
         echo $result;
         break;
     case 'update_cust':
