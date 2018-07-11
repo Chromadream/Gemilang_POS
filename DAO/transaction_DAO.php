@@ -93,11 +93,11 @@ class transaction_DAO
         //krumo($this->transact_id,$this->transact_date,$this->customer_id,$this->customer_name,$this->discount_id);
     }
 
-    function update_transaction_total($transact_total)
+    function update_transaction_total($transact_id,$transact_total)
     {
         $query = "UPDATE TRANSACT SET transact_total = ? WHERE transact_id = ?";
         $prepared_query = mysqli_prepare($this->_connection,$query);
-        $prepared_query->bind_param('ii',$transact_total,$this->transact_id);
+        $prepared_query->bind_param('ii',$transact_total,$transact_id);
         $prepared_query->execute();
         return true;
     }

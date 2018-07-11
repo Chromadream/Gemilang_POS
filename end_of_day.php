@@ -41,7 +41,7 @@
         $id = $transaction_DAO->init_transaction();
         $value = $_POST["daily_transaction"];
         $transact = $line_DAO->add_new_item_to_line($id,30000001,$value);
-        $transaction_DAO->update_transaction_total($value);
+        $transaction_DAO->update_transaction_total($id,$value);
         header("location: reporting.php");
       }?>
     <!-- Optional JavaScript -->

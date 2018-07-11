@@ -147,7 +147,7 @@
                     <td></td>
                     <td></td>
                     <td>Total akhir</td>
-                    <td><?php $total = $subtotal_price*$price_percentage;$transaction_DAO->update_transaction_total($total);echo formatting($total);?></td>
+                    <td><?php $total = $subtotal_price*$price_percentage;$transaction_DAO->update_transaction_total($id,$total);echo formatting($total);?></td>
                 </tr>
             </tbody>
         </table>
