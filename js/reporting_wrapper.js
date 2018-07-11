@@ -1,4 +1,3 @@
-
 //please don't change anything here, it just works
 function money_formatting(n){
     var c = 2, 
@@ -7,7 +6,7 @@ function money_formatting(n){
         s = n < 0 ? "-" : "", 
         i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))), 
         j = (j = i.length) > 3 ? j % 3 : 0;
-        return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+        return "Rp. " + s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
 
 function daily_report(day,month,year,returnLocation,message)
@@ -29,7 +28,7 @@ function daily_report(day,month,year,returnLocation,message)
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById(returnLocation).innerHTML= "Rp."+money_formatting(result);
+            document.getElementById(returnLocation).innerHTML= money_formatting(result);
         }
     }
 }
@@ -62,8 +61,8 @@ function batch_daily_report(month,year)
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             for (let index = 1; index <= endDate; index++) {
-                document.getElementById(returnLocation).innerHTML += index + " " + MonthName + " " + year + ":";
-                document.getElementById(returnLocation).innerHTML += "Rp."+money_formatting(result[index-1]);
+                document.getElementById(returnLocation).innerHTML += index + " " + MonthName + " " + year + ": ";
+                document.getElementById(returnLocation).innerHTML += money_formatting(result[index-1]);
                 document.getElementById(returnLocation).innerHTML += "<br/>";
             }
         }
@@ -90,7 +89,7 @@ function monthly_report(month,year)
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
             batch_daily_report(month,year);
-            document.getElementById("monthly_sum").innerHTML = "Rp."+money_formatting(result);
+            document.getElementById("monthly_sum").innerHTML = money_formatting(result);
         }
     } 
 }
@@ -112,7 +111,7 @@ function yearly_report(year){
         result = xmlhttp.responseText;
         if ((xmlhttp.readyState == 4) && (xmlhttp.status==200))
         {
-            document.getElementById("yearly_sum").innerHTML = "Rp."+money_formatting(result);
+            document.getElementById("yearly_sum").innerHTML = money_formatting(result);
         }
     } 
 }
