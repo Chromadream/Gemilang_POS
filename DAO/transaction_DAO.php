@@ -1,5 +1,4 @@
 <?php
-include("vendor/autoload.php");
 class transaction_DAO
 {
     public $transact_id;
