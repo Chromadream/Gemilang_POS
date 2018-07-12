@@ -44,7 +44,7 @@ EOD;
     }
     $table.="</tbody></table>";
     $table.=<<<EOD
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>Qty</th>
