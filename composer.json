@@ -1,6 +1,6 @@
 {
     "require": {
         "kktsvetkov/krumo": "^0.4.0",
-        "mpdf/mpdf": "^7.1"
+        "tecnickcom/tcpdf": "^6.2"
     }
 }
