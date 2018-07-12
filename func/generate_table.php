@@ -47,11 +47,11 @@ EOD;
     <table border="1">
         <thead>
             <tr>
-                <th>Nama</th>
-                <th>Qty</th>
-                <th>Satuan</th>
-                <th>Harga satuan</th>
-                <th>Harga akhir item</th>
+                <th width="8cm">Nama</th>
+                <th width="1cm">Qty</th>
+                <th width="2cm">Satuan</th>
+                <th width="4cm">Harga satuan</th>
+                <th width="4cm">Harga akhir item</th>
             </tr>
         </thead>
         <tbody>
@@ -66,11 +66,11 @@ EOD;
         $formatted_sub = formatting($subtotal);
         $table .= <<<EOD
         <tr>
-        <td>$current_item->product_name</td>
-        <td>$multiplier</td>
-        <td>$current_item->product_stock_unit</td>
-        <td>$formatted_price</td>
-        <td>$formatted_sub</td>
+        <td width="8cm">$current_item->product_name</td>
+        <td width="1cm">$multiplier</td>
+        <td width="2cm">$current_item->product_stock_unit</td>
+        <td width="4cm">$formatted_price</td>
+        <td width="4cm">$formatted_sub</td>
         </tr>
 EOD;
     }
