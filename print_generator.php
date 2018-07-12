@@ -2,7 +2,7 @@
 include_once("vendor/autoload.php");
 include_once("func/generate_table.php");
 define('K_PATH_IMAGES','img/');
-$id = 1;
+$id = $_GET["id"];
 $PDF_HEADER_LOGO = "logo.jpg";
 $PDF_HEADER_LOGO_WIDTH = "20";
 $sizes = array(215,140);
@@ -21,7 +21,7 @@ krumo($content);
 $tcpdf->writeHTML($content,true,true,true,true,'');
 $savedir = $_SERVER["DOCUMENT_ROOT"]."/tmps/";
 if($tcpdf->Output('testoutput.pdf','I')){
-    echo 200;
+    return $content;
 }
 exit();
 ?>
