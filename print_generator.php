@@ -29,5 +29,6 @@ if($discount_presence)
 $items = $transactitem_DAO->list_all_items_from_order($_GET["id"]);
 $css = file_get_contents("css/printmode.css");
 $mpdf->WriteHTML('<h1>Test</h1>');
+$mpdf->Output();
 
 ?>
