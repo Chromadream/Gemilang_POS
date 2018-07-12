@@ -17,7 +17,6 @@ $tcpdf->SetAutoPageBreak(FALSE,PDF_MARGIN_BOTTOM);
 $tcpdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 $tcpdf->AddPage();
 $content = generate_table($id);
-krumo($content);
 $tcpdf->writeHTML($content,true,true,true,true,'');
 $savedir = $_SERVER["DOCUMENT_ROOT"]."/tmps/";
 if($tcpdf->Output('testoutput.pdf','I')){
