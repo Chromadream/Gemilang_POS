@@ -20,11 +20,6 @@ function generate_table($id){
     }
     $items = $transactitem_DAO->list_all_items_from_order($id);
     $table.=<<<EOD
-    <style>
-    tr,td {
-        white-space: nowrap;
-    }
-    </style>
     <table>
         <tbody>
             <tr>
@@ -52,11 +47,11 @@ EOD;
     <table border="1">
         <thead>
             <tr>
-                <th>Qty</th>
-                <th>Nama</th>
-                <th>Harga satuan</th>
-                <th>Satuan</th>
-                <th>Harga akhir item</th>
+                <th width="20px">Qty</th>
+                <th width="50px">Nama</th>
+                <th width="40px">Harga satuan</th>
+                <th width="20px">Satuan</th>
+                <th width="50px">Harga akhir item</th>
             </tr>
         </thead>
         <tbody>
