@@ -2,3 +2,4 @@
 .idea
 connection_file.php
 role_level.txt
+vendor/
