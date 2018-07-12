@@ -49,7 +49,7 @@ EOD;
             <tr>
                 <th width="8cm">Nama</th>
                 <th width="1cm">Qty</th>
-                <th width="2cm">Satuan</th>
+                <th width="1.4cm">Satuan</th>
                 <th width="4cm">Harga satuan</th>
                 <th width="4cm">Harga akhir item</th>
             </tr>
@@ -68,7 +68,7 @@ EOD;
         <tr>
         <td width="8cm">$current_item->product_name</td>
         <td width="1cm">$multiplier</td>
-        <td width="2cm">$current_item->product_stock_unit</td>
+        <td width="1.4cm">$current_item->product_stock_unit</td>
         <td width="4cm">$formatted_price</td>
         <td width="4cm">$formatted_sub</td>
         </tr>
