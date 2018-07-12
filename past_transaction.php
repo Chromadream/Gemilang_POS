@@ -112,7 +112,7 @@
                 </tr>
             </tbody>
         </table>
-        <a name="printmode" id="printmode" class="btn btn-primary" href="printmode.php?id=<?php echo $_GET["id"];?>" role="button"><i class="fas fa-print"></i> Print Invoice</a>
+        <a name="printmode" id="printmode" class="btn btn-primary" href="print_generator.php?id=<?php echo $_GET["id"];?>" role="button"><i class="fas fa-print"></i> Print Invoice</a>
         <a name="home" id="home" class="btn btn-secondary" href="index.php" role="button"><i class="fas fa-home"></i> Kembali ke menu awal</a>
     </div>
     <!-- Optional JavaScript -->

@@ -101,7 +101,7 @@
                 </tbody>
         </table>
         <a class="btn btn-primary" href="add_to_invoice.php?tid=<?php echo $id;?>" role="button"><i class="fas fa-plus"></i> Tambah item ke invoice</a>
-        <a name="printmode" id="printmode" class="btn btn-success" href="printmode.php?id=<?php echo $id;?>" role="button"><i class="fas fa-print"></i> Print invoice</a>
+        <a name="printmode" id="printmode" class="btn btn-success" href="print_generator.php?id=<?php echo $id;?>" role="button"><i class="fas fa-print"></i> Print invoice</a>
         <table class="table table-striped">
             <thead class="thead-inverse">
                 <tr>
