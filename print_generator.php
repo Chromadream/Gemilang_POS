@@ -6,7 +6,7 @@ $id = $_GET["id"];
 $PDF_HEADER_LOGO = "logo.jpg";
 $PDF_HEADER_LOGO_WIDTH = "55";
 $sizes = array(215,140);
-$tcpdf = new TCPDF('P','mm',$sizes,true,'UTF-8',false,false);
+$tcpdf = new TCPDF('L','mm',$sizes,true,'UTF-8',false,false);
 $tcpdf->SetHeaderData($PDF_HEADER_LOGO,$PDF_HEADER_LOGO_WIDTH,"Invoice",'');
 $tcpdf->SetHeaderFont(array(PDF_FONT_NAME_MAIN,'',20));
 $tcpdf->SetPrintFooter(false);
