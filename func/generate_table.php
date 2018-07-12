@@ -1,9 +1,9 @@
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"]."database_class.php");
-include_once($_SERVER["DOCUMENT_ROOT"]."DAO/transaction_DAO.php");
-include_once($_SERVER["DOCUMENT_ROOT"]."DAO/transaction_line_DAO.php");
-include_once($_SERVER["DOCUMENT_ROOT"]."func/terbilang.php");
-include_once($_SERVER["DOCUMENT_ROOT"]."func/format_wrapper.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/database_class.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/DAO/transaction_DAO.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/DAO/transaction_line_DAO.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/func/terbilang.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/func/format_wrapper.php");
 
 function generate_table($id){
     $connection = new Database();
