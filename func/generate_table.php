@@ -47,11 +47,11 @@ EOD;
     <table border="1">
         <thead>
             <tr>
-                <th class="heading" width="20">Qty</th>
-                <th class="heading" width="50">Nama</th>
-                <th class="heading" width="40">Harga satuan</th>
-                <th class="heading" width="20">Satuan</th>
-                <th class="heading" width="50">Harga akhir item</th>
+                <th>Qty</th>
+                <th>Nama</th>
+                <th>Harga satuan</th>
+                <th>Satuan</th>
+                <th>Harga akhir item</th>
             </tr>
         </thead>
         <tbody>
