@@ -47,10 +47,10 @@ EOD;
     <table border="1">
         <thead>
             <tr>
-                <th>Qty</th>
                 <th>Nama</th>
-                <th>Harga satuan</th>
+                <th>Qty</th>
                 <th>Satuan</th>
+                <th>Harga satuan</th>
                 <th>Harga akhir item</th>
             </tr>
         </thead>
@@ -62,20 +62,20 @@ EOD;
         $multiplier = (int)$current_item->transact_item_quantity;
         $current_price = (int)$current_item->transact_item_price;
         $current_price = formatting($current_price);
-        $subtotal = $multiplier*$current_price;$subtotal_price+=$subtotal;
+        $subtotal = (int)$multiplier*$current_price;$subtotal_price+=$subtotal;
         $formatted_sub = formatting($subtotal);
         $table .= <<<EOD
         <tr>
-        <td scope="row">$multiplier</td>
         <td>$current_item->product_name</td>
-        <td>$current_price</td>
+        <td>$multiplier</td>
         <td>$current_item->product_stock_unit</td>
+        <td>$current_price</td>
         <td>$formatted_sub</td>
         </tr>
 EOD;
     }
-    $formatted_sub = formatting($subtotal_price);
-    $formatted_total = formatting($subtotal_price*$price_percentage);
+    $formatted_sub = formatting((int)$subtotal_price);
+    $formatted_total = formatting((int)$subtotal_price*$price_percentage);
     $table .= <<<EOD
                 <tr>
                     <td></td>
