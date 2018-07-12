@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"]."vendor/autoload.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/vendor/autoload.php");
 class Product_DAO
 {
     public $product_id;
