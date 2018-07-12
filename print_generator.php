@@ -4,10 +4,6 @@ if(!isset($_SESSION["level"]) || $_SESSION["level"] != "B")
 {
     header("location: login.php?redirposition=orders.php");
 }
-if(!isset($_GET["id"]))
-{
-    header("orders.php");
-}
 include_once("database_class.php");
 include_once("DAO/transaction_DAO.php");
 include_once("DAO/transaction_line_DAO.php");
