@@ -61,7 +61,7 @@ EOD;
         $current_item = $items->getNext(new transaction_line_DAO($connection->getConnection()),$i);
         $multiplier = (int)$current_item->transact_item_quantity;
         $current_price = (int)$current_item->transact_item_price;
-        $current_price = formatting($current_price);
+        $formatted_price = formatting($current_price);
         $subtotal = (int)$multiplier*$current_price;$subtotal_price+=$subtotal;
         $formatted_sub = formatting($subtotal);
         $table .= <<<EOD
@@ -69,7 +69,7 @@ EOD;
         <td>$current_item->product_name</td>
         <td>$multiplier</td>
         <td>$current_item->product_stock_unit</td>
-        <td>$current_price</td>
+        <td>$formatted_price</td>
         <td>$formatted_sub</td>
         </tr>
 EOD;
