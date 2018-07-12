@@ -2,7 +2,7 @@
 include_once("vendor/autoload.php");
 include_once("func/generate_table.php");
 define('K_PATH_IMAGES','img/');
-$id = $_GET["id"];
+$id = 1;
 $PDF_HEADER_LOGO = "logo.jpg";
 $PDF_HEADER_LOGO_WIDTH = "20";
 $sizes = array(215,140);
