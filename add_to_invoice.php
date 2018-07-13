@@ -46,6 +46,7 @@
                     <th>ID</th>
                     <th>Nama</th>
                     <th>Harga jual</th>
+                    <th>Satuan</th>
                     <th>Deskripsi</th>
                     <th></th>
                 </tr>
@@ -59,6 +60,7 @@
               <td scope="row"><?php echo $currentRow->product_id; ?></td>
               <td><?php echo $currentRow->product_name; ?></td>
               <td><?php echo $currentRow->product_sale_price;?></td>
+              <td><?php echo $currentRow->product_stock_unit;?></td>
               <td><?php echo $currentRow->product_description;?></td>
               <td><button type="button" class="btn btn-dark" onclick="add_prod(<?php echo $currentRow->product_id;?>,<?php echo $id;?>,<?php echo $currentRow->product_sale_price;?>)"><i class="fas fa-check-square"></i></button></td>
             </tr>
