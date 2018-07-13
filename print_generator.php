@@ -7,7 +7,7 @@ $PDF_HEADER_LOGO = "logo.jpg";
 $PDF_HEADER_LOGO_WIDTH = "70";
 $sizes = array(215,220);
 $tcpdf = new TCPDF('P','mm',$sizes,true,'UTF-8',false,false);
-$tcpdf->SetHeaderData($PDF_HEADER_LOGO,$PDF_HEADER_LOGO_WIDTH,"\nInvoice",'');
+$tcpdf->SetHeaderData($PDF_HEADER_LOGO,$PDF_HEADER_LOGO_WIDTH,"Nota",'');
 $tcpdf->SetHeaderFont(array(PDF_FONT_NAME_MAIN,'',20));
 $tcpdf->SetPrintFooter(false);
 $tcpdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED,'',12);
