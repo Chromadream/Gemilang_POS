@@ -1,4 +1,12 @@
 <?php
+session_start();
+if(!isset($_SESSION["level"]) || ($_SESSION["level"] != "B" && $_SESSION["level"] != "T"))
+{
+    header("location: login.php?redirposition=orders.php");
+}
+if(!isset($_GET["id"])){
+    header("location: login.php?redirposition=orders.php");
+}
 include_once("vendor/autoload.php");
 include_once("func/generate_table.php");
 define('K_PATH_IMAGES','img/');
