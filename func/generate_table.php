@@ -69,8 +69,8 @@ EOD;
         <td width="8cm">$current_item->product_name</td>
         <td width="1cm">$multiplier</td>
         <td width="1.4cm">$current_item->product_stock_unit</td>
-        <td width="4cm">$formatted_price</td>
-        <td width="4cm">$formatted_sub</td>
+        <td width="4cm">  $formatted_price</td>
+        <td width="4cm">  $formatted_sub</td>
         </tr>
 EOD;
     }
@@ -82,29 +82,24 @@ EOD;
                     <td></td>
                     <td></td>
                     <td>Subtotal (Rp)</td>
-                    <td>$formatted_sub</td>
+                    <td>  $formatted_sub</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>Total akhir (Rp)</td>
-                    <td>$formatted_total</td>
+                    <td>  $formatted_total</td>
                 </tr>
             </tbody>
         </table>
 EOD;
     $terbilang = Terbilang($subtotal_price*$price_percentage);
     $table .= <<<EOD
-    <table class="table">
-    <tbody>
-        <tr>
-            <td>Terbilang: </td>
-            <td>$terbilang Rupiah</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+    <div>
+        Terbilang: <br/>
+$terbilang Rupiah
+</div>
 EOD;
 return $table;
 }
