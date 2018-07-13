@@ -50,8 +50,8 @@ EOD;
                 <th width="8cm">Nama</th>
                 <th width="1cm">Qty</th>
                 <th width="1.4cm">Satuan</th>
-                <th width="4cm">Harga satuan</th>
-                <th width="4cm">Harga akhir item</th>
+                <th width="4cm"> Harga satuan</th>
+                <th width="4cm"> Harga akhir item</th>
             </tr>
         </thead>
         <tbody>
@@ -96,10 +96,15 @@ EOD;
 EOD;
     $terbilang = Terbilang($subtotal_price*$price_percentage);
     $table .= <<<EOD
-    <div>
-        Terbilang: <br/>
-$terbilang Rupiah
-</div>
+    <br/>
+    <table>
+        <tr>
+            <td>Terbilang:</td>
+        </tr>
+        <tr>
+            $terbilang Rupiah
+        </tr>
+    </table>
 EOD;
 return $table;
 }

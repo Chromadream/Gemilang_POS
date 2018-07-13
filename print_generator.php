@@ -4,7 +4,7 @@ include_once("func/generate_table.php");
 define('K_PATH_IMAGES','img/');
 $id = $_GET["id"];
 $PDF_HEADER_LOGO = "logo.jpg";
-$PDF_HEADER_LOGO_WIDTH = "80";
+$PDF_HEADER_LOGO_WIDTH = "70";
 $sizes = array(215,220);
 $tcpdf = new TCPDF('P','mm',$sizes,true,'UTF-8',false,false);
 $tcpdf->SetHeaderData($PDF_HEADER_LOGO,$PDF_HEADER_LOGO_WIDTH,"\nInvoice",'');
