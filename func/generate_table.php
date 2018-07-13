@@ -101,8 +101,10 @@ EOD;
         <tr>
             <td>Terbilang:</td>
         </tr>
-        <tr style="font-weight:bold;font-style:italic;background-color:gray;">
+        <tr>
+            <td style="font-weight:bold;font-style:italic;background-color:gray;">
             $terbilang Rupiah
+            </td>
         </tr>
     </table>
 EOD;
